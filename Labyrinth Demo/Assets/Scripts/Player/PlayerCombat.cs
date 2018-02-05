@@ -104,6 +104,7 @@ public class PlayerCombat : MonoBehaviour {
 				}
 				gs.ClearTrail ();
 				gs.KillSwitchEngage ();
+				an.SetBool("Dash", false);
 			}
 			return;
 		} else if (delayCounter > 0) {				//dash must recharge
@@ -157,6 +158,7 @@ public class PlayerCombat : MonoBehaviour {
 			}
 			//Dash ghost trail animation
 			gs.killSwitch = false;
+			an.SetBool("Dash", true);
 			return;
 		} 
 		#endregion
