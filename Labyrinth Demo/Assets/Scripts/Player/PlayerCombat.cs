@@ -46,6 +46,8 @@ public class PlayerCombat : MonoBehaviour {
 	private float dashCounter = 0;					//how long has it been since you started dashing?
 	private float delayCounter = 0;					//how long has it been since you finished dashing?
 	private int dashCharges;						//how many dashes does the player have remaining
+	private float tmpDashCalc;						//remove a calculation each frame of dash by storing it as a tmp variable ((delayCounter % dashDelay) / dashDelay)
+	private float tmpDashCalc2;						//same as above but instead by a factor of O(1) instead of O(n) (1 - (dashTime - dashCounter) - tmpDashCalc)
 
 	// Use this for initialization
 	void Start () {
@@ -92,6 +94,7 @@ public class PlayerCombat : MonoBehaviour {
 		if (dashing) {
 			dashCounter += Time.deltaTime;
 			if (dashCounter >= dashTime) {
+				//Dash Finished
 				dashing = false;
 				php.damageCollider.enabled = true;
 				Physics2D.IgnoreLayerCollision(8, 9, false);
@@ -105,6 +108,18 @@ public class PlayerCombat : MonoBehaviour {
 				gs.ClearTrail ();
 				gs.KillSwitchEngage ();
 				an.SetBool("Dash", false);
+			} else {
+				//show dashBar being used up in the HUD
+				tmpDashCalc2 = tmpDashCalc - (1 - ((dashTime - dashCounter) / dashTime));
+				if (dashCharges == numDashes - 1) {
+					ph.ShowDash(dashCharges, 1 - tmpDashCalc2);
+				} else {
+					if (tmpDashCalc2 > 0) {
+						ph.ShowDash(dashCharges + 1, 1 - tmpDashCalc2);
+					} else {
+						ph.ShowDash(dashCharges, 1 - (1 + tmpDashCalc2));
+					}
+				}
 			}
 			return;
 		} else if (delayCounter > 0) {				//dash must recharge
@@ -132,9 +147,11 @@ public class PlayerCombat : MonoBehaviour {
 			dashCounter = 0;
 			dashCharges--;
 			if (dashCharges == numDashes - 1) {
-				ph.ShowDash(dashCharges, 1);
+				//ph.ShowDash(dashCharges, 1);
+				tmpDashCalc = 1f;
 			} else {
-				ph.ShowDash(dashCharges, (delayCounter % dashDelay) / dashDelay);
+				//ph.ShowDash(dashCharges, (delayCounter % dashDelay) / dashDelay);
+				tmpDashCalc = 1 - ((delayCounter % dashDelay) / dashDelay);
 			}
 			//account for dash with no movement input
 			if (horiz == 0 && vert == 0) {
