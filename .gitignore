@@ -24,7 +24,7 @@ ExportedObj/
 *.pdb
 
 # Let everyone start on their DevScene
-*.LastSceneManagerSetup.txt
+LastSceneManagerSetup.txt
 
 # Unity3D generated meta files
 *.pidb.meta
