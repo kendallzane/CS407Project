@@ -55,3 +55,5 @@ MonoBehaviour:
   canUse: 1
   commandNum: 0
   commandName: Sword Throw
+  thrownSword: {fileID: 1655518714088650, guid: 8169eeccef5de20409cdba691faff05d,
+    type: 2}

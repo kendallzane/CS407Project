@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SwordThrowCommand : PlayerCommand {
 
+	//references
+	public GameObject thrownSword;					//the GameObject to instantiate
+	public float timeTillThrow = 0.13f / 0.60f;		//how long until the player throw's the sword?
+
 	// Use this for initialization
 	void Start () {
 		OnStart ();
@@ -17,8 +21,22 @@ public class SwordThrowCommand : PlayerCommand {
 	/// <summary>
 	/// Uses the selected command by calling its unique action, also begins the recharge process
 	/// </summary>
-	new public void UseCommand () {
+	public override void UseCommand () {
 		base.UseCommand ();
+		an.SetTrigger ("ThrowSword");
+		pc.LostSword ();
+		pm.canMove = false;
+		StartCoroutine ("ThrowTheSword");
+	}
 
+	/// <summary>
+	/// Throws the sword after the animation completes.
+	/// </summary>
+	/// <returns>The the sword.</returns>
+	IEnumerator ThrowTheSword () {
+		yield return new WaitForSeconds (timeTillThrow);
+		pm.canMove = true;
+		GameObject sword = Instantiate (thrownSword, player.transform.position, Quaternion.identity);
+		sword.GetComponent<ThrownSword> ().player = player;
 	}
 }

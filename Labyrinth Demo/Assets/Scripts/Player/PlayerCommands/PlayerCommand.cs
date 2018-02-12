@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCommand : MonoBehaviour {
+public abstract class PlayerCommand : MonoBehaviour {
 
 	//references
+	protected GameObject player;
 	protected Animator an;
 	protected PlayerCombat pc;
 	protected PlayerHUD ph;
@@ -22,12 +23,14 @@ public class PlayerCommand : MonoBehaviour {
 
 	// Use this for initialization
 	public void OnStart () {
-		pm = GetComponent<PlayerMovement> ();
-		rb = GetComponent<Rigidbody2D> ();
-		an = GetComponent<Animator> ();
-		ps = GetComponentInChildren<PlayerSword> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
+		pm = player.GetComponent<PlayerMovement> ();
+		rb = player.GetComponent<Rigidbody2D> ();
+		an = player.GetComponent<Animator> ();
+		ps = player.GetComponentInChildren<PlayerSword> ();
 		ph = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD> ();
-		php = GetComponent<PlayerHealth> ();
+		php = player.GetComponent<PlayerHealth> ();
+		pc = player.GetComponent<PlayerCombat> ();
 		rechargeDelay = 0;
 		canUse = true;
 	}
@@ -48,7 +51,7 @@ public class PlayerCommand : MonoBehaviour {
 	/// <summary>
 	/// Uses the selected command by calling its unique action, also begins the recharge process
 	/// </summary>
-	public void UseCommand () {
+	public virtual void UseCommand () {
 		canUse = false;
 		rechargeDelay = rechargeTime;
 	}

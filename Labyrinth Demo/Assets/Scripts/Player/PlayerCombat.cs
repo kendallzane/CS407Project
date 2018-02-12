@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour {
 	private PlayerSword ps;
 	public GameObject[] HUD;						//the proper HUD to be instantiated
 	public GameObject[] commandsOriginals;			//the array of commands to be instantiated (order editable in menu)
-	[HideInInspector] public PlayerCommand[] commands;//the array of usable commands
+	public PlayerCommand[] commands;//the array of usable commands
 
 	//variables
 	public float[] attackSpeed;						//attacking speeds of various combo attacks
@@ -39,6 +39,7 @@ public class PlayerCombat : MonoBehaviour {
 	[HideInInspector] public bool canAttack = true;	//is the player currently able to attack? (times out the combos)
 	private bool[] attackCombo;						//Keeps track of what stage of the combo we're in
 	[HideInInspector] public bool attackLock = false;//prevents player spam from skipping attacks
+	[HideInInspector] public bool hasSword = true;	//does the player have access to his sword?
 	private bool attacking = false;					//is the player currently attacking?
 	private float horiz;
 	private float vert;								//used for slight movement available during attacks
@@ -60,6 +61,7 @@ public class PlayerCombat : MonoBehaviour {
 			break;
 			//etc
 		}
+		hasSword = true;
 		dashing = false;
 		attackCombo = new bool[COMBONUM];
 		attacking = false;
@@ -181,97 +183,99 @@ public class PlayerCombat : MonoBehaviour {
 		#endregion
 
 		#region BasicAttack
-		//check for attacking spam input
-		if (!attackLock && attacking && Input.GetButtonDown("Attack")) {
-			attackLock = true;
-			int i = 0;
-			for (i = 0; i < COMBONUM; i++) {
-				if (attackCombo[i] == true) {
+		if (hasSword) {
+			//check for attacking spam input
+			if (!attackLock && attacking && Input.GetButtonDown("Attack")) {
+				attackLock = true;
+				int i = 0;
+				for (i = 0; i < COMBONUM; i++) {
+					if (attackCombo[i] == true) {
+						break;
+					}
+				}
+				attackCombo [i] = false;
+				if (i < COMBONUM - 1) {
+					attackCombo [i + 1] = true;				//make sure final combo attack doesn't set attackLock to false, else this will break
+				}
+			}
+
+			//1st Attack
+			if (!attacking && canAttack && Input.GetButtonDown("Attack")) {
+				attackLock = false;
+				attacking = true;
+				canAttack = false;
+				attackCombo [0] = true;
+				pm.canMove = false;
+				ps.comboMultiplier = damageMultiplier[0];
+				an.SetTrigger ("Attack");
+				switch (GetDirection ()) {
+				case DOWN:
+					rb.velocity = Vector2.down * attackSpeed[0];
+					php.damageCollider.offset = new Vector2 (0, damageColliderOffset);
+					break;
+				case LEFT:
+					rb.velocity = Vector2.left * attackSpeed [0];
+					php.damageCollider.offset = new Vector2 (damageColliderOffset, 0);
+					break;
+				case UP:
+					rb.velocity = Vector2.up * attackSpeed [0];
+					php.damageCollider.offset = new Vector2 (0, -damageColliderOffset);
+					break;
+				case RIGHT:
+					rb.velocity = Vector2.right * attackSpeed [0];
+					php.damageCollider.offset = new Vector2 (-damageColliderOffset, 0);
+					break;
+				}
+			} 
+					
+			//get diagonal input
+			if (attacking) {
+				horiz = Input.GetAxis("Horizontal");
+				vert = Input.GetAxis("Vertical");
+			}
+	
+			//2nd Attack
+			if (attackLock && canAttack && attackCombo[1]) {
+				attackLock = false;
+				canAttack = false;
+				ps.comboMultiplier = damageMultiplier[1];
+				an.SetTrigger ("Attack");
+				switch (GetDirection ()) {
+				case DOWN:
+						rb.velocity = new Vector2(horiz, -1).normalized * attackSpeed[1];
+					break;
+				case LEFT:
+					rb.velocity = new Vector2(-1, vert).normalized * attackSpeed [1];
+					break;
+				case UP:
+						rb.velocity = new Vector2(horiz, 1).normalized * attackSpeed [1];
+					break;
+				case RIGHT:
+					rb.velocity = new Vector2(1, vert).normalized * attackSpeed [1];
 					break;
 				}
 			}
-			attackCombo [i] = false;
-			if (i < COMBONUM - 1) {
-				attackCombo [i + 1] = true;				//make sure final combo attack doesn't set attackLock to false, else this will break
-			}
-		}
 
-		//1st Attack
-		if (!attacking && canAttack && Input.GetButtonDown("Attack")) {
-			attackLock = false;
-			attacking = true;
-			canAttack = false;
-			attackCombo [0] = true;
-			pm.canMove = false;
-			ps.comboMultiplier = damageMultiplier[0];
-			an.SetTrigger ("Attack");
-			switch (GetDirection ()) {
-			case DOWN:
-				rb.velocity = Vector2.down * attackSpeed[0];
-				php.damageCollider.offset = new Vector2 (0, damageColliderOffset);
-				break;
-			case LEFT:
-				rb.velocity = Vector2.left * attackSpeed [0];
-				php.damageCollider.offset = new Vector2 (damageColliderOffset, 0);
-				break;
-			case UP:
-				rb.velocity = Vector2.up * attackSpeed [0];
-				php.damageCollider.offset = new Vector2 (0, -damageColliderOffset);
-				break;
-			case RIGHT:
-				rb.velocity = Vector2.right * attackSpeed [0];
-				php.damageCollider.offset = new Vector2 (-damageColliderOffset, 0);
-				break;
-			}
-		} 
-
-		//get diagonal input
-		if (attacking) {
-			horiz = Input.GetAxis("Horizontal");
-			vert = Input.GetAxis("Vertical");
-		}
-
-		//2nd Attack
-		if (attackLock && canAttack && attackCombo[1]) {
-			attackLock = false;
-			canAttack = false;
-			ps.comboMultiplier = damageMultiplier[1];
-			an.SetTrigger ("Attack");
-			switch (GetDirection ()) {
-			case DOWN:
-				rb.velocity = new Vector2(horiz, -1).normalized * attackSpeed[1];
-				break;
-			case LEFT:
-				rb.velocity = new Vector2(-1, vert).normalized * attackSpeed [1];
-				break;
-			case UP:
-				rb.velocity = new Vector2(horiz, 1).normalized * attackSpeed [1];
-				break;
-			case RIGHT:
-				rb.velocity = new Vector2(1, vert).normalized * attackSpeed [1];
-				break;
-			}
-		}
-
-		//3rd Attack
-		if (attackLock && canAttack && attackCombo[2]) {
-			attackLock = false;				
-			canAttack = false;
-			an.SetTrigger ("Attack");
-			ps.comboMultiplier = damageMultiplier[2];
-			switch (GetDirection ()) {
-			case DOWN:
-				rb.velocity = new Vector2(horiz / 2, -1).normalized * attackSpeed[2];
-				break;
-			case LEFT:
-				rb.velocity = new Vector2(-1, vert / 2).normalized * attackSpeed [2];
-				break;
-			case UP:
-				rb.velocity = new Vector2(horiz / 2, 1).normalized * attackSpeed [2];
-				break;
-			case RIGHT:
-				rb.velocity = new Vector2(1, vert / 2).normalized * attackSpeed [2];
-				break;
+			//3rd Attack
+			if (attackLock && canAttack && attackCombo[2]) {
+				attackLock = false;				
+					canAttack = false;
+				an.SetTrigger ("Attack");
+				ps.comboMultiplier = damageMultiplier[2];
+					switch (GetDirection ()) {
+				case DOWN:
+					rb.velocity = new Vector2(horiz / 2, -1).normalized * attackSpeed[2];
+					break;
+				case LEFT:
+					rb.velocity = new Vector2(-1, vert / 2).normalized * attackSpeed [2];
+					break;
+				case UP:
+					rb.velocity = new Vector2(horiz / 2, 1).normalized * attackSpeed [2];
+					break;
+				case RIGHT:
+					rb.velocity = new Vector2(1, vert / 2).normalized * attackSpeed [2];
+					break;
+				}
 			}
 		}
 		#endregion
@@ -328,6 +332,29 @@ public class PlayerCombat : MonoBehaviour {
 		for (int i = 0; i < COMBONUM; i++) {
 			attackCombo [i] = false;
 		}
+	}
+
+	/// <summary>
+	/// Called whenever the player loses his sword, so that he can't attack anymore
+	/// </summary>
+	public void LostSword () {
+		hasSword = false;
+		attacking = false;
+		attackLock = true;
+		canAttack = true;
+		pm.canMove = true;
+		ps.comboMultiplier = 1f;
+		php.damageCollider.offset = Vector2.zero;
+		for (int i = 0; i < COMBONUM; i++) {
+			attackCombo [i] = false;
+		}
+	}
+
+	/// <summary>
+	/// Called whenever the player gets back his sword, allowing attacking again
+	/// </summary>
+	public void RetrieveSword () {
+		hasSword = true;
 	}
 
 	/// <summary>

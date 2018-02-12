@@ -252,6 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c89728dbf9c2f546bc4db72110c6444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeSprites:
+  - {fileID: 21300000, guid: 05dc36256aafbbc4cb26484860546d64, type: 3}
+  - {fileID: 21300000, guid: 5a151d4b49c3c487792db9ccd0c4157c, type: 3}
   baseDamage: 0a0000000f000000
   upgrade: 0
   comboMultiplier: 1
@@ -301,6 +304,7 @@ MonoBehaviour:
   canCommand: 1
   canAttack: 1
   attackLock: 0
+  hasSword: 1
 --- !u!114 &114785022947641584
 MonoBehaviour:
   m_ObjectHideFlags: 1
