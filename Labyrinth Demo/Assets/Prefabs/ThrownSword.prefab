@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  outForce: 200
+  outForce: 100
   inSpeed: 4
   returnTolerance: 0.3
   timeTillReturn: 1

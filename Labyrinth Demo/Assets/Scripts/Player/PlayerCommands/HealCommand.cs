@@ -7,7 +7,7 @@ public class HealCommand : PlayerCommand {
 	// Use this for initialization
 	void Start () {
 		OnStart ();
-		//Debug.Log ("hi");
+
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,8 @@ public class HealCommand : PlayerCommand {
 	/// <summary>
 	/// Uses the selected command by calling its unique action, also begins the recharge process
 	/// </summary>
-	new public void UseCommand () {
+	public override void UseCommand () {
 		base.UseCommand ();
-		Debug.Log ("Used Heal");
+		php.StartHeal ();
 	}
 }

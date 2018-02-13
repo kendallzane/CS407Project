@@ -43,6 +43,7 @@ public class PlayerCombat : MonoBehaviour {
 	private bool attacking = false;					//is the player currently attacking?
 	private float horiz;
 	private float vert;								//used for slight movement available during attacks
+	public bool canDash = true;						//is the player currently able to dash?
 	private bool dashing = false;					//is the player currently dashing?
 	private float dashCounter = 0;					//how long has it been since you started dashing?
 	private float delayCounter = 0;					//how long has it been since you finished dashing?
@@ -61,6 +62,7 @@ public class PlayerCombat : MonoBehaviour {
 			break;
 			//etc
 		}
+		canDash = true;
 		hasSword = true;
 		dashing = false;
 		attackCombo = new bool[COMBONUM];
@@ -139,7 +141,7 @@ public class PlayerCombat : MonoBehaviour {
 		}
 
 		//Start Dash
-		if (!attacking && dashCharges > 0 && Input.GetButtonDown ("Dash")) {
+		if (canDash && !attacking && dashCharges > 0 && Input.GetButtonDown ("Dash")) {
 			horiz = Input.GetAxis("Horizontal");
 			vert = Input.GetAxis("Vertical");
 			pm.canMove = false;
