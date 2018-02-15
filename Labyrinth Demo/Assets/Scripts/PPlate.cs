@@ -33,7 +33,9 @@ public class PPlate : MonoBehaviour {
 		}
 		isOn = true;
 		pRenderer.sprite = Down;
-		wall.SetActive (false);
+		if (wall != null) {
+			wall.SetActive (false);
+		}
 		yield return new WaitForSeconds(0);
 	}
 
@@ -45,7 +47,9 @@ public class PPlate : MonoBehaviour {
 		if (dTime >= 0) {
 			yield return new WaitForSecondsRealtime (dTime);
 			pRenderer.sprite = Up;
-			wall.SetActive (true);
+			if (wall != null) {
+				wall.SetActive (true);
+			}
 			isOn = false;
 		}
 	}
