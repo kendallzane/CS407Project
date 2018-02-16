@@ -56,8 +56,9 @@ public class PlayerHealth : MonoBehaviour {
 			pc.canCommand = false;
 			rb.velocity = Vector2.zero;
 			rb.AddForce (dirHit.normalized * pushBackForce);
-		} else {						//only die if you already had just a "sliver of health" left
-			//YOU DIED!!!!
+		} else {                        //only die if you already had just a "sliver of health" left
+            //YOU DIED!!!!
+            an.SetTrigger("Death");
 		}
 	}
 
@@ -72,6 +73,13 @@ public class PlayerHealth : MonoBehaviour {
 		pc.canDash = true;
 		pc.canCommand = true;
 	}
+
+    public void PlayerIsDead() {
+        Time.timeScale = 0f;
+        //pausemenu.SetActive(true);
+        //gameover.text = true;
+        Destroy(gameObject);
+    }
 
 	#region Heal
 	/// <summary>
