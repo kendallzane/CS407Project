@@ -1387,7 +1387,7 @@ Grid:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863643705}
   m_Enabled: 1
-  m_CellSize: {x: 0.32, y: 0.32, z: 0}
+  m_CellSize: {x: 0.25, y: 0.25, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -2500,6 +2500,7 @@ GameObject:
   - component: {fileID: 1747710563}
   - component: {fileID: 1747710562}
   - component: {fileID: 1747710561}
+  - component: {fileID: 1747710567}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2572,7 +2573,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 1.9729167
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2602,6 +2603,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747710567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747710560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96ce92411cb849ed928d0bcde98fcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelsPerUnit: 128
+  verticalUnitsOnScreen: 4
 --- !u!1 &1829485107
 GameObject:
   m_ObjectHideFlags: 0
