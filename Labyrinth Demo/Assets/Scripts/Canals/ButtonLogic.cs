@@ -18,7 +18,10 @@ public class ButtonLogic : MonoBehaviour {
 	}
 
 	public void switchIt(){
-		
+		Sprite temp = activeCanalSprite;
+		activeCanalSprite = reserveCanalSprite;
+		reserveCanalSprite = temp;
+		this.GetComponent<SpriteRenderer>().sprite = activeCanalSprite;
 	}
 
 }
