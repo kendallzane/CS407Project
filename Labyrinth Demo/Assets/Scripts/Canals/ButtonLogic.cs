@@ -22,6 +22,7 @@ public class ButtonLogic : MonoBehaviour {
 		activeCanalSprite = reserveCanalSprite;
 		reserveCanalSprite = temp;
 		this.GetComponent<SpriteRenderer>().sprite = activeCanalSprite;
+		this.GetComponent<BoxCollider2D> ().isTrigger = !this.GetComponent<BoxCollider2D>().isTrigger;
 	}
 
 }
