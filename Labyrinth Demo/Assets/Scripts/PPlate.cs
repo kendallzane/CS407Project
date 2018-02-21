@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PPlate : MonoBehaviour {
 
-	SpriteRenderer pRenderer;
-	public Sprite Up;
-	public Sprite Down;
+	private SpriteRenderer pRenderer;
+	public Sprite up;
+	public Sprite down;
+	public Sprite inv;
 
 	public float dTime;
 
@@ -22,17 +23,13 @@ public class PPlate : MonoBehaviour {
 		pRenderer = GetComponent<SpriteRenderer> ();
 	}
 
-	public bool getIsOn () {
-		return isOn;
-	}
-
 	IEnumerator OnTriggerEnter2D(Collider2D other) {
 		if (!(other.gameObject.CompareTag ("Player"))) {
-			pRenderer.sprite = Down;
+			pRenderer.sprite = down;
 			yield break;
 		}
 		isOn = true;
-		pRenderer.sprite = Down;
+		pRenderer.sprite = down;
 		if (wall != null) {
 			wall.SetActive (false);
 		}
@@ -41,17 +38,21 @@ public class PPlate : MonoBehaviour {
 
 	IEnumerator OnTriggerExit2D(Collider2D other) {
 		if (!(other.gameObject.CompareTag ("Player"))) {
-			pRenderer.sprite = Up;
+			pRenderer.sprite = up;
 			yield break;
 		}
 		if (dTime >= 0) {
 			yield return new WaitForSecondsRealtime (dTime);
-			pRenderer.sprite = Up;
+			pRenderer.sprite = up;
 			if (wall != null) {
 				wall.SetActive (true);
 			}
 			isOn = false;
 		}
+	}
+
+	public bool getIsOn () {
+		return isOn;
 	}
 
 	public void off() {
@@ -61,7 +62,15 @@ public class PPlate : MonoBehaviour {
 	IEnumerator pOff() {
 		yield return new WaitForSecondsRealtime (1);
 		isOn = false;
-		pRenderer.sprite = Up;	
+		pRenderer.sprite = up;	
+	}
+
+	public void invisible () {
+		pRenderer.sprite = inv;
+	}
+
+	public void visible () {
+		pRenderer.sprite = up;
 	}
 
 	// Update is called once per frame

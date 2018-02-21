@@ -78,8 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a37095cb128a1418cf6259e8b4a6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Up: {fileID: 21300000, guid: c4f36a89be4fcd444be081e5ae38747b, type: 3}
-  Down: {fileID: 21300000, guid: 66d9975fc1883fb499305b04663c4cec, type: 3}
+  up: {fileID: 21300000, guid: c4f36a89be4fcd444be081e5ae38747b, type: 3}
+  down: {fileID: 21300000, guid: 66d9975fc1883fb499305b04663c4cec, type: 3}
+  inv: {fileID: 21300000, guid: a7973d06ff9138a4c878d83d033aef70, type: 3}
   dTime: -1
   wall: {fileID: 0}
 --- !u!212 &212214380012063306
