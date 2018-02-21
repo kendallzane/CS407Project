@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (canMove) {
-			horiz = Input.GetAxis ("Horizontal");
-			vert = Input.GetAxis ("Vertical");
+			horiz = Input.GetAxisRaw ("Horizontal");
+			vert = Input.GetAxisRaw ("Vertical");
 			movement = new Vector2 (horiz, vert).normalized * speed;
 			rb.velocity = movement;
 			an.SetFloat ("Speed", rb.velocity.magnitude);
