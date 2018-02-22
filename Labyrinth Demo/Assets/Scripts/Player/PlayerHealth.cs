@@ -24,6 +24,8 @@ public class PlayerHealth : MonoBehaviour {
 	public int maxHealth = 100;						//the maximum health the player can have
 	private int health = 100;						//the amount of health the player has
 	public float pushBackForce = 3f;				//how much force is the player pushed back with?
+    public bool isDead = false;                     //whether player is dead or not
+
 
 	// Use this for initialization
 	void Start () {
@@ -56,9 +58,11 @@ public class PlayerHealth : MonoBehaviour {
 			pc.canCommand = false;
 			rb.velocity = Vector2.zero;
 			rb.AddForce (dirHit.normalized * pushBackForce);
-		} else {                        //only die if you already had just a "sliver of health" left
+		}
+        if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
             //YOU DIED!!!!
             an.SetTrigger("Death");
+            PlayerIsDead();
 		}
 	}
 
@@ -76,6 +80,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void PlayerIsDead() {
         Time.timeScale = 0f;
+        isDead = true;
         //pausemenu.SetActive(true);
         //gameover.text = true;
         Destroy(gameObject);
