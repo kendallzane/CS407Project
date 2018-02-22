@@ -221,6 +221,22 @@ AnimationClip:
     path: Sword/Trail
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Parameters.widthMultiplier
+    path: Sword/Trail
+    classID: 96
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -302,6 +318,13 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3479817779
+      attribute: 3982886636
+      script: {fileID: 0}
+      typeID: 96
+      customType: 30
+      isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300026, guid: b32b4723d6953b744a19cdea219f14a2, type: 3}
     - {fileID: 21300016, guid: b32b4723d6953b744a19cdea219f14a2, type: 3}
@@ -687,6 +710,22 @@ AnimationClip:
     attribute: m_IsActive
     path: Sword/Trail
     classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Parameters.widthMultiplier
+    path: Sword/Trail
+    classID: 96
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:

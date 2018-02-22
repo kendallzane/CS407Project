@@ -25,7 +25,7 @@ public class GameOver : MonoBehaviour {
 	}
     public void Restart()
     {
-        playerHealth.isDead = false;
+        //playerHealth.isDead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Quit()
