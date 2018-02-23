@@ -60,7 +60,7 @@ public class PPlate : MonoBehaviour {
 	}
 
 	IEnumerator pOff() {
-		yield return new WaitForSecondsRealtime (1);
+		yield return new WaitForSecondsRealtime (.3f);
 		isOn = false;
 		pRenderer.sprite = up;	
 	}
