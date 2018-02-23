@@ -13,9 +13,12 @@ public class PPlatePuzzle3 : MonoBehaviour {
 		pPlates = GetComponentsInChildren<PPlate> ();
 		pPlateView = pPlates [0];
 
+		/* initial set invisible is throwing a null exception -- unknown why.
 		for (int i = 1; i < pPlates.Length - 1; i++) {
 			pPlates [i].invisible ();
-		}	
+		}
+		*/
+
 		pPlates [5].gameObject.SetActive (false);
 	}
 	
