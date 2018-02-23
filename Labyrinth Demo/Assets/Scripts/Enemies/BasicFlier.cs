@@ -207,6 +207,12 @@ public class BasicFlier : EnemyAI
         canMove = true;
     }
 
+	public override IEnumerator OnDeath ()
+	{
+		yield return null;
+		Destroy(gameObject);
+	}
+	
     // Fire eight projectile at the player
     IEnumerator FireProjectile(int num)
     {

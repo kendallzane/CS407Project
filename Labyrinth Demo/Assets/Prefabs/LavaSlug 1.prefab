@@ -56,9 +56,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602711a9c64d2ce4b8f1c9f6ec75bb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 40
 --- !u!114 &114275378682379164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,14 +131,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lava: {fileID: 1864413078083472, guid: ac193b79575e082428fe6eee84c85094, type: 2}
+  Baby: {fileID: 1776936137097676}
   speed: 0.6
   damage: 20
   changeDirMin: 2
   changeDirMax: 4
-  pushBackForce: 50
+  pushBackForce: 20
   lavaCreationRate: 0.2
   timeSinceLava: 0
   lavaLifetime: 2
+  lavaScale: 1
+  daddy: 0
 --- !u!212 &212210301421154398
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -170,8 +173,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -388782773
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 79bf5fa4f77a96f48be55b9b60277968, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

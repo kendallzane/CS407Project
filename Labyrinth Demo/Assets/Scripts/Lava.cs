@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour {
 
-	public int damage = 20;	
+	public int damage = 10;	
 
 	// Use this for initialization
 	void Start () {

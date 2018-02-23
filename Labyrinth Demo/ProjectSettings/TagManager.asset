@@ -47,15 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 3906184523
+    locked: 0
+  - name: Projectile
+    uniqueID: 1309465187
+    locked: 0
   - name: HUD
     uniqueID: 2478996615
     locked: 0
   - name: UI
     uniqueID: 1392492999
-    locked: 0
-  - name: Projectile
-    uniqueID: 1309465187
-    locked: 0
-  - name: Enemy
-    uniqueID: 3906184523
     locked: 0

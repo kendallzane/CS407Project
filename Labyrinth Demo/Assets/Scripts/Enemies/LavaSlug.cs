@@ -6,6 +6,7 @@ public class LavaSlug : EnemyAI {
 
 	//constants
 	public GameObject Lava;
+	public GameObject Baby;
 	private const int DOWN = 0;
 	private const int LEFT = 1;
 	private const int UP = 2;
@@ -20,11 +21,16 @@ public class LavaSlug : EnemyAI {
 	public float lavaCreationRate = 1.0f;
 	public float timeSinceLava = 0.0f;
 	public float lavaLifetime = 2.0f;
+	public float lavaScale = 1.0f;
+	public bool daddy = false;
+	
 	
 	private float timeToChange;							//randomized float btwn min and max to change directions
 	private float timeSinceChanged = 0.0f;				//when since last changeDir
 	private int dir = 0;
 	private bool canMove;								//can the slug move?
+	private bool alive = true;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +44,9 @@ public class LavaSlug : EnemyAI {
 	// Update is called once per frame
 	void Update () {
 		
+		if (!alive) {
+			return;
+		}
 		// Update time since the slug last made lava
         timeSinceLava += Time.deltaTime;
 
@@ -50,6 +59,7 @@ public class LavaSlug : EnemyAI {
 				transform.position,
 				transform.rotation) as GameObject;
 			SpriteRenderer spRend = LavaSplat.transform.GetComponent<SpriteRenderer>();
+			LavaSplat.transform.localScale = new Vector3(0.3f * lavaScale, 0.3f * lavaScale, 0.3f * lavaScale);
 			LavaSplat.transform.localScale += new Vector3(Random.value/2, Random.value/2, Random.value/2);
 			LavaSplat.transform.Rotate(1 - 2 * Random.Range (0, 1), 1 - 2 * Random.Range (0, 1), Random.Range (0, 360));
 			spRend.color = new Color(1f,1f,1f,.8f);
@@ -85,7 +95,7 @@ public class LavaSlug : EnemyAI {
 
 	//hurt the player character by running into them
 	void OnTriggerEnter2D (Collider2D coll) {
-		if (coll.tag == "Player" && coll.isTrigger) {
+		if (coll.tag == "Player" && coll.isTrigger && canMove) {
 			coll.GetComponent<PlayerHealth>().TakeDamage (damage, (Vector2) coll.transform.position - (Vector2) transform.position);
 		}
 	}
@@ -97,15 +107,62 @@ public class LavaSlug : EnemyAI {
 	/// <param name="dirHit">Dir hit.</param>
 	public override void TakeDamage (int damage, Vector2 dirHit)
 	{
-		canMove = false;
-		eh.TakeDamage (damage);
-		an.SetTrigger ("Hurt");
-		rb.velocity = Vector2.zero;
-		rb.AddForce (dirHit.normalized * pushBackForce);
+		if (alive) {
+			canMove = false;
+			eh.TakeDamage (damage);
+			an.SetTrigger ("Hurt");
+			rb.velocity = Vector2.zero;
+			rb.AddForce (dirHit.normalized * pushBackForce);
+		}
 	}
 
+	public override IEnumerator OnDeath ()
+	{
+		an.SetTrigger ("Dead");
+		rb.velocity = Vector2.zero;
+		rb.angularVelocity = 0;
+		rb.isKinematic = true;
+		canMove = false;
+		alive = false;
+		Debug.Log("slug est mort");
+		yield return new WaitForSecondsRealtime(1);
+		if (daddy) {
+			
+			
+			
+			GameObject BabySlug1;
+			BabySlug1 = Instantiate(
+				Baby,
+				transform.position + new Vector3(0.1f,0f,0f),
+				transform.rotation) as GameObject;
+			
+			EnemyHealth bh1 = BabySlug1.GetComponent<EnemyHealth>();
+			bh1.health = 30;
+			BabySlug1.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			LavaSlug ls1 = BabySlug1.GetComponent<LavaSlug>();
+			ls1.lavaScale = 0.3f;
+			ls1.speed = 0.3f;
+			
+			GameObject BabySlug2;
+			BabySlug2 = Instantiate(
+				Baby,
+				transform.position + new Vector3(-0.1f,0f,0f),
+				transform.rotation) as GameObject;
+			EnemyHealth bh2 = BabySlug2.GetComponent<EnemyHealth>();
+			bh2.health = 30;
+			BabySlug2.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			LavaSlug ls2 = BabySlug2.GetComponent<LavaSlug>();
+			ls2.lavaScale = 0.3f;
+			ls2.speed = 0.3f;
+		}
+		
+		Destroy(gameObject);
+	}
+	
 	public void HurtFinished () {
-		canMove = true;
+		if (alive) {
+			canMove = true;
+		}
 	}
 
 	//start moving in a new direction

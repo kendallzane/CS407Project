@@ -8,6 +8,11 @@ public class EnemyHealth : MonoBehaviour {
 	//variables
 	public float health = 100;									//how much health does the enemy have?
 
+	
+	public void OnDeath() {
+		Debug.Log("enemy est mort");
+	}
+	
 	/// <summary>
 	/// Inflicts damage on the enemy.
 	/// </summary>
@@ -16,7 +21,8 @@ public class EnemyHealth : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			//ENEMY KILLED! TODO: Make death animations for enemies
-			Destroy (gameObject);
+			EnemyAI ai = gameObject.GetComponent<EnemyAI>();
+			StartCoroutine(ai.OnDeath());
 		}
 	}
 }
