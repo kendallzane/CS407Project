@@ -51,7 +51,7 @@ public class LavaSlug : EnemyAI {
 				transform.rotation) as GameObject;
 			SpriteRenderer spRend = LavaSplat.transform.GetComponent<SpriteRenderer>();
 			LavaSplat.transform.localScale += new Vector3(Random.value/2, Random.value/2, Random.value/2);
-			LavaSplat.transform.Rotate(0, 0, Random.Range (0, 360));
+			LavaSplat.transform.Rotate(1 - 2 * Random.Range (0, 1), 1 - 2 * Random.Range (0, 1), Random.Range (0, 360));
 			spRend.color = new Color(1f,1f,1f,.8f);
 				
 				
