@@ -50,24 +50,26 @@ public class PlayerHealth : MonoBehaviour {
 	/// <param name="damage">Damage Taken.</param>
 	/// <param name="dirHit">Direction player was hit from.</param>
 	public void TakeDamage (int damage, Vector2 dirHit) {
-		if (health > 0) {
-			health -= damage;
-			if (health < 0) {
-				health = 0;
+		if (damageCollider.enabled) {
+			if (health > 0) {
+				health -= damage;
+				if (health < 0) {
+					health = 0;
+				}
+				damageCollider.enabled = false;
+				ph.ShowHealth (health);
+				pc.DisablePlayer ();
+				an.SetTrigger ("Hurt");
+				healingFX.SetActive (false);
+				rb.AddForce (dirHit.normalized * pushBackForce);
 			}
-			damageCollider.enabled = false;
-			ph.ShowHealth (health);
-			pc.DisablePlayer ();
-			an.SetTrigger ("Hurt");
-			healingFX.SetActive (false);
-			rb.AddForce (dirHit.normalized * pushBackForce);
-		}
-        if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
-            //YOU DIED!!!!
-			damageCollider.enabled = false;
-			pc.DisablePlayer ();
-            an.SetTrigger("Death");
-            PlayerIsDead();
+			if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
+				//YOU DIED!!!!
+				damageCollider.enabled = false;
+				pc.DisablePlayer ();
+				an.SetTrigger("Death");
+				PlayerIsDead();
+			}
 		}
 	}
 
