@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 	private PlayerMovement pm;
 	[HideInInspector] public PlayerHUD ph;
 	private PlayerCombat pc;
+	public PolygonCollider2D normalCollider;		//the collider that prevents the player from running into walls
 	public PolygonCollider2D damageCollider;		//the collider that checks for new damage taken
 	public GameObject healingFX;					//the particle effect of the sword in the ground when healing
 	public GameObject healedFX;						//the particle effect of a successful heal
@@ -25,6 +26,9 @@ public class PlayerHealth : MonoBehaviour {
 	private int health = 100;						//the amount of health the player has
 	public float pushBackForce = 3f;				//how much force is the player pushed back with?
     public bool isDead = false;                     //whether player is dead or not
+
+	private int tmpFallDamage;						//assigned to apply damage after fall finishes
+	private Vector2 tmpFallLoc;						//por donde el player cayo
 
 
 	// Use this for initialization
@@ -37,10 +41,14 @@ public class PlayerHealth : MonoBehaviour {
 		healingFX.SetActive (false);
 	}
 
+	#region HelpfulFunctions
+
 	/// <summary>
 	/// Subtract the damage dealt from the player's total health and update the health bar.
+	/// Pushes the player back in the direction he was hit from, gives invincability frames.
 	/// </summary>
-	/// <param name="damage">Damage dealt.</param>
+	/// <param name="damage">Damage Taken.</param>
+	/// <param name="dirHit">Direction player was hit from.</param>
 	public void TakeDamage (int damage, Vector2 dirHit) {
 		if (health > 0) {
 			health -= damage;
@@ -49,33 +57,76 @@ public class PlayerHealth : MonoBehaviour {
 			}
 			damageCollider.enabled = false;
 			ph.ShowHealth (health);
+			pc.DisablePlayer ();
 			an.SetTrigger ("Hurt");
-			pc.EndAttack ();			//stop player attacks
-			pc.canAttack = false;
-			pm.canMove = false;
 			healingFX.SetActive (false);
-			pc.canDash = false;
-			pc.canCommand = false;
-			rb.velocity = Vector2.zero;
 			rb.AddForce (dirHit.normalized * pushBackForce);
 		}
         if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
             //YOU DIED!!!!
+			damageCollider.enabled = false;
+			pc.DisablePlayer ();
             an.SetTrigger("Death");
             PlayerIsDead();
 		}
 	}
 
 	/// <summary>
+	/// DOES NOT give invinciblity frames, NOT intended for normal damage. Overloaded version.
+	/// Subtract the damage dealt from the player's total health and update the health bar.
+	/// </summary>
+	/// <param name="damage">Damage.</param>
+	public void TakeDamage (int damage) {
+		if (health > 0) {
+			health -= damage;
+			if (health < 0) {
+				health = 0;
+			}
+			ph.ShowHealth (health);
+			healingFX.SetActive (false);
+		}
+		if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
+			//YOU DIED!!!!
+			damageCollider.enabled = false;
+			pc.DisablePlayer ();
+			an.SetTrigger("Death");
+			PlayerIsDead();
+		}
+	}
+
+	/// <summary>
+	/// Call when you want the player to fall down a bottomless pit. The fall animation will trigger, 
+	/// and then the player will be respawned at the specified location.
+	/// </summary>
+	/// <param name="damage">Damage dealt to the player for falling down.</param>
+	/// <param name="locationToRespawn">Location to respawn player after falling.</param>
+	public void Fall (int damage, Vector2 locationToRespawn) {
+		pc.DisablePlayer ();
+		normalCollider.enabled = false;
+		damageCollider.enabled = false;
+		an.SetTrigger ("Fall");
+		tmpFallDamage = damage;
+		tmpFallLoc = locationToRespawn;
+	}
+
+	/// <summary>
+	/// Finishes the fall animation, ONLY CALLED BY ANIMATION.
+	/// </summary>
+	public void FallFinished () {
+		transform.position = new Vector3 (tmpFallLoc.x, tmpFallLoc.y, transform.position.z);
+		pc.EnablePlayer ();
+		damageCollider.enabled = true;
+		normalCollider.enabled = true;
+		TakeDamage (tmpFallDamage);
+	}
+
+	/// <summary>
 	/// Called by animation, Allow the player to move and attack again.
 	/// </summary>
 	public void HurtFinished () {
-		pm.canMove = true;
-		pc.canAttack = true;
 		rb.velocity = Vector2.zero;
 		damageCollider.enabled = true;
-		pc.canDash = true;
-		pc.canCommand = true;
+		pc.EnablePlayer ();
 	}
 
     public void PlayerIsDead() {
@@ -85,6 +136,7 @@ public class PlayerHealth : MonoBehaviour {
         //gameover.text = true;
         Destroy(gameObject);
     }
+	#endregion
 
 	#region Heal
 	/// <summary>

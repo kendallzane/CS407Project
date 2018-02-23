@@ -296,6 +296,8 @@ public class PlayerCombat : MonoBehaviour {
 		#endregion
 	}
 
+	#region HelpfulFunctions
+
 	/// <summary>
 	/// Called by animation when the attack combo is ready for the next animation.
 	/// </summary>
@@ -353,6 +355,39 @@ public class PlayerCombat : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Call this whenever you want the user to lose all control of the player.
+	/// For example, falling down a bottomless pit, the player is dead, etc.
+	/// </summary>
+	public void DisablePlayer () {
+		//Disable Player
+		canAttack = false;
+		canDash = false;
+		canCommand = false;
+		pm.canMove = false;
+
+		//Reset everything that might break when player is suddenly disabled
+		rb.velocity = Vector2.zero;
+		attacking = false;
+		attackLock = true;
+		php.damageCollider.offset = Vector2.zero;
+		ps.comboMultiplier = 1f;
+		for (int i = 0; i < COMBONUM; i++) {
+			attackCombo [i] = false;
+		}
+	}
+
+	/// <summary>
+	/// Call this whenever you want the user to regain control of the player.
+	/// Typically called after DisablePlayer()
+	/// </summary>
+	public void EnablePlayer () {
+		pm.canMove = true;
+		canDash = true;
+		canAttack = true;
+		canCommand = true;
+	}
+
+	/// <summary>
 	/// Called whenever the player gets back his sword, allowing attacking again
 	/// </summary>
 	public void RetrieveSword () {
@@ -363,7 +398,8 @@ public class PlayerCombat : MonoBehaviour {
 	/// Gets the direction the player was last facing from the animator combonent (which is set by PrototypeMovement).
 	/// </summary>
 	/// <returns>The direction.</returns>
-	int GetDirection() {
+	public int GetDirection() {
 		return an.GetInteger ("Direction");
 	}
+	#endregion
 }

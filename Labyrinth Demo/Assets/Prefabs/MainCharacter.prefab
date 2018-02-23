@@ -25,7 +25,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1254358470836390
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254358470836390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: -0.927, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4969782879087734}
@@ -192,15 +192,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919374421936124}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.09, z: -0.1}
-  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4208998475424824}
   - {fileID: 4756126779814850}
   m_Father: {fileID: 4441989929674022}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50385796690660504
 Rigidbody2D:
   serializedVersion: 4
@@ -237,7 +237,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -270,7 +270,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -302,7 +302,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.083682984}
-    oldSize: {x: 0.09, y: 0.29}
+    oldSize: {x: 0.0703125, y: 0.2265625}
     newSize: {x: 0.09, y: 0.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -497,8 +497,8 @@ MonoBehaviour:
   - {fileID: 1612257794814162, guid: 7acd0ceed00ebba47ac31436404c46a7, type: 2}
   commands:
   - {fileID: 114718799188925340, guid: fcfc83ed9f4040f4dab115965c0e1a36, type: 2}
-  - {fileID: 114636873335788266, guid: 7acd0ceed00ebba47ac31436404c46a7, type: 2}
   - {fileID: 114265546561775978, guid: 862fe094061277649818e34bc44b7904, type: 2}
+  - {fileID: 114636873335788266, guid: 7acd0ceed00ebba47ac31436404c46a7, type: 2}
   attackSpeed:
   - 1
   - 1
@@ -532,11 +532,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ph: {fileID: 0}
+  normalCollider: {fileID: 60272013555894944}
   damageCollider: {fileID: 60538081441118310}
   healingFX: {fileID: 1132008688783346}
   healedFX: {fileID: 1076021957402590, guid: cb9afd3340e80ce4aa14921d302c72c4, type: 2}
   maxHealth: 100
   pushBackForce: 50
+  isDead: 0
 --- !u!198 &198132820391831074
 ParticleSystem:
   m_ObjectHideFlags: 1

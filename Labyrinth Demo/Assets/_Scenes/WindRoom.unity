@@ -336,17 +336,27 @@ Prefab:
     - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
         type: 2}
       propertyPath: m_Offset.y
-      value: 0.081189156
+      value: -0.008039236
       objectReference: {fileID: 0}
     - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
         type: 2}
       propertyPath: m_Size.y
-      value: 2.773223
+      value: 2.4833932
       objectReference: {fileID: 0}
     - target: {fileID: 114902829428100556, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
         type: 2}
       propertyPath: fallingDamage
-      value: 3
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.018689811
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.7312932
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faef597b94c4eed4d90c96ddaa6dd2e0, type: 2}
@@ -632,7 +642,27 @@ Prefab:
     - target: {fileID: 114902829428100556, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
         type: 2}
       propertyPath: fallingDamage
-      value: 3
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.0136470795
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.4559383
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.01276356
+      objectReference: {fileID: 0}
+    - target: {fileID: 61213187944809756, guid: faef597b94c4eed4d90c96ddaa6dd2e0,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.702355
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faef597b94c4eed4d90c96ddaa6dd2e0, type: 2}
