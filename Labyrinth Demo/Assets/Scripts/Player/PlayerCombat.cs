@@ -102,6 +102,7 @@ public class PlayerCombat : MonoBehaviour {
 				dashing = false;
 				php.damageCollider.enabled = true;
 				Physics2D.IgnoreLayerCollision(8, 9, false);
+				Physics2D.IgnoreLayerCollision(8, 10, false);
 				dashCounter = 0;
 				rb.velocity = Vector2.zero;
 				pm.canMove = true;
@@ -147,6 +148,7 @@ public class PlayerCombat : MonoBehaviour {
 			pm.canMove = false;
 			dashing = true;
 			Physics2D.IgnoreLayerCollision(8, 9, true);
+			Physics2D.IgnoreLayerCollision(8, 10, true);
 			php.damageCollider.enabled = false;
 			dashCounter = 0;
 			dashCharges--;
