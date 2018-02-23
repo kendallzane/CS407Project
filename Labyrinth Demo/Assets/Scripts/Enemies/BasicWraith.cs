@@ -81,6 +81,12 @@ public class BasicWraith : EnemyAI {
 		canMove = true;
 	}
 
+	public override IEnumerator OnDeath ()
+	{
+		yield return null;
+		Destroy(gameObject);
+	}
+	
 	//start moving in a new direction
 	void ChangeDir () {
 		dir = Random.Range (0, 4);

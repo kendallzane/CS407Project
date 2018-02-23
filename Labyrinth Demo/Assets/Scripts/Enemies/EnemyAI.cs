@@ -18,4 +18,5 @@ public abstract class EnemyAI : MonoBehaviour {
 
 	//what does each enemy do when it takes damage?
 	abstract public void TakeDamage (int damage, Vector2 dirHit);
+	abstract public IEnumerator OnDeath ();
 }
