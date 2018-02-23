@@ -55,11 +55,11 @@ public class PPlate : MonoBehaviour {
 		return isOn;
 	}
 
-	public void off() {
+	public void off () {
 		StartCoroutine (pOff());
 	}
 
-	IEnumerator pOff() {
+	IEnumerator pOff () {
 		yield return new WaitForSecondsRealtime (.3f);
 		isOn = false;
 		pRenderer.sprite = up;	

@@ -4,13 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
-    public PlayerHealth playerHealth;
+
+	//references
     public GameObject gameOverCanvas;
-    Animator anim;
+
+	private PlayerHealth playerHealth;
+    private Animator anim;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+		playerHealth = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHealth> ();
     }
 	
 	// Update is called once per frame

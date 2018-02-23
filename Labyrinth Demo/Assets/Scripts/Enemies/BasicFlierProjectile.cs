@@ -13,8 +13,9 @@ public class BasicFlierProjectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (moveTowardsTarget)
+        if (Owner != null && moveTowardsTarget)
         {
+			
             // Get position of projectile and flier
             Vector3 targetPosition = Owner.transform.position;
             Vector3 currentPosition = this.transform.position;

@@ -22,7 +22,7 @@ public class PrototypeFollow : MonoBehaviour {
 	void FixedUpdate () {
 		if (!clamped) {
 			//Only move camera if character is out of the middle of the screen
-			if (Mathf.Abs (target.position.x - transform.position.x) > widthDamping || Mathf.Abs (target.position.y - transform.position.y) > heightDamping) {
+			if (target != null && (Mathf.Abs (target.position.x - transform.position.x) > widthDamping || Mathf.Abs (target.position.y - transform.position.y) > heightDamping)) {
 				Vector3 goalPos = target.position;
 				goalPos.z = transform.position.z;
 				transform.position = Vector3.SmoothDamp (transform.position, goalPos, ref velocity, smoothTime);

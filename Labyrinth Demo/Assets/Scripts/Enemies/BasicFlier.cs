@@ -15,6 +15,7 @@ public class BasicFlier : EnemyAI
     public float fireRate;                              // Fire rate of the basic flier
 
     private bool canMove;                               // Can the basic flier move?
+	private GameObject Player;							// Find the player once is start, rather than every frame O(1) instead of O(n)
 
     // Use this for initialization
     void Start()
@@ -24,15 +25,16 @@ public class BasicFlier : EnemyAI
 
         // Set initial fire rate to 2, so the flier shoots the very first projectile more quickly
         timeSinceFire = 2f;
+
+		// Keep track of player throughout
+		Player = GameObject.Find("MainCharacter");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+		if (canMove && Player != null)
         {
-            // Create new instance of Player object with each loop
-            GameObject Player = GameObject.Find("MainCharacter");
 
             // Find distance between Player and BasicFlier
             Vector3 targetPosition = Player.transform.position;
