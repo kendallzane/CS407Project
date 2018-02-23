@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 92178269438042350}
   - component: {fileID: 124573347629606992}
   - component: {fileID: 81271139506800740}
-  - component: {fileID: 114942360984588048}
   - component: {fileID: 114093991166817132}
+  - component: {fileID: 114866196328980270}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38,7 +38,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536751333574304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -65,7 +65,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.1992188
+  orthographic size: 1.7753906
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelsPerUnit: 128
   verticalUnitsOnScreen: 4
---- !u!114 &114942360984588048
+--- !u!114 &114866196328980270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -116,17 +116,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536751333574304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0da765051506e2344ad4d7387b61a4cb, type: 3}
+  m_Script: {fileID: 11500000, guid: db7b009a3a7df4e419fc378d8a96d999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clamped: 0
-  heightDamping: 0.35
-  widthDamping: 0.35
+  heightDamping: 0.25
+  widthDamping: 0.25
   smoothTime: 0.4
-  MinX: -3.1
-  MaxX: 3.1
-  MinY: -3
-  MaxY: 3
+  MinX: -100
+  MaxX: 100
+  MinY: -100
+  MaxY: 100
 --- !u!124 &124573347629606992
 Behaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DynamicCameraClamper : MonoBehaviour {
 
 	//references
-	public PrototypeFollow theCamera;
+	public CameraFollower theCamera;
 
 	void OnTriggerEnter2D (Collider2D coll) {
 		if (coll.tag == "Player") {
