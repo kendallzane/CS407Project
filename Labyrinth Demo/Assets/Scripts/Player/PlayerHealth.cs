@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public GameObject healingFX;					//the particle effect of the sword in the ground when healing
 	public GameObject healedFX;						//the particle effect of a successful heal
+	public GameObject soul;							//GameObject to spawn after death
 
 	//variables
 	public int maxHealth = 100;						//the maximum health the player can have
@@ -71,7 +72,6 @@ public class PlayerHealth : MonoBehaviour {
 				damageCollider.enabled = false;
 				pc.DisablePlayer ();
 				an.SetTrigger("Death");
-				PlayerIsDead();
 			}
 		}
 	}
@@ -90,12 +90,11 @@ public class PlayerHealth : MonoBehaviour {
 			ph.ShowHealth (health);
 			healingFX.SetActive (false);
 		}
-		if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
+		else if (!isDead) {                        //only die if you already had just a "sliver of health" left
 			//YOU DIED!!!!
 			damageCollider.enabled = false;
 			pc.DisablePlayer ();
 			an.SetTrigger("Death");
-			PlayerIsDead();
 		}
 	}
 
@@ -135,10 +134,10 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
     public void PlayerIsDead() {
+		isDead = true;
         Time.timeScale = 0f;
-        isDead = true;
-        //pausemenu.SetActive(true);
-        //gameover.text = true;
+		Instantiate (soul, gameObject.transform.position, Quaternion.identity);
+		Destroy (ph.gameObject);
         Destroy(gameObject);
     }
 	#endregion

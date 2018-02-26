@@ -56,6 +56,9 @@ TagManager:
   - name: Player
     uniqueID: 3725117061
     locked: 0
+  - name: ParticleFX
+    uniqueID: 1442581673
+    locked: 0
   - name: HUD
     uniqueID: 2478996615
     locked: 0
