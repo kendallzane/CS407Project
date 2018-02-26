@@ -16,8 +16,11 @@ public class PlayerHealth : MonoBehaviour {
 	private PlayerMovement pm;
 	[HideInInspector] public PlayerHUD ph;
 	private PlayerCombat pc;
-	public PolygonCollider2D normalCollider;		//the collider that prevents the player from running into walls
-	public PolygonCollider2D damageCollider;		//the collider that checks for new damage taken
+	//public PolygonCollider2D normalCollider;		//the collider that prevents the player from running into walls
+	//public PolygonCollider2D damageCollider;		//the collider that checks for new damage taken
+	public BoxCollider2D normalCollider;		//the collider that prevents the player from running into walls
+	public BoxCollider2D damageCollider;		//the collider that checks for new damage taken
+	
 	public GameObject healingFX;					//the particle effect of the sword in the ground when healing
 	public GameObject healedFX;						//the particle effect of a successful heal
 
