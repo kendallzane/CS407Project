@@ -25,7 +25,12 @@ public class PPlate : MonoBehaviour {
 
 	IEnumerator OnTriggerEnter2D(Collider2D other) {
 		if (!(other.gameObject.CompareTag ("Player"))) {
-			pRenderer.sprite = down;
+			if (other.gameObject.CompareTag ("Projectile")) {
+				yield break;
+			}
+			if (pRenderer.sprite != inv) {
+				pRenderer.sprite = down;
+			}
 			yield break;
 		}
 		isOn = true;
@@ -38,7 +43,9 @@ public class PPlate : MonoBehaviour {
 
 	IEnumerator OnTriggerExit2D(Collider2D other) {
 		if (!(other.gameObject.CompareTag ("Player"))) {
-			pRenderer.sprite = up;
+			if (!isOn) {
+				pRenderer.sprite = up;
+			}
 			yield break;
 		}
 		if (dTime >= 0) {
