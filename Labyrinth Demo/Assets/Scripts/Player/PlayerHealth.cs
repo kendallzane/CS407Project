@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour {
 				healingFX.SetActive (false);
 				rb.AddForce (dirHit.normalized * pushBackForce);
 			}
-			if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
+			else if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
 				//YOU DIED!!!!
 				damageCollider.enabled = false;
 				pc.DisablePlayer ();
@@ -91,7 +91,8 @@ public class PlayerHealth : MonoBehaviour {
 			ph.ShowHealth (health);
 			healingFX.SetActive (false);
 		}
-		else if (!isDead) {                        //only die if you already had just a "sliver of health" left
+		//please keep this else
+		else if (!isDead) {                        //ONLY die if you already had just a "sliver of health" left
 			//YOU DIED!!!!
 			damageCollider.enabled = false;
 			pc.DisablePlayer ();
