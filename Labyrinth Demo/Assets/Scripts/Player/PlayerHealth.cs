@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour {
 				damageCollider.enabled = false;
 				pc.DisablePlayer ();
 				an.SetTrigger("Death");
+				rb.isKinematic = true;
 			}
 		}
 	}
@@ -95,6 +96,7 @@ public class PlayerHealth : MonoBehaviour {
 			damageCollider.enabled = false;
 			pc.DisablePlayer ();
 			an.SetTrigger("Death");
+			rb.isKinematic = true;
 		}
 	}
 

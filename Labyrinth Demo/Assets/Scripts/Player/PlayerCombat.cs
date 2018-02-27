@@ -32,6 +32,7 @@ public class PlayerCombat : MonoBehaviour {
 	public int numDashes = 2;						//how many dashes does the player have available?
 	public int numCommands = 3;						//how many commands does the player have available?
 	public float damageColliderOffset = 0.03f;		//how far back does the damageCollider move when attacking?
+	private Vector2 damageColliderOriginalOffset;
 	public int[] chosenCommands;					//which commands were selected in the menu?
 
 	[HideInInspector] public int selectedCommand = 1;//which command is currently selected?
@@ -51,6 +52,8 @@ public class PlayerCombat : MonoBehaviour {
 	private float tmpDashCalc;						//remove a calculation each frame of dash by storing it as a tmp variable ((delayCounter % dashDelay) / dashDelay)
 	private float tmpDashCalc2;						//same as above but instead by a factor of O(1) instead of O(n) (1 - (dashTime - dashCounter) - tmpDashCalc)
 
+	
+	
 	// Use this for initialization
 	void Start () {
 		switch (numCommands) {
@@ -88,6 +91,7 @@ public class PlayerCombat : MonoBehaviour {
 		gs.ClearTrail ();
 		selectedCommand = 1;
 		canCommand = true;
+		damageColliderOriginalOffset = php.damageCollider.offset;
 	}
 	
 	// Update is called once per frame
@@ -371,7 +375,7 @@ public class PlayerCombat : MonoBehaviour {
 		rb.velocity = Vector2.zero;
 		attacking = false;
 		attackLock = true;
-		php.damageCollider.offset = Vector2.zero;
+		php.damageCollider.offset = damageColliderOriginalOffset;
 		ps.comboMultiplier = 1f;
 		for (int i = 0; i < COMBONUM; i++) {
 			attackCombo [i] = false;
