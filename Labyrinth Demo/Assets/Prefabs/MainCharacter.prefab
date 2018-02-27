@@ -372,8 +372,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.125}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.05, y: 0.025}
+  m_EdgeRadius: 0.05
 --- !u!61 &61751442992609552
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -397,7 +397,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.135}
+  m_Size: {x: 0.16, y: 0.125}
   m_EdgeRadius: 0
 --- !u!61 &61895825781751924
 BoxCollider2D:
@@ -649,7 +649,7 @@ MonoBehaviour:
   damageCollider: {fileID: 61751442992609552}
   healingFX: {fileID: 1132008688783346}
   healedFX: {fileID: 1076021957402590, guid: cb9afd3340e80ce4aa14921d302c72c4, type: 2}
-  soul: {fileID: 1688720160645272, guid: db4585409958222488355689c97640ce, type: 2}
+  soul: {fileID: 0}
   maxHealth: 100
   pushBackForce: 50
   isDead: 0
