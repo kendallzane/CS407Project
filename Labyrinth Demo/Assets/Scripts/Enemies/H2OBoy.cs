@@ -32,7 +32,8 @@ public class H2OBoy : EnemyAI {
 	private bool alive = true;
 	
 	private float moveAngle = 90;
-
+	public bool mercyInvincibility = false;
+	
 	// Use this for initialization
 	void Start () {
 		dir = 90;
@@ -114,7 +115,13 @@ public class H2OBoy : EnemyAI {
 	/// <param name="dirHit">Dir hit.</param>
 	public override void TakeDamage (int damage, Vector2 dirHit)
 	{
+		if (mercyInvincibility) {
+			//Debug.Log("TakeDamage activated - Enemy is invincible");
+			return;
+		}
 		if (alive) {
+			//Debug.Log("TakeDamage activated - Enemy is not invincible");
+			mercyInvincibility = true;
 			canMove = false;
 			eh.TakeDamage (damage);
 			an.SetTrigger ("Hurt");
@@ -171,6 +178,7 @@ public class H2OBoy : EnemyAI {
 	}
 	
 	public void HurtFinished () {
+		mercyInvincibility = false;
 		if (alive) {
 			canMove = true;
 		}

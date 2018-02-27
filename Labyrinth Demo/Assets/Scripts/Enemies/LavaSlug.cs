@@ -30,6 +30,7 @@ public class LavaSlug : EnemyAI {
 	private int dir = 0;
 	private bool canMove;								//can the slug move?
 	private bool alive = true;
+	public bool mercyInvincibility = false;
 	
 
 	// Use this for initialization
@@ -107,8 +108,13 @@ public class LavaSlug : EnemyAI {
 	/// <param name="dirHit">Dir hit.</param>
 	public override void TakeDamage (int damage, Vector2 dirHit)
 	{
+		if (mercyInvincibility) {
+			//Debug.Log("TakeDamage activated - Enemy is invincible");
+			return;
+		}
 		if (alive) {
 			canMove = false;
+			mercyInvincibility = true;
 			eh.TakeDamage (damage);
 			an.SetTrigger ("Hurt");
 			rb.velocity = Vector2.zero;
@@ -160,6 +166,7 @@ public class LavaSlug : EnemyAI {
 	}
 	
 	public void HurtFinished () {
+		mercyInvincibility = false;
 		if (alive) {
 			canMove = true;
 		}
