@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ff2771e94146448ca41d640e2af3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   canMove: 0
 --- !u!114 &114338615419079794
 MonoBehaviour:
@@ -649,7 +649,7 @@ MonoBehaviour:
   damageCollider: {fileID: 61751442992609552}
   healingFX: {fileID: 1132008688783346}
   healedFX: {fileID: 1076021957402590, guid: cb9afd3340e80ce4aa14921d302c72c4, type: 2}
-  soul: {fileID: 0}
+  soul: {fileID: 1688720160645272, guid: db4585409958222488355689c97640ce, type: 2}
   maxHealth: 100
   pushBackForce: 50
   isDead: 0

@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 92178269438042350}
   - component: {fileID: 124573347629606992}
   - component: {fileID: 81271139506800740}
-  - component: {fileID: 114093991166817132}
   - component: {fileID: 114866196328980270}
+  - component: {fileID: 114355069699532448}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -65,7 +65,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.7753906
+  orthographic size: 1.9729167
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -95,7 +95,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536751333574304}
   m_Enabled: 1
---- !u!114 &114093991166817132
+--- !u!114 &114355069699532448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536751333574304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96ce92411cb849ed928d0bcde98fcf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 65a752d4166db5048a0b1c9f4033a712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pixelsPerUnit: 128
@@ -120,13 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clamped: 0
-  heightDamping: 0.25
-  widthDamping: 0.25
+  heightDamping: 0.35
+  widthDamping: 0.35
   smoothTime: 0.4
-  MinX: -100
-  MaxX: 100
-  MinY: -100
-  MaxY: 100
 --- !u!124 &124573347629606992
 Behaviour:
   m_ObjectHideFlags: 1
