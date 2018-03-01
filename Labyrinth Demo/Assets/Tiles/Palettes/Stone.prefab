@@ -90,7 +90,7 @@ Grid:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939512564970114}
   m_Enabled: 1
-  m_CellSize: {x: 0.32, y: 0.32, z: 0}
+  m_CellSize: {x: 0.25, y: 0.25, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -149,11 +149,20 @@ Tilemap:
       m_TileColorIndex: 1
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 2
-      m_ColliderType: 1
+      m_ColliderType: 0
   - first: {x: -3, y: 0, z: 0}
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 2
+      m_ColliderType: 0
+  - first: {x: -2, y: 0, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_ObjectToInstantiate: {fileID: 0}
@@ -165,6 +174,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9fb1db597d3e9e547b2de980c711e037, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e911c91f166f2b840a6e260131872e44, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 245f9080c60d75d4e8b72d748fcfcc7b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -180,14 +191,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: fc42d3098a42f974fa8887c1e7f650d5, type: 3}
+    m_Data: {fileID: 21300000, guid: a32de8a3aff9f0943ac43e971562be57, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 60ce5b24d8aabad419139556e3f9f7a5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: b2b4c8c796ea4564eb82a36e736e2cd9, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -208,7 +219,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 7736068, a: 0}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,6 +246,8 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 0
+    m_DirtyIndex: 20
   - serializedVersion: 1
-    m_DirtyIndex: 0
+    m_DirtyIndex: 20
+  - serializedVersion: 1
+    m_DirtyIndex: 1
