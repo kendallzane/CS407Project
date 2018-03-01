@@ -15,12 +15,18 @@ public class Door : MonoBehaviour {
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other) {
-		close = true;
+		if (other.gameObject.CompareTag ("Player")) {
+			close = true;
+			yield break;
+		}
 		yield break;
 	}
 
 	IEnumerator OnTriggerExit2D(Collider2D other) {
-		close = false;
+		if (other.gameObject.CompareTag ("Player")) {
+			close = false;
+			yield break;
+		}
 		yield break;
 	}
 	
