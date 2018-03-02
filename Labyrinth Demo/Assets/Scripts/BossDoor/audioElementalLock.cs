@@ -9,6 +9,7 @@ public class audioElementalLock : MonoBehaviour {
 	AudioSource audio2;
 
 	private GameObject player;
+	private GameObject hud;
 	private GameObject gc;
 	public GameObject mainCamera;
 	public GameObject cutSceneCamera;
@@ -20,7 +21,9 @@ public class audioElementalLock : MonoBehaviour {
 		audio2 = audios [1];
 
 		player = GameObject.Find ("MainCharacter");
+		hud = GameObject.FindGameObjectWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
+
 
 		//mainCamera = GameObject.Find ("Main Camera");
 		//cutSceneCamera = GameObject.Find ("cutSceneCamera");
@@ -32,6 +35,7 @@ public class audioElementalLock : MonoBehaviour {
 		audio1.Play ();
 		gc.GetComponentInChildren<PauseMenu> ().enabled = false;
 		player.GetComponent<PlayerCombat>().DisablePlayer();
+		hud.SetActive (false);
 		mainCamera.gameObject.SetActive(false);
 		cutSceneCamera.gameObject.SetActive(true);
 		Time.timeScale = 0f;

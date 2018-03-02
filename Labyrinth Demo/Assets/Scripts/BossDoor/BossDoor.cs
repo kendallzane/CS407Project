@@ -7,6 +7,7 @@ public class BossDoor : MonoBehaviour {
 	private Animator an;
 
 	private GameObject player;
+	private GameObject hud;
 	private GameObject gc;
 
 	public GameObject mainCamera;
@@ -16,6 +17,7 @@ public class BossDoor : MonoBehaviour {
 	void Start () {
 		an = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
 		player = GameObject.Find ("MainCharacter");
+		hud = GameObject.FindGameObjectWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
 	}
 
@@ -30,6 +32,7 @@ public class BossDoor : MonoBehaviour {
 	private void disablePlayer() {
 		gc.GetComponentInChildren<PauseMenu> ().enabled = false;
 		player.GetComponent<PlayerCombat>().DisablePlayer();
+		hud.SetActive (false);
 		mainCamera.gameObject.SetActive(false);
 		cutSceneCamera.gameObject.SetActive(true);
 		Time.timeScale = 0f;
@@ -38,6 +41,7 @@ public class BossDoor : MonoBehaviour {
 	private void enablePlayer() {
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
+		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		Time.timeScale = 1f;
@@ -47,6 +51,7 @@ public class BossDoor : MonoBehaviour {
 		an.SetBool ("airUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
+		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		Time.timeScale = 1f;
@@ -56,6 +61,7 @@ public class BossDoor : MonoBehaviour {
 		an.SetBool ("earthUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
+		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		Time.timeScale = 1f;
@@ -65,6 +71,7 @@ public class BossDoor : MonoBehaviour {
 		an.SetBool ("fireUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
+		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		Time.timeScale = 1f;
@@ -74,6 +81,7 @@ public class BossDoor : MonoBehaviour {
 		an.SetBool ("waterUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
+		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		Time.timeScale = 1f;
