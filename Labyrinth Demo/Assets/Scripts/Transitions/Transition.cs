@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -10,15 +11,48 @@ public class Transition : MonoBehaviour {
 
 	//references
 	private GameController gc;
+	public Image fadeScreen;
 
 	//variables
 	public string[] sceneNames;									//An array of all possible scenes in the Labyrinth to transition to.
+	public float transitionTime = 0.5f;							//How long does it take to transition to the next scene?
+
+	public float timeDelay;									//How long have we been fading?
+	public bool fading = false;								//Is the scene fading in/out?
+	public bool fin = true;									//in or out?
+	private string toScene;										//used to transition to the next scene
 	[HideInInspector] public int entranceNum;					//Which entrance to the room is the character entering in?
 
 	// Use this for initialization
 	void Start () {
 		gc = GetComponent<GameController> ();
 		SceneManager.sceneLoaded += OnSceneLoaded;
+		timeDelay = 0;
+		fading = true;
+		fin = true;
+	}
+
+	// Elegantly fade the screen in and out between room transitions
+	void Update () {
+		if (fading) {
+			timeDelay += Time.deltaTime;
+			if (timeDelay > transitionTime) {
+				fading = false;
+				if (fin) {
+					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 0);
+				} else {
+					//load next scene
+					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 1);
+					SceneManager.LoadScene (toScene);
+				}
+			} else {
+				if (fin) {
+					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 1 - (timeDelay / transitionTime));
+				} else {
+					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, (timeDelay / transitionTime));
+				}
+			}
+		}
 	}
 
 	/// <summary>
@@ -29,11 +63,12 @@ public class Transition : MonoBehaviour {
 	public void TransitionToScene (int sceneNum, int entrance) {
 
 		//Account for multiple entrances
-		string toScene = "ParrDev";
 		toScene = SwitchNumToString (sceneNum);
 		entranceNum = entrance;
 
-		SceneManager.LoadScene (toScene);
+		timeDelay = 0;
+		fin = false;
+		fading = true;
 	}
 
 	//Perform sanity checks before trying to access array
@@ -53,6 +88,9 @@ public class Transition : MonoBehaviour {
 	/// <param name="scene">The newly loaded scene.</param>
 	/// <param name="mode">How the scene is loaded.</param>
 	void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
+		fin = true;
+		timeDelay = 0;
+		fading = true;
 
 		GameObject meh = GameObject.FindGameObjectWithTag ("MultipleEntranceHandler");
 		if (meh == null) {
