@@ -8,3 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ParrDev.unity
     guid: 789b6a636ab86d047bc0346eeb5f6512
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Room 1.unity
+    guid: 9db16811bcebba4458ba018fbeab3d5e
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Room 2.unity
+    guid: fa4136557793f4e49a21750ff60c275b
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Room 3.unity
+    guid: c1009603d76d082488fbb042240b0ced

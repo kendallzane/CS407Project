@@ -14,20 +14,16 @@ public class Door : MonoBehaviour {
 		close = false;
 	}
 
-	IEnumerator OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			close = true;
-			yield break;
 		}
-		yield break;
 	}
 
-	IEnumerator OnTriggerExit2D(Collider2D other) {
+	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			close = false;
-			yield break;
 		}
-		yield break;
 	}
 	
 	// Update is called once per frame
