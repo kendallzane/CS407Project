@@ -866,10 +866,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 114467931098327502}
   sceneNames:
-  - ParrDev
-  - Room 1
-  - Room 2
-  - Room 3
+  - Entrance
+  - Tutorial1
+  - Tutorial2
+  - Tutorial3
+  - Tutorial4
+  - Central
   transitionTime: 0.5
   timeDelay: 0
   fading: 0
