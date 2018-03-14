@@ -92,3 +92,93 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Labyrinth/EarthBoss.unity
     guid: 485c4cf3f0563c940b1a92fc8d377bdb
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire29.unity
+    guid: e9486068a9a081b45a9c450b6f49e9d3
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire30.unity
+    guid: 5e04571efbdaf704b9ce2ff046cd37d9
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire31.unity
+    guid: 44360e2e2ba705c42af9268fdef1c9b9
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire32.unity
+    guid: f94620a7e96bde4438b1474851bc8a0d
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire33.unity
+    guid: 19e4438fe9633d24b9e0f0569a0b0b6a
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire34.unity
+    guid: 34014b8a75a3892478855818bc1bebf8
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire35.unity
+    guid: bbe2ddf08bd45ef4d93a74ad16834fb3
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire36.unity
+    guid: e6667a6205312f2418201143f8fdd07a
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire37.unity
+    guid: ece4641586174f34d9eca338727ea218
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire38.unity
+    guid: 111552f3eabab9f47a01cd440ed3eb18
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire39.unity
+    guid: 26402ecebe3cdbd4d964539320177475
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire40.unity
+    guid: d7e97029518333c4cbaba52efa434e32
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire41.unity
+    guid: a7f1d61d7d103b64c9b2c40a1bbd789e
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire42.unity
+    guid: d330acfd15442bf41a3c1d61af055e8d
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire43.unity
+    guid: d896bfe7fe9b8a445a8586bdc3417e5f
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire44.unity
+    guid: 4e2f8f7c20afc0a418bd191973c532db
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire45.unity
+    guid: 1cbf9804cc25080478eb98624ec1ad4c
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire46.unity
+    guid: 1b513423d55d6fe4d9f133616b43e9b1
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire47.unity
+    guid: 5c42310294d81514ca5b6f4de49e9243
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire48.unity
+    guid: 06d730b035e129447827539fed96ba8b
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire49.unity
+    guid: 89fbb87c4c3dd714fb7c8a5d32d20ab3
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire50.unity
+    guid: 52d4262741cffbe49bd0a25b813b5b93
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire51.unity
+    guid: b3e2293c3205f9540be4be1e304ff3e4
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire52.unity
+    guid: 4ca23e6da1e8a13459ced24cf6073613
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire53.unity
+    guid: edfb10098c535b645b97b23de8a73346
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire54.unity
+    guid: 5c845411a276cde43b8b8c38fcd7b85e
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire55.unity
+    guid: 1f36da61547968945b432879a5adc40f
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Fire56.unity
+    guid: 6501714c202325448a598d3df5d456aa
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/FireBoss.unity
+    guid: 39d0357b41613204382e6c3c8d36b365
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water58.unity
+    guid: e86231168c11fa74f8cb5cde891b9340
