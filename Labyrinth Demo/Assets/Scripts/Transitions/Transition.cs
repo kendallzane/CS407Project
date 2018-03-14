@@ -17,9 +17,9 @@ public class Transition : MonoBehaviour {
 	public string[] sceneNames;									//An array of all possible scenes in the Labyrinth to transition to.
 	public float transitionTime = 0.5f;							//How long does it take to transition to the next scene?
 
-	public float timeDelay;									//How long have we been fading?
-	public bool fading = false;								//Is the scene fading in/out?
-	public bool fin = true;									//in or out?
+	public float timeDelay;										//How long have we been fading?
+	public bool fading = false;									//Is the scene fading in/out?
+	public bool fin = true;										//in or out?
 	private string toScene;										//used to transition to the next scene
 	[HideInInspector] public int entranceNum;					//Which entrance to the room is the character entering in?
 
@@ -75,7 +75,7 @@ public class Transition : MonoBehaviour {
 	string SwitchNumToString (int sceneNum) {
 		if (sceneNum < 0 || sceneNum >= sceneNames.Length) {
 			Debug.Log ("Trying to enter non-existent Scene");
-			sceneNum = 0;
+			sceneNum = 5;
 		}
 
 		return sceneNames [sceneNum];

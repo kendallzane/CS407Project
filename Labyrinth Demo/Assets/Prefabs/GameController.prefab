@@ -872,7 +872,30 @@ MonoBehaviour:
   - Tutorial3
   - Tutorial4
   - Central
-  transitionTime: 0.5
+  - Earth6
+  - Earth7
+  - Earth8
+  - Earth9
+  - Earth10
+  - Earth11
+  - Earth12
+  - Earth13
+  - Earth14
+  - Earth15
+  - Earth16
+  - Earth17
+  - Earth18
+  - Earth19
+  - Earth20
+  - Earth21
+  - Earth22
+  - Earth23
+  - Earth24
+  - Earth25
+  - Earth26
+  - Earth27
+  - EarthBoss
+  transitionTime: 0.25
   timeDelay: 0
   fading: 0
   fin: 1

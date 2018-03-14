@@ -26,5 +26,6 @@ public class EntranceHandler : MonoBehaviour {
 
 		player.transform.position = characterStartPositions [entrance];
 		playerCam.transform.position = cameraStartPositions [entrance];
+		//playerCam.transform.position = new Vector3 (characterStartPositions [entrance].x, characterStartPositions [entrance].y, -10);
 	}
 }
