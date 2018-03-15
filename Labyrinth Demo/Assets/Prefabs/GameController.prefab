@@ -1372,6 +1372,29 @@ MonoBehaviour:
   - Water83
   - WaterBoss
   - Wind85
+  - Wind86
+  - Wind87
+  - Wind88
+  - Wind89
+  - Wind90
+  - Wind91
+  - Wind92
+  - Wind93
+  - Wind94
+  - Wind95
+  - Wind96
+  - Wind97
+  - Wind98
+  - Wind99
+  - Wind100
+  - Wind101
+  - Wind102
+  - Wind103
+  - Wind104
+  - Wind105
+  - Wind106
+  - Wind107
+  - WindBoss
   transitionTime: 0.25
   entranceNum: 0
 --- !u!114 &114579284964072502

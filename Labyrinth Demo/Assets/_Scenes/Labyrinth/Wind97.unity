@@ -338,12 +338,12 @@ Prefab:
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toEntrance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toScene
-      value: 93
+      value: 88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3002c21a0ba572e4b85c34e293118ea1, type: 2}
@@ -650,12 +650,12 @@ Prefab:
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toEntrance
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toScene
-      value: 96
+      value: 98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3002c21a0ba572e4b85c34e293118ea1, type: 2}
