@@ -65,6 +65,10 @@ public class PlayerHUD : MonoBehaviour {
 		healthBar.value = health;
 	}
 
+	public void SetMaxHealth (int maxHealth) {
+		healthBar.maxValue = maxHealth;
+	}
+
 /// <summary>
 /// Shows the time remaining until dash is charged.
 /// </summary>

@@ -72,6 +72,15 @@ public class TreasureChest : MonoBehaviour {
 		case WINDKEY:
 			gc.playerKeysHeld [4]++;
 			break;
+		case SWORDUPGRADE:
+			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<PlayerSword> ().UpgradeToNextLevel ();
+			break;
+		case DASHUPGRADE:
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerCombat> ().numDashes++;
+			break;
+		case HEALTHUPGRADE:
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHealth> ().UpgradeHealth ();
+			break;
 		}
 	}
 }

@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	//variables
 	public int maxHealth = 100;						//the maximum health the player can have
+	public int extraHealthOnUpgrade = 50;			//the increase to maximum health per upgrade given
 	private int health = 100;						//the amount of health the player has
 	public float pushBackForce = 3f;				//how much force is the player pushed back with?
     public bool isDead = false;                     //whether player is dead or not
@@ -43,6 +44,7 @@ public class PlayerHealth : MonoBehaviour {
 		an = GetComponent<Animator> ();
 		//health = maxHealth;
 		ph.ShowHealth(health);
+		ph.SetMaxHealth (maxHealth);
 		healingFX.SetActive (false);
 	}
 
@@ -135,6 +137,16 @@ public class PlayerHealth : MonoBehaviour {
 		rb.velocity = Vector2.zero;
 		damageCollider.enabled = true;
 		pc.EnablePlayer ();
+	}
+
+	/// <summary>
+	/// Upgrades the maximum health of the player.
+	/// </summary>
+	public void UpgradeHealth () {
+		maxHealth += extraHealthOnUpgrade;
+		health = maxHealth;
+		ph.SetMaxHealth (maxHealth);
+		ph.ShowHealth (health);
 	}
 
 	/// <summary>
