@@ -41,7 +41,8 @@ public class PlayerHealth : MonoBehaviour {
 		pc = GetComponent<PlayerCombat> ();
 		rb = GetComponent<Rigidbody2D> ();
 		an = GetComponent<Animator> ();
-		health = maxHealth;
+		//health = maxHealth;
+		ph.ShowHealth(health);
 		healingFX.SetActive (false);
 	}
 
@@ -134,6 +135,22 @@ public class PlayerHealth : MonoBehaviour {
 		rb.velocity = Vector2.zero;
 		damageCollider.enabled = true;
 		pc.EnablePlayer ();
+	}
+
+	/// <summary>
+	/// Gets the current health of the player.
+	/// </summary>
+	/// <returns>The health.</returns>
+	public int GetHealth () {
+		return health;
+	}
+
+	/// <summary>
+	/// Sets the current health of the player.
+	/// </summary>
+	/// <param name="newHealth">New health.</param>
+	public void SetHealth (int newHealth) {
+		health = newHealth;
 	}
 
     public void PlayerIsDead() {

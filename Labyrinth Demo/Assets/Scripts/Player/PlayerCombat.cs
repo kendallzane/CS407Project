@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour {
 	private PlayerSword ps;
 	public GameObject[] HUD;						//the proper HUD to be instantiated
 	public GameObject[] commandsOriginals;			//the array of commands to be instantiated (order editable in menu)
-	public PlayerCommand[] commands;//the array of usable commands
+	public PlayerCommand[] commands;				//the array of usable commands
 
 	//variables
 	public float[] attackSpeed;						//attacking speeds of various combo attacks
@@ -55,7 +55,7 @@ public class PlayerCombat : MonoBehaviour {
 	
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		switch (numCommands) {
 		case 2:
 			Instantiate (HUD [0]);
@@ -407,5 +407,46 @@ public class PlayerCombat : MonoBehaviour {
 	public int GetDirection() {
 		return an.GetInteger ("Direction");
 	}
+
+	/// <summary>
+	/// Gets the current number of dash charges.
+	/// </summary>
+	/// <returns>The dash charges.</returns>
+	public int GetDashCharges () {
+		return dashCharges;
+	}
+
+	/// <summary>
+	/// Gets the current dash delay time.
+	/// </summary>
+	/// <returns>The dash delay.</returns>
+	public float GetDashDelay () {
+		return delayCounter;
+	}
+
+	/// <summary>
+	/// Sets up the player to maintain consistent values at the when transitioning into a new scene.
+	/// </summary>
+	/// <param name="maxHealth">Max health.</param>
+	/// <param name="health">Current Health.</param>
+	/// <param name="maxDashCharges">Max dash charges.</param>
+	/// <param name="dashCharges">Current Dash charges.</param>
+	/// <param name="dashTimeDelay">Dash time delay.</param>
+	/// <param name="selectedCommand">Currently Selected command.</param>
+	/// <param name="commandCharges">Array of all Command charges.</param>
+	/// <param name="swordUpgrade">Sword upgrade.</param>
+	public void PlayerSetup (int maxHealth, int health, int maxDashCharges, int dashCharges, float dashTimeDelay, int selectedCommand, float[] commandCharges, int swordUpgrade) {
+		php.maxHealth = maxHealth;
+		php.SetHealth (health);
+		numDashes = maxDashCharges;
+		this.dashCharges = dashCharges;
+		delayCounter = dashTimeDelay;
+		this.selectedCommand = selectedCommand;
+		for (int i = 0; i < commandCharges.Length; i++) {
+			commands [i].SetRechargeDelay (commandCharges [i]);
+		}
+		ps.upgrade = swordUpgrade;
+	}
+
 	#endregion
 }

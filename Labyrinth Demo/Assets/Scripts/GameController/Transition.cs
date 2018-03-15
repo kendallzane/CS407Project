@@ -42,6 +42,7 @@ public class Transition : MonoBehaviour {
 					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 0);
 				} else {
 					//load next scene
+					gc.UpdatePlayerValues();
 					fadeScreen.color = new Color (fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, 1);
 					SceneManager.LoadScene (toScene);
 				}
@@ -69,6 +70,8 @@ public class Transition : MonoBehaviour {
 		timeDelay = 0;
 		fin = false;
 		fading = true;
+
+
 	}
 
 	//Perform sanity checks before trying to access array

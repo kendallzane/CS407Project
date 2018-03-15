@@ -29,6 +29,7 @@ public class PlayerHUD : MonoBehaviour {
 			commandBar [i].GetComponentInChildren<Text> ().text = pc.commands [i].commandName;
 			pc.commands [i].commandNum = i;
 		}
+		ResetSelection ();
 	}
 	
 	// Update is called once per frame
@@ -82,5 +83,13 @@ public class PlayerHUD : MonoBehaviour {
 	public void Minimize () {
 		//Minimize the HUD
 		an.SetTrigger("Minimize");
+	}
+
+	/// <summary>
+	/// Resets the selection of the HUD to what it should be.
+	/// </summary>
+	public void ResetSelection () {
+		an.SetInteger ("SelectedCommand", pc.selectedCommand);
+		an.SetTrigger ("ResetSelection");
 	}
 }

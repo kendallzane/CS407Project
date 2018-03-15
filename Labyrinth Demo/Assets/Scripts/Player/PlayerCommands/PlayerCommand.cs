@@ -31,8 +31,12 @@ public abstract class PlayerCommand : MonoBehaviour {
 		ph = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD> ();
 		php = player.GetComponent<PlayerHealth> ();
 		pc = player.GetComponent<PlayerCombat> ();
-		rechargeDelay = 0;
-		canUse = true;
+		//rechargeDelay = 0;
+		if (rechargeDelay <= 0) {
+			canUse = true;
+		} else {
+			canUse = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -54,5 +58,21 @@ public abstract class PlayerCommand : MonoBehaviour {
 	public virtual void UseCommand () {
 		canUse = false;
 		rechargeDelay = rechargeTime;
+	}
+
+	/// <summary>
+	/// Called by the GameController to get the rechargeDelay of the command.
+	/// </summary>
+	/// <returns>The recharge delay.</returns>
+	public float GetRechargeDelay () {
+		return rechargeDelay;
+	}
+
+	/// <summary>
+	/// Sets the recharge delay.
+	/// </summary>
+	/// <param name="newCharge">New charge.</param>
+	public void SetRechargeDelay (float newCharge) {
+		rechargeDelay = newCharge;
 	}
 }

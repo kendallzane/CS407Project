@@ -56,5 +56,22 @@ public class TreasureChest : MonoBehaviour {
 		}
 
 		//Give player the item
+		switch (containedItem) {
+		case BASEKEY:
+			gc.playerKeysHeld [0]++;
+			break;
+		case EARTHKEY:
+			gc.playerKeysHeld [1]++;
+			break;
+		case FIREKEY:
+			gc.playerKeysHeld [2]++;
+			break;
+		case WATERKEY:
+			gc.playerKeysHeld [3]++;
+			break;
+		case WINDKEY:
+			gc.playerKeysHeld [4]++;
+			break;
+		}
 	}
 }
