@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class Transition : MonoBehaviour {
 
 	//references
-	//private GameController gc;
+	private GameController gc;
 	public Image fadeScreen;
 
 	//variables
@@ -25,7 +25,7 @@ public class Transition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//gc = GetComponent<GameController> ();
+		gc = GetComponent<GameController> ();
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		timeDelay = 0;
 		fading = true;
@@ -88,6 +88,7 @@ public class Transition : MonoBehaviour {
 	/// <param name="scene">The newly loaded scene.</param>
 	/// <param name="mode">How the scene is loaded.</param>
 	void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
+		gc.OnSceneStart ();
 		fin = true;
 		timeDelay = 0;
 		fading = true;

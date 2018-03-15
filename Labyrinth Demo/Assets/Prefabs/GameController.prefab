@@ -1855,6 +1855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d127e4ffac235147a0dfdaa3d65500f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treasureChests: 000000000000000000000000000000000000000000000000000000000000
+  unlockedDoors: 
 --- !u!114 &114989428624634882
 MonoBehaviour:
   m_ObjectHideFlags: 1
