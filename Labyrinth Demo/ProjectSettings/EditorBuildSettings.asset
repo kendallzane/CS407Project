@@ -260,3 +260,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Labyrinth/WaterBoss.unity
     guid: a4704c74b99e6134a8398b9350b3fbb7
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Wind85.unity
+    guid: 9ef6c0725ff6bb54c84256d341d226ff

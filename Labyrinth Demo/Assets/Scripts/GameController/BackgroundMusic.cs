@@ -10,6 +10,7 @@ public class BackgroundMusic : MonoBehaviour {
 	const int FIRE = 2;
 	const int WATER = 3;
 	const int WIND = 4;
+	const int ALL = 5;
 
 	//references
 	private AudioSource[] aus;
@@ -56,6 +57,13 @@ public class BackgroundMusic : MonoBehaviour {
 			aus [WATER].volume = layerVolume;
 			break;
 		case WIND:
+			aus [WIND].volume = layerVolume;
+			break;
+		case ALL:
+			aus [BASE].volume = standaloneBaseVolume;
+			aus [EARTH].volume = layerVolume;
+			aus [FIRE].volume = layerVolume;
+			aus [WATER].volume = layerVolume;
 			aus [WIND].volume = layerVolume;
 			break;
 		}

@@ -1371,6 +1371,7 @@ MonoBehaviour:
   - Water82
   - Water83
   - WaterBoss
+  - Wind85
   transitionTime: 0.25
   entranceNum: 0
 --- !u!114 &114579284964072502
