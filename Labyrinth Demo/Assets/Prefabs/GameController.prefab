@@ -1345,6 +1345,32 @@ MonoBehaviour:
   - Fire56
   - FireBoss
   - Water58
+  - Water59
+  - Water60
+  - Water61
+  - Water62
+  - Water63
+  - Water64
+  - Water65
+  - Water66
+  - Water67
+  - Water68
+  - Water69
+  - Water70
+  - Water71
+  - Water72
+  - Water73
+  - Water74
+  - Water75
+  - Water76
+  - Water77
+  - Water78
+  - Water79
+  - Water80
+  - Water81
+  - Water82
+  - Water83
+  - WaterBoss
   transitionTime: 0.25
   entranceNum: 0
 --- !u!114 &114579284964072502

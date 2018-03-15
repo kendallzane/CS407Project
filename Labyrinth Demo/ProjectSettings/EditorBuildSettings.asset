@@ -182,3 +182,81 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Labyrinth/Water58.unity
     guid: e86231168c11fa74f8cb5cde891b9340
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water59.unity
+    guid: b142d2ed0a92e254aa3d4ae47a98d608
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water60.unity
+    guid: 2736f7a08506fa44fa1af9bbd526159b
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water61.unity
+    guid: a3915af9f1b6cb94fb02ceeb79ffb714
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water62.unity
+    guid: 995dae755ddfd9e4a9e077e977ae06ff
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water63.unity
+    guid: 59fdf480860350e42b647b3ef3282b7e
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water64.unity
+    guid: d1023c42ba9f1a543ac8c3fcf01e0c74
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water65.unity
+    guid: 9e8b1828351dcb746ae4afd030ef56f2
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water66.unity
+    guid: 12050eac3fb13664e95dfba3e44bc6ba
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water67.unity
+    guid: faf473149d6d5b94280f6c754a4e94ce
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water68.unity
+    guid: 622629337c15c0749800a90bee6373ec
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water69.unity
+    guid: fb8c98cfff498984387737690c820da2
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water70.unity
+    guid: d4d8c8701deebde4cbd631fe2587a564
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water71.unity
+    guid: 940c4eaffaa464743901138404494223
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water72.unity
+    guid: 660bd9cf3f20bd34eab484b10294a020
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water73.unity
+    guid: d0eb65f1ed18e6a47aab5005ba882378
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water74.unity
+    guid: e6d8ef8b8c592444e9f1e02b1745b44e
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water75.unity
+    guid: 8ed433431f1ffc7438e99aac31e52bfc
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water76.unity
+    guid: 331a65f32e9ac4c4b990b042d375c3f3
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water77.unity
+    guid: e9633b8f93fe21f418851cb73eb8629a
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water78.unity
+    guid: d432bc2c7cb2c6f469ba1f0de69f6a8b
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water79.unity
+    guid: 821077d050803d64c93699738b126348
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water80.unity
+    guid: 4b16e72a30bfbe04794af35219819450
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water81.unity
+    guid: 5644587a4a2a520429286c13b081556d
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water82.unity
+    guid: 3e8e5a47af48989429d0cacd5c5b93a0
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Water83.unity
+    guid: cdc7a4b434f60534e88bc3e17bcb2a0d
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/WaterBoss.unity
+    guid: a4704c74b99e6134a8398b9350b3fbb7
