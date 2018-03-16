@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 	//variables
 	public bool[] treasureChests;							//a list of all treasureChests in the Labyrinth, true if it has been opened
 	public bool[] unlockedDoors;							//a list of all lockedDoors in the Labyrinth, true if it has been unlocked
+	[HideInInspector] public bool[] bossDefeats;			//based on the constants above, has the proper boss been defeated?
 	[HideInInspector] public int[] playerKeysHeld;			//how many of each type of key is the player holding? Based on constants above
 	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
 
@@ -30,16 +31,34 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public int swordUpgrade;				//what upgrade is the player's sword at?
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		DontDestroyOnLoad (gameObject);
 		playerKeysHeld = new int[5];
 		commandCharges = new float[3];
+		bossDefeats = new bool[5];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+	/// <summary>
+	/// Called every time a new Scene is transitioned to. 
+	/// </summary>
+	public void OnSceneStart () {
+		if (!toBeDestroyed) {
+
+			//Keep player values consistent
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			player.GetComponent<PlayerCombat> ().PlayerSetup (maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
+			GetComponentInChildren<GameOver> ().playerHealth = player.GetComponent<PlayerHealth> ();
+
+			//Keep track of enemy respawns
+		}
+	}
+
+	#region HelpfulFunctions
 
 	/// <summary>
 	/// Called just before a transition to record the player's current status.
@@ -60,17 +79,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Called every time a new Scene is transitioned to. 
+	/// Let the GameController know that the boss has been defeated.
 	/// </summary>
-	public void OnSceneStart () {
-		if (!toBeDestroyed) {
-
-			//Keep player values consistent
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
-			player.GetComponent<PlayerCombat> ().PlayerSetup (maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
-			GetComponentInChildren<GameOver> ().playerHealth = player.GetComponent<PlayerHealth> ();
-
-			//Keep track of enemy respawns
-		}
+	/// <param name="element">The element of the boss. 1 = Earth, 2 = Fire, 3 = Water, 4 = Wind.</param>
+	public void DefeatBoss (int element) {
+		bossDefeats [element] = true;
 	}
+
+	#endregion
 }

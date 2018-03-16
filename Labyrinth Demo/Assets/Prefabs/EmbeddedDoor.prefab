@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 95132067897527566}
   m_Layer: 0
   m_Name: EmbeddedDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

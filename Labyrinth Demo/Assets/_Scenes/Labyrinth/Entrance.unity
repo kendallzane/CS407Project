@@ -254,11 +254,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114967505314812802, guid: 79a556539ac19644bb25fffc0e3e9047,
-        type: 2}
-      propertyPath: unlockedDoors.Array.size
-      value: 21
-      objectReference: {fileID: 0}
     - target: {fileID: 4194284641158102, guid: 79a556539ac19644bb25fffc0e3e9047, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1444,6 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1711908482164392}
+  playerHealth: {fileID: 0}
 --- !u!114 &114631464868488650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1856,7 +1857,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureChests: 000000000000000000000000000000000000000000000000000000000000
-  unlockedDoors: 
+  unlockedDoors: 000000000000000000000000000000000000000000
+  bossDefeats: 
+  playerKeysHeld: 
+  toBeDestroyed: 0
+  maxHealth: 0
+  health: 0
+  maxDashCharges: 0
+  dashCharges: 0
+  dashTimeDelay: 0
+  selectedCommand: 0
+  commandCharges: []
+  swordUpgrade: 0
 --- !u!114 &114989428624634882
 MonoBehaviour:
   m_ObjectHideFlags: 1
