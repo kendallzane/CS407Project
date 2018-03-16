@@ -23,9 +23,8 @@ public class SwordThrowCommand : PlayerCommand {
 	/// </summary>
 	public override void UseCommand () {
 		base.UseCommand ();
+		pc.DisablePlayer ();
 		an.SetTrigger ("ThrowSword");
-		pc.LostSword ();
-		pm.canMove = false;
 		StartCoroutine ("ThrowTheSword");
 	}
 
@@ -35,7 +34,8 @@ public class SwordThrowCommand : PlayerCommand {
 	/// <returns>The the sword.</returns>
 	IEnumerator ThrowTheSword () {
 		yield return new WaitForSeconds (timeTillThrow);
-		pm.canMove = true;
+		pc.EnablePlayer ();
+		pc.LostSword ();
 		GameObject sword = Instantiate (thrownSword, player.transform.position, Quaternion.identity);
 		sword.GetComponent<ThrownSword> ().player = player;
 	}

@@ -180,11 +180,7 @@ public class PlayerHealth : MonoBehaviour {
 	/// </summary>
 	public void StartHeal () {
 		an.SetTrigger ("Heal");
-		pm.canMove = false;
-		pc.canAttack = false;
-		rb.velocity = Vector2.zero;
-		pc.canCommand = false;
-		pc.canDash = false;
+		pc.DisablePlayer ();
 	}
 
 	/// <summary>
@@ -208,10 +204,7 @@ public class PlayerHealth : MonoBehaviour {
 	/// Called by animation, The heal animation is finished, allow player input
 	/// </summary>
 	public void HealFinished () {
-		pm.canMove = true;
-		pc.canAttack = true;
-		pc.canCommand = true;
-		pc.canDash = true;
+		pc.EnablePlayer ();
 	}
 	#endregion
 }

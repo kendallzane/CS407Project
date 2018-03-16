@@ -51,6 +51,7 @@ public class PlayerCombat : MonoBehaviour {
 	private int dashCharges;						//how many dashes does the player have remaining
 	private float tmpDashCalc;						//remove a calculation each frame of dash by storing it as a tmp variable ((delayCounter % dashDelay) / dashDelay)
 	private float tmpDashCalc2;						//same as above but instead by a factor of O(1) instead of O(n) (1 - (dashTime - dashCounter) - tmpDashCalc)
+	[HideInInspector] public bool commandSwitching;	//don't allow commands while switching
 
 	
 	
@@ -292,7 +293,7 @@ public class PlayerCombat : MonoBehaviour {
 
 		#region Commands
 		//check for command input
-		if (canCommand && Input.GetButtonDown("UseCommand")) {
+		if (hasSword && !commandSwitching && canCommand && Input.GetButtonDown("UseCommand")) {
 			if (commands[selectedCommand].canUse) {
 				//Use the selected command
 				commands[selectedCommand].UseCommand();
@@ -317,7 +318,7 @@ public class PlayerCombat : MonoBehaviour {
 	/// Changes the current command selection.
 	/// </summary>
 	public void ChangeCommand () {
-		canCommand = true;
+		commandSwitching = false;
 		selectedCommand--;
 		if (selectedCommand < 0) {
 			selectedCommand = commands.Length - 1;

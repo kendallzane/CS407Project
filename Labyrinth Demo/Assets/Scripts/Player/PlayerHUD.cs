@@ -47,7 +47,7 @@ public class PlayerHUD : MonoBehaviour {
 	/// </summary>
 	public void ChangeCommand () {
 		canChange = false;
-		pc.canCommand = false;
+		pc.commandSwitching = true;
 		an.SetTrigger ("ChangeCommand");
 	}
 
