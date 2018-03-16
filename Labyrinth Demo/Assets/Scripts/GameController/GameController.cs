@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 	public bool[] treasureChests;							//a list of all treasureChests in the Labyrinth, true if it has been opened
 	public bool[] unlockedDoors;							//a list of all lockedDoors in the Labyrinth, true if it has been unlocked
 	[HideInInspector] public int[] playerKeysHeld;			//how many of each type of key is the player holding? Based on constants above
+	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
 
 	//playerValues (could be good to refactor as a struct)
 	[HideInInspector] public int maxHealth;					//what is the maxHealth of the player?
@@ -62,10 +63,14 @@ public class GameController : MonoBehaviour {
 	/// Called every time a new Scene is transitioned to. 
 	/// </summary>
 	public void OnSceneStart () {
+		if (!toBeDestroyed) {
 
-		//Keep player values consistent
-		GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerCombat>().PlayerSetup(maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
+			//Keep player values consistent
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			player.GetComponent<PlayerCombat> ().PlayerSetup (maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
+			GetComponentInChildren<GameOver> ().playerHealth = player.GetComponent<PlayerHealth> ();
 
-		//Keep track of enemy respawns
+			//Keep track of enemy respawns
+		}
 	}
 }

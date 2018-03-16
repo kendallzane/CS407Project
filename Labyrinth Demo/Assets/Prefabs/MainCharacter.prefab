@@ -582,7 +582,8 @@ MonoBehaviour:
   upgradeSprites:
   - {fileID: 21300000, guid: 05dc36256aafbbc4cb26484860546d64, type: 3}
   - {fileID: 21300000, guid: 5a151d4b49c3c487792db9ccd0c4157c, type: 3}
-  baseDamage: 0a0000000f000000
+  - {fileID: 21300000, guid: 022bfd9a66bb6f0438564dfc50b28d8b, type: 3}
+  baseDamage: 0a0000000f00000014000000
   upgrade: 0
   comboMultiplier: 1
 --- !u!114 &114585733178415582
@@ -613,9 +614,9 @@ MonoBehaviour:
   - {fileID: 114265546561775978, guid: 862fe094061277649818e34bc44b7904, type: 2}
   - {fileID: 114636873335788266, guid: 7acd0ceed00ebba47ac31436404c46a7, type: 2}
   attackSpeed:
+  - 0.25
+  - 0.25
   - 1
-  - 1
-  - 2
   damageMultiplier:
   - 1
   - 1.25
@@ -633,6 +634,7 @@ MonoBehaviour:
   attackLock: 0
   hasSword: 1
   canDash: 1
+  commandSwitching: 0
 --- !u!114 &114785022947641584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,6 +653,7 @@ MonoBehaviour:
   healedFX: {fileID: 1076021957402590, guid: cb9afd3340e80ce4aa14921d302c72c4, type: 2}
   soul: {fileID: 1688720160645272, guid: db4585409958222488355689c97640ce, type: 2}
   maxHealth: 100
+  extraHealthOnUpgrade: 50
   pushBackForce: 50
   isDead: 0
 --- !u!198 &198132820391831074

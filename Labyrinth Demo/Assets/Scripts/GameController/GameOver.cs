@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour {
 	//references
     public GameObject gameOverCanvas;
 
-	private PlayerHealth playerHealth;
+	[HideInInspector] public PlayerHealth playerHealth;
     private Animator anim;
 
 	// Use this for initialization
@@ -30,7 +30,9 @@ public class GameOver : MonoBehaviour {
     public void Restart()
     {
         //playerHealth.isDead = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		GetComponentInParent<GameController>().toBeDestroyed = true;
+		SceneManager.LoadScene("Entrance");												//This is where we'll respawn upon death
+		Destroy (GetComponentInParent<GameController>().gameObject);					//Destroy the old GameController
     }
     public void Quit()
     {

@@ -35,6 +35,8 @@ public class PauseMenu : MonoBehaviour {
     }
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		GetComponentInParent<GameController>().toBeDestroyed = true;
+        SceneManager.LoadScene("Entrance");												//This is where we'll respawn upon death
+		Destroy (GetComponentInParent<GameController>().gameObject);					//Destroy the old GameController
     }
 }

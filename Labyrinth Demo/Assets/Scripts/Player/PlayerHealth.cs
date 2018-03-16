@@ -43,8 +43,8 @@ public class PlayerHealth : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		an = GetComponent<Animator> ();
 		//health = maxHealth;
-		ph.ShowHealth(health);
 		ph.SetMaxHealth (maxHealth);
+		ph.ShowHealth(health);
 		healingFX.SetActive (false);
 	}
 

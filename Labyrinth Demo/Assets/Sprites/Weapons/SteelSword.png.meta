@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a151d4b49c3c487792db9ccd0c4157c
-timeCreated: 1514671118
+guid: 022bfd9a66bb6f0438564dfc50b28d8b
+timeCreated: 1521176363
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Iron Sword_0
+    21300000: SteelSword_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Iron Sword_0
+      name: SteelSword_0
       rect:
         serializedVersion: 2
         x: 11
