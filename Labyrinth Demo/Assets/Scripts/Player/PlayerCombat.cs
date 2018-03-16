@@ -215,6 +215,7 @@ public class PlayerCombat : MonoBehaviour {
 				attackCombo [0] = true;
 				pm.canMove = false;
 				ps.comboMultiplier = damageMultiplier[0];
+				an.SetInteger("ComboNum", 0);
 				an.SetTrigger ("Attack");
 				switch (GetDirection ()) {
 				case DOWN:
@@ -236,10 +237,9 @@ public class PlayerCombat : MonoBehaviour {
 				}
 			} 
 					
-			//get diagonal input
+			//allow direction change
 			if (attacking) {
-				horiz = Input.GetAxis("Horizontal");
-				vert = Input.GetAxis("Vertical");
+				SetDirection ();
 			}
 	
 			//2nd Attack
@@ -247,6 +247,7 @@ public class PlayerCombat : MonoBehaviour {
 				attackLock = false;
 				canAttack = false;
 				ps.comboMultiplier = damageMultiplier[1];
+				an.SetInteger("ComboNum", 1);
 				an.SetTrigger ("Attack");
 				switch (GetDirection ()) {
 				case DOWN:
@@ -268,6 +269,7 @@ public class PlayerCombat : MonoBehaviour {
 			if (attackLock && canAttack && attackCombo[2]) {
 				attackLock = false;				
 					canAttack = false;
+				an.SetInteger("ComboNum", 2);
 				an.SetTrigger ("Attack");
 				ps.comboMultiplier = damageMultiplier[2];
 					switch (GetDirection ()) {
@@ -406,6 +408,30 @@ public class PlayerCombat : MonoBehaviour {
 	/// <returns>The direction.</returns>
 	public int GetDirection() {
 		return an.GetInteger ("Direction");
+	}
+
+	/// <summary>
+	/// Sets the direction the player is facing based off of input from the player.
+	/// </summary>
+	public void SetDirection() {
+		horiz = Input.GetAxis("Horizontal");
+		vert = Input.GetAxis("Vertical");
+
+		if (horiz != 0 || vert != 0) {
+			if (Mathf.Abs (horiz) > Mathf.Abs (vert)) {
+				if (horiz > 0) {
+					an.SetInteger ("Direction", RIGHT);
+				} else {
+					an.SetInteger ("Direction", LEFT);
+				}
+			} else {
+				if (vert > 0) {
+					an.SetInteger ("Direction", UP);
+				} else {
+					an.SetInteger ("Direction", DOWN);
+				}
+			}
+		}
 	}
 
 	/// <summary>

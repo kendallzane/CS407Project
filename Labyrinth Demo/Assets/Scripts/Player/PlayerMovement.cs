@@ -42,19 +42,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			//set facing direction
 			if (horiz != 0 || vert != 0) {
-				if (Mathf.Abs (horiz) > Mathf.Abs (vert)) {
-					if (horiz > 0) {
-						an.SetInteger ("Direction", RIGHT);
-					} else {
-						an.SetInteger ("Direction", LEFT);
-					}
-				} else {
-					if (vert > 0) {
-						an.SetInteger ("Direction", UP);
-					} else {
-						an.SetInteger ("Direction", DOWN);
-					}
-				}
+				pc.SetDirection ();
 			}
 		} else {
 			//cancel end attack frames by moving

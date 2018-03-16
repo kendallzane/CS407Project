@@ -43,6 +43,7 @@ public class HurricaneBladeCommand : PlayerCommand {
 		php.damageCollider.enabled = false;
 		pc.DisablePlayer ();
 		an.SetBool ("HurricaneBlade", true);
+		an.SetTrigger ("Attack");
 		pm.canMove = true;								//disable everything except movement
 	}
 }
