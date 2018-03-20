@@ -17,6 +17,9 @@ public class TreasureChest : MonoBehaviour {
 	//references
 	private Animator an;
 	private GameController gc;
+	public SpriteRenderer itemSpriteObj;
+	public Sprite[] containedItemSprites;
+	public Color[] keyColors;
 
 	//variables
 	public int containedItem;								//based on the constants listed above
@@ -25,6 +28,41 @@ public class TreasureChest : MonoBehaviour {
 
 	void Start () {
 		an = GetComponent<Animator> ();
+
+		//set itemSprite and color based on Type
+		switch (containedItem) {
+		case BASEKEY:
+			itemSpriteObj.sprite = containedItemSprites [0];
+			itemSpriteObj.color = keyColors [BASEKEY];
+			break;
+		case EARTHKEY:
+			itemSpriteObj.sprite = containedItemSprites [0];
+			itemSpriteObj.color = keyColors [EARTHKEY];
+			break;
+		case FIREKEY:
+			itemSpriteObj.sprite = containedItemSprites [0];
+			itemSpriteObj.color = keyColors [FIREKEY];
+			break;
+		case WATERKEY:
+			itemSpriteObj.sprite = containedItemSprites [0];
+			itemSpriteObj.color = keyColors [WATERKEY];
+			break;
+		case WINDKEY:
+			itemSpriteObj.sprite = containedItemSprites [0];
+			itemSpriteObj.color = keyColors [WINDKEY];
+			break;
+		case SWORDUPGRADE:
+			itemSpriteObj.sprite = containedItemSprites [1];
+			break;
+		case DASHUPGRADE:
+			itemSpriteObj.sprite = containedItemSprites [2];
+			break;
+		case HEALTHUPGRADE:
+			itemSpriteObj.sprite = containedItemSprites [3];
+			itemSpriteObj.color = keyColors [FIREKEY];
+			break;
+		}
+
 		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
 		if (gcObj != null) {
 			gc = gcObj.GetComponent<GameController> ();		//account for if there is no GameController

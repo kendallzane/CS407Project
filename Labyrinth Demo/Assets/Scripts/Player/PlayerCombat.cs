@@ -94,6 +94,12 @@ public class PlayerCombat : MonoBehaviour {
 		canCommand = true;
 		damageColliderOriginalOffset = php.damageCollider.offset;
 	}
+
+	void Start () {
+		if (dashCharges == numDashes) {
+			ph.ShowDash(dashCharges - 1, 0);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -120,16 +126,7 @@ public class PlayerCombat : MonoBehaviour {
 				an.SetBool("Dash", false);
 			} else {
 				//show dashBar being used up in the HUD
-				tmpDashCalc2 = tmpDashCalc - (1 - ((dashTime - dashCounter) / dashTime));
-				if (dashCharges == numDashes - 1) {
-					ph.ShowDash(dashCharges, 1 - tmpDashCalc2);
-				} else {
-					if (tmpDashCalc2 > 0) {
-						ph.ShowDash(dashCharges + 1, 1 - tmpDashCalc2);
-					} else {
-						ph.ShowDash(dashCharges, 1 - (1 + tmpDashCalc2));
-					}
-				}
+				CalcDashHUD();
 			}
 			return;
 		} else if (delayCounter > 0) {				//dash must recharge
@@ -360,6 +357,22 @@ public class PlayerCombat : MonoBehaviour {
 		php.damageCollider.offset = Vector2.zero;
 		for (int i = 0; i < COMBONUM; i++) {
 			attackCombo [i] = false;
+		}
+	}
+
+	/// <summary>
+	/// Calculates how much the dash bar should be filled in the HUD and calls ShowDash() in PlayerHUD.
+	/// </summary>
+	void CalcDashHUD () {
+		tmpDashCalc2 = tmpDashCalc - (1 - ((dashTime - dashCounter) / dashTime));
+		if (dashCharges == numDashes - 1) {
+			ph.ShowDash(dashCharges, 1 - tmpDashCalc2);
+		} else {
+			if (tmpDashCalc2 > 0) {
+				ph.ShowDash(dashCharges + 1, 1 - tmpDashCalc2);
+			} else {
+				ph.ShowDash(dashCharges, 1 - (1 + tmpDashCalc2));
+			}
 		}
 	}
 
