@@ -19,6 +19,7 @@ public class PlayerCombat : MonoBehaviour {
 	private PlayerHUD ph;
 	private PlayerHealth php;
 	private PlayerSword ps;
+	private SFXManager sfx;
 	public GameObject[] HUD;						//the proper HUD to be instantiated
 	public GameObject[] commandsOriginals;			//the array of commands to be instantiated (order editable in menu)
 	public PlayerCommand[] commands;				//the array of usable commands
@@ -79,6 +80,7 @@ public class PlayerCombat : MonoBehaviour {
 		}
 		canAttack = true;
 		pm = GetComponent<PlayerMovement> ();
+		sfx = GetComponent<SFXManager> ();
 		rb = GetComponent<Rigidbody2D> ();
 		an = GetComponent<Animator> ();
 		gs = GetComponent<GhostSprites> ();
@@ -215,6 +217,7 @@ public class PlayerCombat : MonoBehaviour {
 				ps.comboMultiplier = damageMultiplier[0];
 				an.SetInteger("ComboNum", 0);
 				an.SetTrigger ("Attack");
+				sfx.playSound(0);
 				switch (GetDirection ()) {
 				case DOWN:
 					rb.velocity = Vector2.down * attackSpeed[0];

@@ -19,6 +19,7 @@ public class BackgroundMusic : MonoBehaviour {
 	public float standaloneBaseVolume = 1;
 	public float baseVolume = 0.6f;
 	public float layerVolume = 1;
+	public float sFXVolume = 1;
 
 	// Use this for initialization
 	void Start () {
