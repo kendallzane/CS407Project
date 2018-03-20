@@ -186,6 +186,7 @@ public class PlayerCombat : MonoBehaviour {
 			//Dash ghost trail animation
 			gs.killSwitch = false;
 			an.SetBool("Dash", true);
+			sfx.playSound(3);
 			return;
 		} 
 		#endregion
@@ -250,6 +251,7 @@ public class PlayerCombat : MonoBehaviour {
 				ps.comboMultiplier = damageMultiplier[1];
 				an.SetInteger("ComboNum", 1);
 				an.SetTrigger ("Attack");
+				sfx.playSound(1);
 				switch (GetDirection ()) {
 				case DOWN:
 						rb.velocity = new Vector2(horiz, -1).normalized * attackSpeed[1];
@@ -272,6 +274,7 @@ public class PlayerCombat : MonoBehaviour {
 					canAttack = false;
 				an.SetInteger("ComboNum", 2);
 				an.SetTrigger ("Attack");
+				sfx.playSound(2);
 				ps.comboMultiplier = damageMultiplier[2];
 					switch (GetDirection ()) {
 				case DOWN:
