@@ -39,4 +39,12 @@ public class PauseMenu : MonoBehaviour {
         SceneManager.LoadScene("Entrance");												//This is where we'll respawn upon death
 		Destroy (GetComponentInParent<GameController>().gameObject);					//Destroy the old GameController
     }
+    public void QuitToMainMenu()
+    {
+        isPaused = false;
+        GameObject GC = GameObject.FindGameObjectWithTag("GameController");
+        GC.GetComponent<GameController>().toBeDestroyed = true;
+        Destroy(GC);
+        SceneManager.LoadScene("Main Menu");
+    }
 }

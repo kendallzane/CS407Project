@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/Labyrinth/Main Menu.unity
     guid: e00aae56c0f793a409e16f40665db6c6
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Entrance.unity
-    guid: 95d73c66978337141842079b71de206c
-  - enabled: 1
     path: Assets/_Scenes/Labyrinth/Tutorial1.unity
     guid: 8f5abff4510abcb47a91af1b707385ce
   - enabled: 1
@@ -335,3 +332,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Labyrinth/WindBoss.unity
     guid: 294a373c523d1b4448083794eaf2b0e6
+  - enabled: 1
+    path: Assets/_Scenes/Labyrinth/Entrance.unity
+    guid: 95d73c66978337141842079b71de206c
