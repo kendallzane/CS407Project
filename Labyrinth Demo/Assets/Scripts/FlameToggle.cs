@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FlameToggle : ButtonLogic {
 
-    public GameObject fire;
-    private bool fireActive = true;
+    private GameObject fire;
+	private bool fireActive;
 
 	// Use this for initialization
 	void Start () {
-		
+		fire = gameObject;
+		fireActive = true;
 	}
 	
 	// Update is called once per frame
