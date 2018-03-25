@@ -19,6 +19,7 @@ public class ButtonPush : MonoBehaviour {
 	void onPress(){
 		foreach(GameObject canal in canalsToSwitch){
 			canal.GetComponent<ButtonLogic>().switchIt();
+            canal.GetComponent<FlameToggle>().switchIt();
 		}
 	}
 
