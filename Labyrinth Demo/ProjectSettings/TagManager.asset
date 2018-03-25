@@ -12,6 +12,7 @@ TagManager:
   - Borders
   - MultipleEntranceHandler
   - Door
+  - Dirt
   layers:
   - Default
   - TransparentFX
