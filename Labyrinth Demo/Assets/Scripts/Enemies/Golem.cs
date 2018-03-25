@@ -84,11 +84,15 @@ public class Golem : EnemyAI
 
             if (timeSinceDirtCreation > dirtCreationRate)
             {
+                Vector3 dirtPosition = transform.position;
+                dirtPosition.z += 1;
+
                 GameObject DirtSplat;
                 DirtSplat = Instantiate(
                     GolemDirt,
-                    transform.position,
+                    dirtPosition,
                     transform.rotation) as GameObject;
+                
 
                 timeSinceDirtCreation = 0f;
                 Destroy(DirtSplat, dirtLifetime);
@@ -235,13 +239,26 @@ public class Golem : EnemyAI
     // Golem death
     public override IEnumerator OnDeath()
     {
-        an.SetTrigger("Dead");
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0;
-        rb.isKinematic = true;
-        canMove = false;
-        alive = false;
-        yield return new WaitForSecondsRealtime(1);
+        if (burrowed)
+        {
+            an.SetTrigger("Dead");
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0;
+            rb.isKinematic = true;
+            canMove = false;
+            alive = false;
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+        else
+        {
+            an.SetTrigger("Dead");
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0;
+            rb.isKinematic = true;
+            canMove = false;
+            alive = false;
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
 
         Destroy(gameObject);
     }
@@ -259,7 +276,7 @@ public class Golem : EnemyAI
     // Burrowing
     IEnumerator Burrowing()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.8f);
         canMove = true;
     }
 
