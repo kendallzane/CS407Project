@@ -25,7 +25,7 @@ public class audioElementalLock : MonoBehaviour {
 		gc = GameObject.Find ("GameController");
 
 
-		//mainCamera = GameObject.Find ("Main Camera");
+		mainCamera = Camera.main;
 		//cutSceneCamera = GameObject.Find ("cutSceneCamera");
 		//cutSceneCamera.disable
 	}

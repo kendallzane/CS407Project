@@ -57,10 +57,12 @@ public class CameraFollower : MonoBehaviour {
 				transform.position = Vector3.SmoothDamp (transform.position, goalPos, ref velocity, smoothTime);
 
 				//don't move past the edges
-				transform.position = new Vector3 (
-					Mathf.Clamp (transform.position.x, MinX, MaxX),
-					Mathf.Clamp (transform.position.y, MinY, MaxY),
-					transform.position.z);
+				if (!(transform.position.x < MinX && transform.position.x > MaxX) || !(transform.position.y < MinY && transform.position.y > MaxY)) {
+					transform.position = new Vector3 (
+						Mathf.Clamp (transform.position.x, MinX, MaxX),
+						Mathf.Clamp (transform.position.y, MinY, MaxY),
+						transform.position.z);
+				}
 			}
 		}
 	}

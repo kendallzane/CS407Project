@@ -205,6 +205,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &352153792 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1536751333574304, guid: d452a748b17fb034993ed0db9a3aedef,
+    type: 2}
+  m_PrefabInternal: {fileID: 577237405}
 --- !u!1001 &577010634
 Prefab:
   m_ObjectHideFlags: 0
@@ -567,6 +572,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114955596931092600, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114854488836959656, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114162894856521794, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114296628558174032, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114810001818713688, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114429092550856698, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114613042150827890, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114992452777473034, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114557594790076292, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b34d56c6571cc1a4981dcbe401610227, type: 2}
   m_IsPrefabParent: 0

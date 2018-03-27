@@ -19,6 +19,28 @@ public class BossDoor : MonoBehaviour {
 		player = GameObject.Find ("MainCharacter");
 		hud = GameObject.FindGameObjectWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
+		for (int i = 0; i < 5; i++) {
+			disablePlayer ();
+			if (gc != null && gc.GetComponent<GameController> ().bossDefeats [i]) {
+				switch (i) {
+				case 0:
+					break;
+				case 1:
+					earthLock ();
+					break;
+				case 2:
+					fireLock ();
+					break;
+				case 3:
+					waterLock ();
+					break;
+				case 4:
+					airLock ();
+					break;
+				}
+			}
+			enablePlayer ();
+		}
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other) {
