@@ -283,7 +283,7 @@ public class Golem : EnemyAI
     // Disable mercy damage after certain time
     IEnumerator MercyDamage()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.25f);
         mercyInvincibility = false;
     }
 }
