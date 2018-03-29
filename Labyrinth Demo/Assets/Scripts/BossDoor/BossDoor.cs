@@ -20,36 +20,95 @@ public class BossDoor : MonoBehaviour {
 		player = GameObject.Find ("MainCharacter");
 		hud = GameObject.FindGameObjectWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
+
+		// called if lock has been opened before
 		for (int i = 0; i < 5; i++) {
 			disablePlayer ();
-			if (gc != null && gc.GetComponent<GameController> ().bossDefeats [i]) {
+			if (gc != null && gc.GetComponent<GameController> ().ElementalLocks[i]) {
 				switch (i) {
 				case 0:
 					break;
 				case 1:
 					if (elementType == 1) {
+						gameObject.GetComponent<Animator> ().enabled = false;
+						gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+					} 
+
+					if (elementType == 0) {
 						an.SetBool ("earthUnlocked", true);
 					}
 					break;
 				case 2:
 					if (elementType == 2) {
+						gameObject.GetComponent<Animator> ().enabled = false;
+						gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+					}
+					if (elementType == 0) {
 						an.SetBool ("fireUnlocked", true);
 					}
 					break;
 				case 3:
 					if (elementType == 3) {
+						gameObject.GetComponent<Animator> ().enabled = false;
+						gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+					}
+						if (elementType == 0) {
 						an.SetBool ("waterUnlocked", true);
 					}
 					break;
 				case 4:
 					if (elementType == 4) {
-						an.SetBool ("windUnlocked", true);
+						gameObject.GetComponent<Animator> ().enabled = false;
+						gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+					}
+						if (elementType == 0) {
+						an.SetBool ("airUnlocked", true);
 					}
 					break;
 				}
 			}
 			enablePlayer ();
 		}
+
+		// called if lock has not been opened before
+		for (int i = 0; i < 5; i++) {
+			disablePlayer ();
+			if (gc != null && gc.GetComponent<GameController> ().bossDefeats [i] && !gc.GetComponent<GameController> ().ElementalLocks[i]) {
+				switch (i) {
+				case 0:
+					break;
+				case 1:
+					if (elementType == 1) {
+						gc.GetComponent<GameController> ().ElementalLockOpen (1);
+						an.SetBool ("earthUnlocked", true);
+					}
+					break;
+				case 2:
+					if (elementType == 2) {
+						gc.GetComponent<GameController> ().ElementalLockOpen (2);
+						an.SetBool ("fireUnlocked", true);
+					}
+					break;
+				case 3:
+					if (elementType == 3) {
+						gc.GetComponent<GameController> ().ElementalLockOpen (3);
+						an.SetBool ("waterUnlocked", true);
+					}
+					break;
+				case 4:
+					if (elementType == 4) {
+						gc.GetComponent<GameController> ().ElementalLockOpen (4);
+						an.SetBool ("airUnlocked", true);
+					}
+					break;
+				}
+			}
+			enablePlayer ();
+		}
+
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other) {

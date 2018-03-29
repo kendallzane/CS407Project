@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
 	public bool[] treasureChests;							//a list of all treasureChests in the Labyrinth, true if it has been opened
 	public bool[] unlockedDoors;							//a list of all lockedDoors in the Labyrinth, true if it has been unlocked
 	[HideInInspector] public bool[] bossDefeats;			//based on the constants above, has the proper boss been defeated?
+	[HideInInspector] public bool[] ElementalLocks;			//based on the constants above, has the proper lock already been opened?
 	[HideInInspector] public int[] playerKeysHeld;			//how many of each type of key is the player holding? Based on constants above
 	[HideInInspector] public bool[] roomsExplored;			//which rooms has the player explored? (to show on the map in the pause menu)
 	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour {
 		playerKeysHeld = new int[5];
 		commandCharges = new float[3];
 		bossDefeats = new bool[5];
+		ElementalLocks = new bool[5];
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
 		roomsExplored [0] = true;
 	}
@@ -89,6 +91,10 @@ public class GameController : MonoBehaviour {
 	/// <param name="element">The element of the boss. 1 = Earth, 2 = Fire, 3 = Water, 4 = Wind.</param>
 	public void DefeatBoss (int element) {
 		bossDefeats [element] = true;
+	}
+
+	public void ElementalLockOpen (int element) {
+		ElementalLocks [element] = true;
 	}
 
 	#endregion

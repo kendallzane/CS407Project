@@ -180,7 +180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230003169990340}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4155936919588322
 Transform:
@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230003169990340}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4175367275728318
 Transform:
@@ -215,15 +215,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715089696455214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.23, y: 3.94, z: 0}
+  m_LocalPosition: {x: 0.75, y: 5.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4175367275728318}
   - {fileID: 4626894971701116}
-  - {fileID: 4155936919588322}
   - {fileID: 4104393175266576}
   - {fileID: 4400864806922736}
   - {fileID: 4404180369792932}
+  - {fileID: 4155936919588322}
   - {fileID: 4328210547579024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230003169990340}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4404180369792932
 Transform:
@@ -265,7 +265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230003169990340}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4626894971701116
 Transform:
@@ -1260,6 +1260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d459b2f069b5091449e35a00a9ecd4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toScene: 0
+  toEntrance: 0
 --- !u!114 &114296628558174032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1284,6 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328983fd2035c844f8f50fdf80efae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementType: 2
   mainCamera: {fileID: 0}
   cutSceneCamera: {fileID: 1648715348443226}
 --- !u!114 &114557594790076292
@@ -1323,6 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328983fd2035c844f8f50fdf80efae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementType: 1
   mainCamera: {fileID: 0}
   cutSceneCamera: {fileID: 1648715348443226}
 --- !u!114 &114854488836959656
@@ -1336,6 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328983fd2035c844f8f50fdf80efae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementType: 4
   mainCamera: {fileID: 0}
   cutSceneCamera: {fileID: 1648715348443226}
 --- !u!114 &114955596931092600
@@ -1349,6 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328983fd2035c844f8f50fdf80efae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementType: 0
   mainCamera: {fileID: 0}
   cutSceneCamera: {fileID: 1648715348443226}
 --- !u!114 &114992452777473034
@@ -1362,6 +1368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328983fd2035c844f8f50fdf80efae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementType: 3
   mainCamera: {fileID: 0}
   cutSceneCamera: {fileID: 1648715348443226}
 --- !u!124 &124124723747447674
