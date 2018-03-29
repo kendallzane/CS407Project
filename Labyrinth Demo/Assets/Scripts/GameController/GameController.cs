@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public int currLayer = BASE;			//what layer is the player currently in?
 	[HideInInspector] public GameObject player;				//the player in the current scene
 
+	[HideInInspector] public bool[] roomPuzzle;
+
 	//playerValues (could be good to refactor as a struct)
 	[HideInInspector] public int maxHealth;					//what is the maxHealth of the player?
 	[HideInInspector] public int health;					//the Player's health
@@ -44,7 +46,11 @@ public class GameController : MonoBehaviour {
 		ElementalLocks = new bool[5];
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
 		roomsExplored [0] = true;
+<<<<<<< HEAD
+		roomPuzzle = new bool[SceneManager.sceneCountInBuildSettings];
+=======
 		player = GameObject.FindGameObjectWithTag ("Player");
+>>>>>>> e51d4b1dfa1b03c2387163c1c73e118a1d9d9fc0
 	}
 	
 	// Update is called once per frame
