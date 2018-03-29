@@ -10,10 +10,13 @@ public class BackgroundMusic : MonoBehaviour {
 	const int FIRE = 2;
 	const int WATER = 3;
 	const int WIND = 4;
-	const int ALL = 5;
+	const int BOSS = 5;
+	const int ALL = 6;
 
 	//references
 	private AudioSource[] aus;
+	public AudioClip bossIntro;
+	[HideInInspector] public int currLayer = BASE;			//what layer is the player currently in?
 
 	//variables
 	public float standaloneBaseVolume = 1;
@@ -29,6 +32,21 @@ public class BackgroundMusic : MonoBehaviour {
 		aus [FIRE].volume = 0;
 		aus [WATER].volume = 0;
 		aus [WIND].volume = 0;
+		aus [BOSS].volume = 0;
+	}
+
+	/// <summary>
+	/// Switch the music to the boss battle music
+	/// </summary>
+	public void PlayBossTheme () {
+		aus [BASE].volume = 0;
+		aus [EARTH].volume = 0;
+		aus [FIRE].volume = 0;
+		aus [WATER].volume = 0;
+		aus [WIND].volume = 0;
+		aus [BOSS].volume = layerVolume;
+		aus [BOSS].PlayOneShot (bossIntro);
+		aus [BOSS].PlayDelayed (bossIntro.length);
 	}
 
 	/// <summary>
@@ -36,6 +54,7 @@ public class BackgroundMusic : MonoBehaviour {
 	/// </summary>
 	/// <param name="layer">Layer.</param>
 	public void SwitchLayers (int layer) {
+		currLayer = layer;
 
 		//default to all off
 		aus [BASE].volume = baseVolume;
@@ -43,6 +62,7 @@ public class BackgroundMusic : MonoBehaviour {
 		aus [FIRE].volume = 0;
 		aus [WATER].volume = 0;
 		aus [WIND].volume = 0;
+		aus [BOSS].volume = 0;
 
 		switch (layer) {
 		case BASE:

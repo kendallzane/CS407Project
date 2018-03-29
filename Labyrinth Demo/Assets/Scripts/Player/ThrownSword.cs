@@ -26,6 +26,7 @@ public class ThrownSword : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GetComponent<PlayerSword> ().upgrade = player.GetComponentInChildren<PlayerSword> ().upgrade;
 		rb = GetComponent<Rigidbody2D> ();
 		float horiz = Input.GetAxis ("Horizontal");
 		float vert = Input.GetAxis ("Vertical");

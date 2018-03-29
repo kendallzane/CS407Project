@@ -40,7 +40,7 @@ public class SettingsMenu : MonoBehaviour {
             gc.GetComponent<BackgroundMusic>().baseVolume = volume / 2;
             gc.GetComponent<BackgroundMusic>().layerVolume = volume;
             gc.GetComponent<BackgroundMusic>().sFXVolume = volume;
-            gc.GetComponent<BackgroundMusic>().SwitchLayers(0);
+			gc.GetComponent<BackgroundMusic>().SwitchLayers(gc.GetComponent<BackgroundMusic>().currLayer);
         } else
         {
             audioMixer.SetFloat("Volume", volume);

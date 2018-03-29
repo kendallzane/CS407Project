@@ -10,12 +10,13 @@ public class BossDoor : MonoBehaviour {
 	private GameObject hud;
 	private GameObject gc;
 
+	public int elementType = 0;			//1 for Earth, 2 for Fire, 3 for Water, 4 for Wind
 	public GameObject mainCamera;
 	public GameObject cutSceneCamera;
 
 	// Use this for initialization
 	void Start () {
-		an = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
+		an = GetComponent<Animator> ();
 		player = GameObject.Find ("MainCharacter");
 		hud = GameObject.FindGameObjectWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
@@ -26,16 +27,24 @@ public class BossDoor : MonoBehaviour {
 				case 0:
 					break;
 				case 1:
-					earthLock ();
+					if (elementType == 1) {
+						an.SetBool ("earthUnlocked", true);
+					}
 					break;
 				case 2:
-					fireLock ();
+					if (elementType == 2) {
+						an.SetBool ("fireUnlocked", true);
+					}
 					break;
 				case 3:
-					waterLock ();
+					if (elementType == 3) {
+						an.SetBool ("waterUnlocked", true);
+					}
 					break;
 				case 4:
-					airLock ();
+					if (elementType == 4) {
+						an.SetBool ("windUnlocked", true);
+					}
 					break;
 				}
 			}
