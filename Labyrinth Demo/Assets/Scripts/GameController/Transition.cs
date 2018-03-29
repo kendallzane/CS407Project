@@ -95,7 +95,7 @@ public class Transition : MonoBehaviour {
 		fin = true;
 		timeDelay = 0;
 		fading = true;
-
+		gc.roomsExplored [scene.buildIndex] = true;
 		GameObject meh = GameObject.FindGameObjectWithTag ("MultipleEntranceHandler");
 		if (meh == null) {
 			return;

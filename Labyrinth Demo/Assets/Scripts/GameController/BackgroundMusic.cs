@@ -55,6 +55,7 @@ public class BackgroundMusic : MonoBehaviour {
 	/// <param name="layer">Layer.</param>
 	public void SwitchLayers (int layer) {
 		currLayer = layer;
+		GetComponent<GameController> ().currLayer = layer;
 
 		//default to all off
 		aus [BASE].volume = baseVolume;
