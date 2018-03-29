@@ -125,9 +125,9 @@ MonoBehaviour:
   dirtCreationRate: 0.1
   dirtLifetime: 6
   burrowMin: 1
-  burrowMax: 2
+  burrowMax: 3
   unburrowMin: 4
-  unburrowMax: 6
+  unburrowMax: 8
 --- !u!114 &114564963812406170
 MonoBehaviour:
   m_ObjectHideFlags: 1
