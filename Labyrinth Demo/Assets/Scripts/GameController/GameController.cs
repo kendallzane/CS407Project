@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour {
 		commandCharges = new float[3];
 		bossDefeats = new bool[5];
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
+		roomsExplored [0] = true;
 	}
 	
 	// Update is called once per frame
