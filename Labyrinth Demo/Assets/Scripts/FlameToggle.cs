@@ -20,7 +20,7 @@ public class FlameToggle : ButtonLogic {
 
     public void switchIt(){
         fireActive = !fireActive;
-        fire.SetActive(fireActive);
+        fire.SetActive(false);
     }
 
 }

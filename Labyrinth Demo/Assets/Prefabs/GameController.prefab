@@ -4740,7 +4740,9 @@ MonoBehaviour:
   unlockedDoors: 000000000000000000000000000000000000000000
   bossDefeats: 
   playerKeysHeld: 
+  roomsExplored: 
   toBeDestroyed: 0
+  currLayer: 0
   maxHealth: 0
   health: 0
   maxDashCharges: 0

@@ -18,8 +18,8 @@ public class ButtonPush : MonoBehaviour {
 
 	void onPress(){
 		foreach(GameObject canal in canalsToSwitch){
-			//canal.GetComponent<ButtonLogic>().switchIt();
-            canal.GetComponent<FlameToggle>().switchIt();
+            if(canal.GetComponent<ButtonLogic>() != null) canal.GetComponent<ButtonLogic>().switchIt();
+            if(canal.GetComponent<FlameToggle>() != null) canal.GetComponent<FlameToggle>().switchIt();
 		}
 	}
 
