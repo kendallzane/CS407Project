@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -18,7 +19,9 @@ public class GameController : MonoBehaviour {
 	public bool[] unlockedDoors;							//a list of all lockedDoors in the Labyrinth, true if it has been unlocked
 	[HideInInspector] public bool[] bossDefeats;			//based on the constants above, has the proper boss been defeated?
 	[HideInInspector] public int[] playerKeysHeld;			//how many of each type of key is the player holding? Based on constants above
+	[HideInInspector] public bool[] roomsExplored;			//which rooms has the player explored? (to show on the map in the pause menu)
 	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
+	[HideInInspector] public int currLayer = BASE;			//what layer is the player currently in?
 
 	//playerValues (could be good to refactor as a struct)
 	[HideInInspector] public int maxHealth;					//what is the maxHealth of the player?
@@ -36,6 +39,8 @@ public class GameController : MonoBehaviour {
 		playerKeysHeld = new int[5];
 		commandCharges = new float[3];
 		bossDefeats = new bool[5];
+		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
+		roomsExplored [0] = true;
 	}
 	
 	// Update is called once per frame
