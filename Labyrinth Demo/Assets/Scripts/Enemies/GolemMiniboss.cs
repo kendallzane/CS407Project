@@ -11,6 +11,7 @@ public class GolemMiniboss : EnemyAI
     private GameObject spawn1;
     private GameObject spawn2;
     private GameObject spawn3;
+    private GameObject spawn4;
 
     public float speed;
     public int damage;
@@ -242,10 +243,23 @@ public class GolemMiniboss : EnemyAI
         Vector3 golemPosition1 = transform.position;
         Vector3 golemPosition2 = transform.position;
         Vector3 golemPosition3 = transform.position;
+        Vector3 golemPosition4 = transform.position;
 
-        golemPosition1.x += 1;
-        golemPosition2.x -= 1;
-        golemPosition3.y += 1;
+        golemPosition1.x += 0.16f;
+        golemPosition1.y += 0.16f;
+        golemPosition1.z -= 1;
+
+        golemPosition2.x += 0.16f;
+        golemPosition2.y -= 0.16f;
+        golemPosition2.z -= 1;
+
+        golemPosition3.x -= 0.16f;
+        golemPosition3.y -= 0.16f;
+        golemPosition3.z -= 1;
+
+        golemPosition4.x -= 0.16f;
+        golemPosition4.y += 0.16f;
+        golemPosition4.z -= 1;
 
         spawn1 = Instantiate(
             SpawnedGolem,
@@ -258,6 +272,10 @@ public class GolemMiniboss : EnemyAI
         spawn3 = Instantiate(
             SpawnedGolem,
             golemPosition3,
+            transform.rotation) as GameObject;
+        spawn4 = Instantiate(
+            SpawnedGolem,
+            golemPosition4,
             transform.rotation) as GameObject;
 
         haveSpawned = true;
@@ -344,6 +362,17 @@ public class GolemMiniboss : EnemyAI
             alive = false;
             yield return new WaitForSecondsRealtime(0.5f);
         }
+
+		//Update Game Controller and clear room
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj != null) {
+			gcObj.GetComponent<GameController> ().DefeatBoss (1);
+			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+		}
+		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+		foreach (GameObject door in doors) {
+			door.GetComponent<Animator> ().SetTrigger ("Open");
+		}
 
         Destroy(gameObject);
     }

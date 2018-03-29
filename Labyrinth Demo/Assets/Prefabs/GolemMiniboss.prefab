@@ -141,8 +141,8 @@ MonoBehaviour:
   dirtLifetime: 10
   burrowMin: 1
   burrowMax: 2
-  unburrowMin: 4
-  unburrowMax: 6
+  unburrowMin: 6
+  unburrowMax: 8
   spawnCount: 3
 --- !u!212 &212128380681174162
 SpriteRenderer:
