@@ -572,37 +572,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114955596931092600, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114854488836959656, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114162894856521794, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114296628558174032, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114810001818713688, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114429092550856698, guid: b34d56c6571cc1a4981dcbe401610227,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 352153792}
-    - target: {fileID: 114613042150827890, guid: b34d56c6571cc1a4981dcbe401610227,
+    - target: {fileID: 114557594790076292, guid: b34d56c6571cc1a4981dcbe401610227,
         type: 2}
       propertyPath: mainCamera
       value: 
@@ -612,7 +582,37 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 352153792}
-    - target: {fileID: 114557594790076292, guid: b34d56c6571cc1a4981dcbe401610227,
+    - target: {fileID: 114613042150827890, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114429092550856698, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114810001818713688, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114296628558174032, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114162894856521794, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114854488836959656, guid: b34d56c6571cc1a4981dcbe401610227,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 352153792}
+    - target: {fileID: 114955596931092600, guid: b34d56c6571cc1a4981dcbe401610227,
         type: 2}
       propertyPath: mainCamera
       value: 
