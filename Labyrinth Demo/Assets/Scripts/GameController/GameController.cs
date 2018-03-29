@@ -40,11 +40,6 @@ public class GameController : MonoBehaviour {
 		playerKeysHeld = new int[5];
 		commandCharges = new float[3];
 		bossDefeats = new bool[5];
-		bossDefeats [1] = true;
-		bossDefeats [2] = true;
-		bossDefeats [3] = true;
-		bossDefeats [4] = true;
-
 		ElementalLocks = new bool[5];
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
 		roomsExplored [0] = true;
