@@ -11,7 +11,7 @@ public class GapPlatform : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D coll) {
-		if (coll.tag == "Player") {
+		if (coll.tag == "Player" && !coll.isTrigger) {
 			coll.GetComponent<PlayerMovement> ().platformFallSafe = false;
 		}
 	}
