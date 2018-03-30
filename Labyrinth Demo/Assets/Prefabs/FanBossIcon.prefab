@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720770159532252}
   - component: {fileID: 212372863099453770}
+  - component: {fileID: 95931782263128014}
   m_Layer: 10
   m_Name: FanBossIcon
   m_TagString: Projectile
@@ -40,6 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95931782263128014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877368299991468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d13823ab7e4204e4eb51d90f5c5c80d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &212372863099453770
 SpriteRenderer:
   m_ObjectHideFlags: 1

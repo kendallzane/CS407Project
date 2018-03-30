@@ -2857,7 +2857,7 @@ Transform:
   m_Children:
   - {fileID: 241445576}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &863643708
 TilemapCollider2D:
@@ -3103,6 +3103,11 @@ Prefab:
       propertyPath: iconY
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f328cf698828b0342a948830b98094a1, type: 2}
@@ -3211,7 +3216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4170301038792202, guid: faef597b94c4eed4d90c96ddaa6dd2e0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4170301038792202, guid: faef597b94c4eed4d90c96ddaa6dd2e0, type: 2}
       propertyPath: m_LocalScale.x
