@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotationSwitch : MonoBehaviour {
 
 	//constants
+	private static int MAXBRIDGES = 5;
 
 	//references
 	private Animator an;
@@ -13,7 +14,6 @@ public class RotationSwitch : MonoBehaviour {
 	//variables
 	public int switchNum = 0;
 	public bool switchState = false;
-	public int maxBridges = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -37,12 +37,12 @@ public class RotationSwitch : MonoBehaviour {
 			//CLOCKWISE
 			gc.windBridgeState--;
 			if (gc.windBridgeState < 0) {
-				gc.windBridgeState = maxBridges;
+				gc.windBridgeState = MAXBRIDGES;
 			}
 		} else {
 			//COUNTERCLOCKWISE
 			gc.windBridgeState++;
-			if (gc.windBridgeState > maxBridges) {
+			if (gc.windBridgeState > MAXBRIDGES) {
 				gc.windBridgeState = 0;
 			}
 		}

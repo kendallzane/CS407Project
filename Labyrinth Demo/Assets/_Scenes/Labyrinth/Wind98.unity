@@ -346,8 +346,55 @@ Transform:
   m_Children:
   - {fileID: 1829485108}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &879643329
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.6048656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.5240862
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462750516728656, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114992597685456984, guid: 59d7713a72dd07c40b3f0a477f0815d1,
+        type: 2}
+      propertyPath: switchNum
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 59d7713a72dd07c40b3f0a477f0815d1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &886744086
 Prefab:
   m_ObjectHideFlags: 0
@@ -508,7 +555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1425530019
 BoxCollider2D:
