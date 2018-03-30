@@ -31,9 +31,12 @@ public class PlayerHealth : MonoBehaviour {
 	private int health = 100;						//the amount of health the player has
 	public float pushBackForce = 3f;				//how much force is the player pushed back with?
     public bool isDead = false;                     //whether player is dead or not
+	public float invincibilityFramesTime = 1.0f;	//how much extra time does the player have to work with?
 
 	private int tmpFallDamage;						//assigned to apply damage after fall finishes
 	private Vector2 tmpFallLoc;						//por donde el player cayo
+	[HideInInspector] public bool invincibilityFrames;	//is the player invincibal right after getting hit? 
+	private float timeDelay = 0;
 
 
 	// Use this for initialization
@@ -46,6 +49,21 @@ public class PlayerHealth : MonoBehaviour {
 		ph.SetMaxHealth (maxHealth);
 		ph.ShowHealth(health);
 		healingFX.SetActive (false);
+		invincibilityFrames = false;
+		timeDelay = invincibilityFramesTime;
+	}
+
+	// Called every frame
+	void Update()
+	{
+		if (invincibilityFrames) {
+			timeDelay -= Time.deltaTime;
+			if (timeDelay <= 0) {
+				damageCollider.enabled = true;
+				invincibilityFrames = false;
+				timeDelay = invincibilityFramesTime;
+			}
+		}
 	}
 
 	#region HelpfulFunctions
@@ -135,7 +153,7 @@ public class PlayerHealth : MonoBehaviour {
 	/// </summary>
 	public void HurtFinished () {
 		rb.velocity = Vector2.zero;
-		damageCollider.enabled = true;
+		invincibilityFrames = true;
 		pc.EnablePlayer ();
 	}
 
