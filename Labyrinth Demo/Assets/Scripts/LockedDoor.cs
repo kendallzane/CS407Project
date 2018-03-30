@@ -18,6 +18,7 @@ public class LockedDoor : MonoBehaviour {
 
 	//variables
 	public bool isLock = false;									//only set to true if this door is supposed to be locked
+	public bool isClosed = false;								//does this door slam shut upon entering the room?
 	public int lockNum = -1;									//which lock is this in the game? (for keeping track by gameController)
 	public int lockType = 0;									//what type of lock is this? Based on the constants above
 	[HideInInspector] public bool unlocked = false;				//is the door locked?
@@ -45,6 +46,9 @@ public class LockedDoor : MonoBehaviour {
 			}
 
 			theLock.GetComponent<SpriteRenderer> ().color = typeColors [lockType];
+		}
+		if (isClosed) {
+			an.SetTrigger ("Close");
 		}
 	}
 

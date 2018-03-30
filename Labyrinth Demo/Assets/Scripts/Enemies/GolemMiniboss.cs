@@ -363,6 +363,17 @@ public class GolemMiniboss : EnemyAI
             yield return new WaitForSecondsRealtime(0.5f);
         }
 
+		//Update Game Controller and clear room
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj != null) {
+			gcObj.GetComponent<GameController> ().DefeatBoss (1);
+			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+		}
+		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+		foreach (GameObject door in doors) {
+			door.GetComponent<Animator> ().SetTrigger ("Open");
+		}
+
         Destroy(gameObject);
     }
 

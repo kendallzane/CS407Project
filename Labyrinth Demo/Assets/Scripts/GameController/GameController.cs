@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public bool[] roomsExplored;			//which rooms has the player explored? (to show on the map in the pause menu)
 	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
 	[HideInInspector] public int currLayer = BASE;			//what layer is the player currently in?
+	[HideInInspector] public GameObject player;				//the player in the current scene
+
+	[HideInInspector] public bool[] roomPuzzle;
 
 	//playerValues (could be good to refactor as a struct)
 	[HideInInspector] public int maxHealth;					//what is the maxHealth of the player?
@@ -43,6 +46,8 @@ public class GameController : MonoBehaviour {
 		ElementalLocks = new bool[5];
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
 		roomsExplored [0] = true;
+		roomPuzzle = new bool[SceneManager.sceneCountInBuildSettings];
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -57,7 +62,7 @@ public class GameController : MonoBehaviour {
 		if (!toBeDestroyed) {
 
 			//Keep player values consistent
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			player = GameObject.FindGameObjectWithTag ("Player");
 			player.GetComponent<PlayerCombat> ().PlayerSetup (maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
 			GetComponentInChildren<GameOver> ().playerHealth = player.GetComponent<PlayerHealth> ();
 
@@ -71,7 +76,7 @@ public class GameController : MonoBehaviour {
 	/// Called just before a transition to record the player's current status.
 	/// </summary>
 	public void UpdatePlayerValues () {
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.FindGameObjectWithTag ("Player");
 		health = player.GetComponent<PlayerHealth> ().GetHealth ();
 		maxHealth = player.GetComponent<PlayerHealth> ().maxHealth;
 		PlayerCombat pc = player.GetComponent<PlayerCombat> ();

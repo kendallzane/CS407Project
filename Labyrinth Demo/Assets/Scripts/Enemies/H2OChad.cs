@@ -301,7 +301,17 @@ public class H2OChad : EnemyAI {
 		alive = false;
 		Debug.Log("h2o chad est mort");
 		yield return new WaitForSecondsRealtime(1);
-		
+
+		//Update Game Controller and clear room
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj != null) {
+			gcObj.GetComponent<GameController> ().DefeatBoss (1);
+			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+		}
+		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+		foreach (GameObject door in doors) {
+			door.GetComponent<Animator> ().SetTrigger ("Open");
+		}
 		
 		Destroy(gameObject);
 	}
