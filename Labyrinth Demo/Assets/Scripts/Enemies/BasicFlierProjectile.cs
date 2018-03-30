@@ -62,7 +62,9 @@ public class BasicFlierProjectile : MonoBehaviour {
         }
         else
         {
-            Destroy(gameObject);
+			if (coll.tag != "Gap" && !coll.isTrigger) {
+				Destroy (gameObject);
+			}
         }
     }
 

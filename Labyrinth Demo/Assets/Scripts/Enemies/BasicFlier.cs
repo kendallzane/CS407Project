@@ -28,6 +28,12 @@ public class BasicFlier : EnemyAI
 
 		// Keep track of player throughout
 		Player = GameObject.Find("MainCharacter");
+
+		// Check for holes that can be flown over
+		GameObject gap = GameObject.FindGameObjectWithTag("Gap");
+		if (gap != null) {
+			Physics2D.IgnoreCollision(gap.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+		}
     }
 
     // Update is called once per frame

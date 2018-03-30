@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour {
 		roomsExplored = new bool[SceneManager.sceneCountInBuildSettings];
 		roomsExplored [0] = true;
 		roomPuzzle = new bool[SceneManager.sceneCountInBuildSettings];
+		rotationSwitchStates [3] = true;
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	

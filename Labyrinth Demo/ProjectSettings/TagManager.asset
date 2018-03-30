@@ -15,6 +15,7 @@ TagManager:
   - Dirt
   - Entity
   - Bridges
+  - Gap
   layers:
   - Default
   - TransparentFX
