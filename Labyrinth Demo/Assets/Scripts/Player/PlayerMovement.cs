@@ -23,11 +23,13 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 2.0f;
 	[HideInInspector] public bool canMove = true;
 	[HideInInspector] public bool fallSafe = false;
+	[HideInInspector] public bool platformFallSafe = false;
 
 	// Use this for initialization
 	void Start () {
 		canMove = true;
 		fallSafe = false;
+		platformFallSafe = false;
 		pc = GetComponent<PlayerCombat> ();
 		rb = GetComponent<Rigidbody2D> ();
 		an = GetComponent<Animator> ();

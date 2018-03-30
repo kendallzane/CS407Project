@@ -8,8 +8,8 @@ public class DashableGap : MonoBehaviour {
 	public Vector2[] respawnPoints;
 	public int damage = 10;
 
-	void OnTriggerEnter2D (Collider2D coll) {
-		if (coll.tag == "Player" && !coll.GetComponent<PlayerMovement> ().fallSafe) {
+	void OnTriggerStay2D (Collider2D coll) {
+		if (coll.tag == "Player" && !coll.GetComponent<PlayerMovement> ().fallSafe && !coll.GetComponent<PlayerMovement>().platformFallSafe) {
 			coll.GetComponent<PlayerHealth>().Fall (damage, respawnPoints[GetClosestPoint((Vector2) coll.gameObject.transform.position)]);
 		}
 	}
