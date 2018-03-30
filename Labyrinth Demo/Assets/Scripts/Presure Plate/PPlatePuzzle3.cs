@@ -5,11 +5,16 @@ using UnityEngine;
 public class PPlatePuzzle3 : MonoBehaviour {
 
 	PPlate pPlateView;
-
 	PPlate[] pPlates;
+	GameObject container;
+	GameObject cube;
+
+	private GameObject gc;
+
 
 	// Use this for initialization
 	void Start () {
+		container = GameObject.Find ("Puzzle 3");
 		pPlates = GetComponentsInChildren<PPlate> ();
 		pPlateView = pPlates [0];
 
@@ -20,6 +25,15 @@ public class PPlatePuzzle3 : MonoBehaviour {
 		*/
 
 		pPlates [5].gameObject.SetActive (false);
+
+		cube = container.transform.Find ("cube").gameObject;
+
+
+		gc = GameObject.Find ("GameController");
+
+		if (gc.GetComponent<GameController> ().roomPuzzle [19]) {
+			cube.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -40,6 +54,10 @@ public class PPlatePuzzle3 : MonoBehaviour {
 
 		if (pPlates [1].getIsOn () && pPlates [2].getIsOn () && pPlates [3].getIsOn () && pPlates [4].getIsOn ()) {
 			pPlates [5].gameObject.SetActive (true);
+		}
+
+		if (pPlates [5].getIsOn ()) {
+			gc.GetComponent<GameController> ().roomPuzzle [19] = true;
 		}
 	}
 }

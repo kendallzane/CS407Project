@@ -4593,36 +4593,6 @@ Prefab:
       propertyPath: iAmBoss
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114187990301014260, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: health
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114560862605842474, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: aimAttackTimes
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 114560862605842474, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: aimSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 114560862605842474, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: spinAttackTimes
-      value: 240
-      objectReference: {fileID: 0}
-    - target: {fileID: 114560862605842474, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: waveAngleIncrement
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114560862605842474, guid: 56958ae06c659864aabb8121cf6de2ce,
-        type: 2}
-      propertyPath: spinAttackRate
-      value: 0.01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56958ae06c659864aabb8121cf6de2ce, type: 2}
   m_IsPrefabParent: 0
