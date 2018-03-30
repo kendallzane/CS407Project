@@ -305,7 +305,7 @@ public class H2OChad : EnemyAI {
 		//Update Game Controller and clear room
 		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
 		if (gcObj != null) {
-			gcObj.GetComponent<GameController> ().DefeatBoss (1);
+			gcObj.GetComponent<GameController> ().DefeatBoss (3);
 			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
 		}
 		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
