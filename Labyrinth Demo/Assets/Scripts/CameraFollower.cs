@@ -46,6 +46,20 @@ public class CameraFollower : MonoBehaviour {
 		MaxX -= (Camera.main.orthographicSize * (16f/9f));
 		MinY += Camera.main.orthographicSize;
 		MaxY -= Camera.main.orthographicSize;
+
+		//fix for if the screen is too small
+		if ((MaxX < MinX)) {
+			float tmp;
+			tmp = MaxX;
+			MaxX = MinX;
+			MinX = tmp;
+		}
+		if ((MaxY < MinY)) {
+			float tmp;
+			tmp = MaxY;
+			MaxY = MinY;
+			MinY = tmp;
+		}
 	}
 
 	void FixedUpdate () {
@@ -57,10 +71,16 @@ public class CameraFollower : MonoBehaviour {
 				transform.position = Vector3.SmoothDamp (transform.position, goalPos, ref velocity, smoothTime);
 
 				//don't move past the edges
-				if (!(transform.position.x < MinX && transform.position.x > MaxX) || !(transform.position.y < MinY && transform.position.y > MaxY)) {
+				if (!(transform.position.y < MinY && transform.position.y > MaxY)) {
+					transform.position = new Vector3 (
+						transform.position.x,
+						Mathf.Clamp (transform.position.y, MinY, MaxY),
+						transform.position.z);
+				}
+				if (!(transform.position.x < MinX && transform.position.x > MaxX)) {
 					transform.position = new Vector3 (
 						Mathf.Clamp (transform.position.x, MinX, MaxX),
-						Mathf.Clamp (transform.position.y, MinY, MaxY),
+						transform.position.y,
 						transform.position.z);
 				}
 			}
