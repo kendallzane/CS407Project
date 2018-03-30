@@ -16,7 +16,7 @@ public class WindBoss : EnemyAI {
 	private int direction = 0;							// 0 = left, 1 = right
 	public float speed = 1.0f;							//speed fan travels in
 	
-	
+	public GameObject exitPlatform;						//Added to exit the Labyrinth's WindBoss room
 	
 	
 	private float timeToChange;							//randomized float btwn min and max to change directions
@@ -352,6 +352,20 @@ public class WindBoss : EnemyAI {
 		an.SetTrigger ("Dead");
 		Debug.Log("fan est mort");
 		yield return new WaitForSecondsRealtime(1);
+
+		//Update Game Controller and clear room
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj != null) {
+			gcObj.GetComponent<GameController> ().DefeatBoss (4);
+			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+		}
+		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+		foreach (GameObject door in doors) {
+			door.GetComponent<Animator> ().SetTrigger ("Open");
+		}
+		if (exitPlatform != null) {
+			exitPlatform.SetActive (true);
+		}
 		
 		Destroy(gameObject);
 	}

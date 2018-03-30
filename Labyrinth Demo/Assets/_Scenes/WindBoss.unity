@@ -3066,50 +3066,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1401866512948402, guid: f328cf698828b0342a948830b98094a1, type: 2}
-      propertyPath: m_Name
-      value: FanBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 1491818345054118, guid: f328cf698828b0342a948830b98094a1, type: 2}
-      propertyPath: m_Name
-      value: ArmRight
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95191790516471834, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c47d478530817404b9d6623df68d366f, type: 2}
-    - target: {fileID: 61776030472682066, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61776030472682066, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: iconGap
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: iconY
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
-        type: 2}
-      propertyPath: bulletSpeed
-      value: 70
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f328cf698828b0342a948830b98094a1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1554041138

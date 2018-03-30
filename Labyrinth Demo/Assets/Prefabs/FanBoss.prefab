@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1401866512948402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8321383, y: 0.56501424, z: 0}
+  m_LocalPosition: {x: 2.517, y: 0.762, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4186267192879334}
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.4}
+  m_Size: {x: 2, y: 20}
   m_EdgeRadius: 0
 --- !u!95 &95191790516471834
 Animator:
@@ -187,7 +187,7 @@ Animator:
   m_GameObject: {fileID: 1491818345054118}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c1753e728f26dcd499a83d86a8f04869, type: 2}
+  m_Controller: {fileID: 9100000, guid: c47d478530817404b9d6623df68d366f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
   windForce: 0.03
   facingDown: 1
   bullet: {fileID: 1877368299991468, guid: 9036be7d17e1d0d4ba16e1e8e7cddfcb, type: 2}
-  iconY: -1.8
-  iconGap: 0.7
+  iconY: -2
+  iconGap: 1
   iconCenter: 0
   icon: {fileID: 1877368299991468, guid: 61b356ea0a0d5b24eb97c8032ac4a7ea, type: 2}
   icon1type: 0
@@ -269,11 +269,12 @@ MonoBehaviour:
   icon4type: 0
   icon5type: 0
   rectSize: 5
-  bulletSpeed: 100
+  bulletSpeed: 70
   sprite1: {fileID: 21300000, guid: e978c26f3b3526c43b5bfe4edb38dc00, type: 3}
   sprite2: {fileID: 21300000, guid: 1fe0354099c47d64aa51228142420bd9, type: 3}
   sprite3: {fileID: 21300000, guid: 77cc950da4c6f5347a42a83b8c9e139f, type: 3}
   sprite4: {fileID: 21300000, guid: 37837c0b36312894498bae5c76625c5c, type: 3}
+  numPhases: 2
 --- !u!212 &212397462386310890
 SpriteRenderer:
   m_ObjectHideFlags: 1
