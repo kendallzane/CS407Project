@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
 	//variables
 	public bool[] treasureChests;							//a list of all treasureChests in the Labyrinth, true if it has been opened
 	public bool[] unlockedDoors;							//a list of all lockedDoors in the Labyrinth, true if it has been unlocked
-	[HideInInspector] public bool[] rotationSwitchStates;	//a list of all rotation switches in the wind layer
+	public bool[] rotationSwitchStates;						//a list of all rotation switches in the wind layer
 	[HideInInspector] public int windBridgeState;			//what orientation is the wind bridge in?
 	[HideInInspector] public int waterCanalState;			//what configuration is the water canals in?
 	[HideInInspector] public bool[] bossDefeats;			//based on the constants above, has the proper boss been defeated?
