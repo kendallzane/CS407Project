@@ -103,7 +103,7 @@ public class H2OChad : EnemyAI {
 				Vector3 dir = Player.transform.position - transform.position;
 				dir = Player.transform.InverseTransformDirection(dir);
 				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-				angle += Random.Range(-5, 5);
+				angle += Random.Range(-5, 6);
                 StartCoroutine(FireProjectile(aimSpeed, angle));
         
 				aimAttackCounter += 1;
@@ -240,7 +240,7 @@ public class H2OChad : EnemyAI {
 				transform.position + new Vector3(0f,-0.2f,0f),
 				transform.rotation) as GameObject;
 				an.SetTrigger("Shoot");
-				timeSinceAttack = 0f;
+				timeSinceAttack = -2.0f;
 				EnemyHealth bh = BabyH2O.GetComponent<EnemyHealth>();
 				bh.health = 20;
 				return;
