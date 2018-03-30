@@ -6697,66 +6697,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
         type: 2}
-      propertyPath: radius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: rotateSpeed
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: lavaCreationRate
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: lavaScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: lavaLifetime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
       propertyPath: Cage
       value: 
       objectReference: {fileID: 1255600674}
-    - target: {fileID: 61433760008318440, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61433760008318440, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61373147878456136, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61373147878456136, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61373147878456136, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114224804559122870, guid: ca45016faf60ba346b3c7660a753a354,
-        type: 2}
-      propertyPath: health
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114187990301014260, guid: ca45016faf60ba346b3c7660a753a354, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca45016faf60ba346b3c7660a753a354, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &863643705

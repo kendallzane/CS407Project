@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 95608329861422428}
   - component: {fileID: 50038537289824732}
   - component: {fileID: 61373147878456136}
-  - component: {fileID: 114187990301014260}
   - component: {fileID: 61433760008318440}
   - component: {fileID: 114224804559122870}
   m_Layer: 9
@@ -40,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776936137097676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +74,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.06}
@@ -89,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.4}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &61433760008318440
 BoxCollider2D:
@@ -100,7 +99,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.06}
@@ -133,18 +132,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114187990301014260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1776936137097676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602711a9c64d2ce4b8f1c9f6ec75bb0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 150
 --- !u!114 &114224804559122870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,17 +145,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1877368299991468, guid: 3457f274608142f4aa549b552548897e, type: 2}
   Lava: {fileID: 1864413078083472, guid: ac193b79575e082428fe6eee84c85094, type: 2}
+  Cage: {fileID: 0}
   aimSpeed: 50
   damage: 20
   timeSinceAttack: 0
   attackRate: 0.4
-  lavaCreationRate: 1
+  lavaCreationRate: 0.05
   timeSinceLava: 0
-  lavaLifetime: 2
-  lavaScale: 1
-  rotateSpeed: 0.5
-  radius: 1
+  lavaLifetime: 4
+  lavaScale: 3
+  timer: 0
+  regenerate: 1
+  regernerating: 0
+  rotateSpeed: 0.4
+  radius: 2
   mercyInvincibility: 0
+  health: 2
 --- !u!212 &212210301421154398
 SpriteRenderer:
   m_ObjectHideFlags: 1
