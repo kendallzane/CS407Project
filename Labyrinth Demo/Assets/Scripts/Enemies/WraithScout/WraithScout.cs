@@ -18,11 +18,12 @@ public class WraithScout : Entity {
     private float wanderTimeSample = 0.0f;
     private bool attacked = false;                      //flag set if the attack FSM state was performed
     public Path p;
-
+    private GameObject Player;
 
     // Use this for initialization
     void Start () {
-		//p = new Path(PathFinding.ReturnAStarPath(this.gameObject, gc.player, new List<string> { "Entity", "Player" }, gc.nodelist, 0.6f), 0.2f);
+        //p = new Path(PathFinding.ReturnAStarPath(this.gameObject, gc.player, new List<string> { "Entity", "Player" }, gc.nodelist, 0.6f), 0.2f);
+        Player = GameObject.Find("MainCharacter");
     }
 
     protected override void Awake()
@@ -43,7 +44,21 @@ public class WraithScout : Entity {
             an.SetTrigger("Attack");
             attacking = false;
         }
-		rb.AddForce (AASeek (gc.player.transform.position));
+
+        Vector3 targetPosition = Player.transform.position;
+        Vector3 currentPosition = this.transform.position;
+        Vector3 difference = targetPosition - currentPosition;
+        if (canMove)
+        {
+            if (Mathf.Abs(difference.x) + Mathf.Abs(difference.y) < 2)
+            {
+                rb.AddForce(AASeek(gc.player.transform.position));
+            }
+            else
+            {
+                rb.AddForce(AAWander());
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -198,4 +213,36 @@ public class WraithScout : Entity {
         animationMovementOverride = false;
     }
     #endregion
+
+    private bool canMove = true;
+    private bool takenHit = false;
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        int damage = 10;
+        if (coll.tag == "Player" && coll.isTrigger)
+        {
+            coll.GetComponent<PlayerHealth>().TakeDamage(damage, (Vector2)coll.transform.position - (Vector2)transform.position);
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            canMove = false;
+            StartCoroutine(WaitToMove());
+        }
+        if (coll.tag == "Sword" && coll.isTrigger)
+        {
+            this.rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            canMove = false;
+            StartCoroutine(WaitToMove());
+            if (takenHit)
+            {
+                Destroy(gameObject);
+            }
+            takenHit = true;
+        }
+    }
+
+    IEnumerator WaitToMove()
+    {
+        yield return new WaitForSeconds(1);
+        canMove = true;
+    }
 }
