@@ -188,6 +188,21 @@ public class WindBoss : EnemyAI {
 			for(int i = 0; i < bullets.Length; i++) {
 				Destroy(bullets[i]);
 			}
+
+			//Update Game Controller and clear room
+			GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+			if (gcObj != null) {
+				gcObj.GetComponent<GameController> ().DefeatBoss (4);
+				gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+			}
+			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+			foreach (GameObject door in doors) {
+				door.GetComponent<Animator> ().SetTrigger ("Open");
+			}
+			if (exitPlatform != null) {
+				exitPlatform.SetActive (true);
+			}
+
 			Destroy(gameObject);
 			return;
 		}
@@ -352,20 +367,6 @@ public class WindBoss : EnemyAI {
 		an.SetTrigger ("Dead");
 		Debug.Log("fan est mort");
 		yield return new WaitForSecondsRealtime(1);
-
-		//Update Game Controller and clear room
-		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
-		if (gcObj != null) {
-			gcObj.GetComponent<GameController> ().DefeatBoss (4);
-			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
-		}
-		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
-		foreach (GameObject door in doors) {
-			door.GetComponent<Animator> ().SetTrigger ("Open");
-		}
-		if (exitPlatform != null) {
-			exitPlatform.SetActive (true);
-		}
 		
 		Destroy(gameObject);
 	}
