@@ -119,6 +119,7 @@ public class PlayerCombat : MonoBehaviour {
 				dashCounter = 0;
 				rb.velocity = Vector2.zero;
 				pm.canMove = true;
+				pm.fallSafe = false;
 				delayCounter += dashDelay;
 				if (delayCounter > dashDelay * numDashes) {
 					delayCounter = dashDelay * numDashes;
@@ -150,6 +151,7 @@ public class PlayerCombat : MonoBehaviour {
 			horiz = Input.GetAxis("Horizontal");
 			vert = Input.GetAxis("Vertical");
 			pm.canMove = false;
+			pm.fallSafe = true;
 			dashing = true;
 			Physics2D.IgnoreLayerCollision(8, 9, true);
 			Physics2D.IgnoreLayerCollision(8, 10, true);

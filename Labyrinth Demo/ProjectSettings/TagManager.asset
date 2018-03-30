@@ -13,6 +13,7 @@ TagManager:
   - MultipleEntranceHandler
   - Door
   - Dirt
+  - Entity
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - HUD
   - SandBarrier
   - Golem
-  - 
+  - EnemyOnlyBarrier
   - 
   - 
   - 
