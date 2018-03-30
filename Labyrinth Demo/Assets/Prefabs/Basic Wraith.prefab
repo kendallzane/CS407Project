@@ -141,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -202,7 +202,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Time: 0.25
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.02
@@ -211,7 +211,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.7755146
+        value: 0.23551369
         inSlope: 0.06663965
         outSlope: 0.06663965
         tangentMode: 0
@@ -258,7 +258,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.001
+  m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!96 &96314660962886678
 TrailRenderer:
