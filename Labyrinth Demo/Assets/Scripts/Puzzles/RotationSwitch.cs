@@ -12,7 +12,8 @@ public class RotationSwitch : MonoBehaviour {
 
 	//variables
 	public int switchNum = 0;
-	private bool switchState = false;
+	public bool switchState = false;
+	public int maxBridges = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -34,14 +35,24 @@ public class RotationSwitch : MonoBehaviour {
 	void Switch () {
 		if (switchState) {
 			//CLOCKWISE
-
+			gc.windBridgeState--;
+			if (gc.windBridgeState < 0) {
+				gc.windBridgeState = maxBridges;
+			}
 		} else {
 			//COUNTERCLOCKWISE
-
+			gc.windBridgeState++;
+			if (gc.windBridgeState > maxBridges) {
+				gc.windBridgeState = 0;
+			}
 		}
 		switchState = !switchState;
 		if (gc != null) {
 			gc.rotationSwitchStates [switchNum] = switchState;
+		}
+		GameObject bridges = GameObject.FindGameObjectWithTag ("Bridges");
+		if (bridges != null) {
+			bridges.GetComponent<WindBridge> ().ChangeBridge ();
 		}
 	}
 

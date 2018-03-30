@@ -11378,11 +11378,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treasureChests: 000000000000000000000000000000000000000000000000000000000000
   unlockedDoors: 000000000000000000000000000000000000000000
+  rotationSwitchStates: 00000000000000000000
+  windBridgeState: 0
+  waterCanalState: 0
   bossDefeats: 
+  ElementalLocks: 
   playerKeysHeld: 
   roomsExplored: 
   toBeDestroyed: 0
   currLayer: 0
+  player: {fileID: 0}
+  roomPuzzle: 
   maxHealth: 0
   health: 0
   maxDashCharges: 0

@@ -8,6 +8,10 @@ public class WindBridge : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		ChangeBridge ();
+	}
+
+	public void ChangeBridge () {
 		foreach (GameObject bridge in bridges) {
 			bridge.SetActive (false);
 		}

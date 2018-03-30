@@ -14,6 +14,7 @@ TagManager:
   - Door
   - Dirt
   - Entity
+  - Bridges
   layers:
   - Default
   - TransparentFX
