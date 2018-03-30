@@ -23,9 +23,11 @@ public class H2OChadProjectile : MonoBehaviour {
         
         if (coll.tag == "Player" && coll.isTrigger)
         {
-            coll.GetComponent<PlayerHealth>().TakeDamage(damageToPlayer, (Vector2)coll.transform.position - (Vector2)transform.position);
-            Destroy(gameObject);
-        }
+			if (coll.isTrigger) {
+				coll.GetComponent<PlayerHealth>().TakeDamage(damageToPlayer, (Vector2)coll.transform.position - (Vector2)transform.position);
+            }
+			Destroy(gameObject);
+        } 
     }
 
     // Destroy the projectile when it collides with the edge of the map
