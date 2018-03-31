@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	[HideInInspector] public bool canMove = true;
 	[HideInInspector] public bool fallSafe = false;
 	[HideInInspector] public bool platformFallSafe = false;
+	
 
 	// Use this for initialization
 	void Start () {

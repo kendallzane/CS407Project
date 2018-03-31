@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour {
 	private float horiz;
 	private float vert;								//used for slight movement available during attacks
 	public bool canDash = true;						//is the player currently able to dash?
-	private bool dashing = false;					//is the player currently dashing?
+	public bool dashing = false;					//is the player currently dashing?
 	private float dashCounter = 0;					//how long has it been since you started dashing?
 	private float delayCounter = 0;					//how long has it been since you finished dashing?
 	private int dashCharges;						//how many dashes does the player have remaining

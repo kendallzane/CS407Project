@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -36,7 +37,14 @@ public class PlayerHealth : MonoBehaviour {
 	private int tmpFallDamage;						//assigned to apply damage after fall finishes
 	private Vector2 tmpFallLoc;						//por donde el player cayo
 	[HideInInspector] public bool invincibilityFrames;	//is the player invincibal right after getting hit? 
-	private float timeDelay = 0;
+	public float timeDelay = 0;
+	
+	public Tilemap tm;
+	public Grid gr;
+	public string lastTile;
+	private Vector2 lastGoodPosition;
+	public int fallDamage = 10;
+	public bool falling = false;
 
 
 	// Use this for initialization
@@ -45,6 +53,8 @@ public class PlayerHealth : MonoBehaviour {
 		pc = GetComponent<PlayerCombat> ();
 		rb = GetComponent<Rigidbody2D> ();
 		an = GetComponent<Animator> ();
+		tm = GameObject.Find("Grid/Floor").GetComponent<Tilemap>();
+		gr = GameObject.Find("Grid").GetComponent<Grid>();
 		//health = maxHealth;
 		ph.SetMaxHealth (maxHealth);
 		ph.ShowHealth(health);
@@ -64,7 +74,27 @@ public class PlayerHealth : MonoBehaviour {
 				timeDelay = invincibilityFramesTime;
 			}
 		}
+		
+		string currentTile = tm.GetTile(gr.WorldToCell(transform.position)).name; 
+		if (lastTile != currentTile) {
+			//Debug.Log("Player tile change: " + lastTile + " to " + currentTile + "		" + Time.time);
+			lastTile = currentTile;
+		}
+			
+		if (lastTile == "HoleTile") {
+				//check at some other locations on the sprite
+				if (tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.15f, 0f))).name == "HoleTile" 
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0.06f, 0.15f, 0f))).name == "HoleTile" 
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.15f, 0f))).name == "HoleTile") 
+				{
+					Fall(fallDamage, lastGoodPosition);
+				}
+		} else {
+			lastGoodPosition = transform.position;
+		}
 	}
+		
+	
 
 	#region HelpfulFunctions
 
@@ -129,6 +159,11 @@ public class PlayerHealth : MonoBehaviour {
 	/// <param name="damage">Damage dealt to the player for falling down.</param>
 	/// <param name="locationToRespawn">Location to respawn player after falling.</param>
 	public void Fall (int damage, Vector2 locationToRespawn) {
+		if (falling || pc.dashing) {
+			return;
+		}
+		falling = true;
+		rb.constraints = RigidbodyConstraints2D.FreezeAll; //so you don't dash into a hole and "fall" while moving
 		pc.DisablePlayer ();
 		normalCollider.enabled = false;
 		damageCollider.enabled = false;
@@ -146,6 +181,9 @@ public class PlayerHealth : MonoBehaviour {
 		damageCollider.enabled = true;
 		normalCollider.enabled = true;
 		TakeDamage (tmpFallDamage);
+		falling = false;
+		rb.constraints = RigidbodyConstraints2D.None;
+		invincibilityFrames = true;
 	}
 
 	/// <summary>
