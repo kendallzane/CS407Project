@@ -182,7 +182,7 @@ public class PlayerHealth : MonoBehaviour {
 		normalCollider.enabled = true;
 		TakeDamage (tmpFallDamage);
 		falling = false;
-		rb.constraints = RigidbodyConstraints2D.None;
+		rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 		invincibilityFrames = true;
 	}
 
