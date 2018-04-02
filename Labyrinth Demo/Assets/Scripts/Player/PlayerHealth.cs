@@ -159,7 +159,7 @@ public class PlayerHealth : MonoBehaviour {
 	/// <param name="damage">Damage dealt to the player for falling down.</param>
 	/// <param name="locationToRespawn">Location to respawn player after falling.</param>
 	public void Fall (int damage, Vector2 locationToRespawn) {
-		if (falling || pc.dashing) {
+		if (falling || pc.dashing || pm.platformFallSafe) {
 			return;
 		}
 		falling = true;
