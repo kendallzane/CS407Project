@@ -11,46 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: SandFloor
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: c21b0d2bd2d7e3f4abf786263716eea0, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 196091b61a1d9f341a0bef5ebe702f9d, type: 3}
   m_DefaultColliderType: 0
   m_TilingRules:
-  - m_Neighbors: 0100000000000000020000000100000002000000010000000000000002000000
-    m_Sprites:
-    - {fileID: 21300000, guid: 9113217d612cfc943be2725688a6998c, type: 3}
-    m_AnimationSpeed: 1
-    m_PerlinScale: 0.5
-    m_RuleTransform: 0
-    m_Output: 0
-    m_ColliderType: 0
-    m_RandomTransform: 0
-  - m_Neighbors: 0200000000000000010000000200000001000000020000000000000001000000
-    m_Sprites:
-    - {fileID: 21300000, guid: b06454d47d307034ea9ea193d1789c3b, type: 3}
-    m_AnimationSpeed: 1
-    m_PerlinScale: 0.5
-    m_RuleTransform: 0
-    m_Output: 0
-    m_ColliderType: 0
-    m_RandomTransform: 0
-  - m_Neighbors: 0100000001000000010000000000000000000000020000000200000002000000
-    m_Sprites:
-    - {fileID: 21300000, guid: cbed486aac85d684d8a50bce68444e5c, type: 3}
-    m_AnimationSpeed: 1
-    m_PerlinScale: 0.5
-    m_RuleTransform: 0
-    m_Output: 0
-    m_ColliderType: 0
-    m_RandomTransform: 0
-  - m_Neighbors: 0200000002000000020000000000000000000000010000000100000001000000
-    m_Sprites:
-    - {fileID: 21300000, guid: aadda8de6e3d0af47bd6300c7aee4012, type: 3}
-    m_AnimationSpeed: 1
-    m_PerlinScale: 0.5
-    m_RuleTransform: 0
-    m_Output: 0
-    m_ColliderType: 0
-    m_RandomTransform: 0
-  - m_Neighbors: 0200000002000000020000000100000002000000010000000100000002000000
+  - m_Neighbors: 0000000002000000020000000100000002000000010000000100000000000000
     m_Sprites:
     - {fileID: 21300000, guid: 42272dc4f9d1d39428def603cd5a7348, type: 3}
     m_AnimationSpeed: 1
@@ -59,7 +23,7 @@ MonoBehaviour:
     m_Output: 0
     m_ColliderType: 0
     m_RandomTransform: 0
-  - m_Neighbors: 0200000002000000020000000200000001000000020000000100000001000000
+  - m_Neighbors: 0200000002000000000000000200000001000000000000000100000001000000
     m_Sprites:
     - {fileID: 21300000, guid: 8288cacfff2a19640914c6bddf3c71aa, type: 3}
     m_AnimationSpeed: 1
@@ -68,7 +32,7 @@ MonoBehaviour:
     m_Output: 0
     m_ColliderType: 0
     m_RandomTransform: 0
-  - m_Neighbors: 0100000001000000020000000100000002000000020000000200000002000000
+  - m_Neighbors: 0100000001000000000000000100000002000000000000000200000002000000
     m_Sprites:
     - {fileID: 21300000, guid: e4c826c832d0a38489ab9255af063c7b, type: 3}
     m_AnimationSpeed: 1
@@ -77,7 +41,7 @@ MonoBehaviour:
     m_Output: 0
     m_ColliderType: 0
     m_RandomTransform: 0
-  - m_Neighbors: 0200000001000000010000000200000001000000020000000200000002000000
+  - m_Neighbors: 0000000001000000010000000200000001000000020000000200000000000000
     m_Sprites:
     - {fileID: 21300000, guid: df5496eadf2443240b47e4d9a385139d, type: 3}
     m_AnimationSpeed: 1
@@ -85,6 +49,78 @@ MonoBehaviour:
     m_RuleTransform: 0
     m_Output: 0
     m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000002000000000000000100000001000000010000000100000001000000
+    m_Sprites:
+    - {fileID: 21300000, guid: aadda8de6e3d0af47bd6300c7aee4012, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0100000001000000010000000100000001000000000000000200000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: cbed486aac85d684d8a50bce68444e5c, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0100000001000000000000000100000002000000010000000100000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 9113217d612cfc943be2725688a6998c, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000001000000010000000200000001000000000000000100000001000000
+    m_Sprites:
+    - {fileID: 21300000, guid: b06454d47d307034ea9ea193d1789c3b, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0100000001000000010000000000000001000000020000000000000001000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 8a6760cfa20103d4c901e19bdb962700, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+  - m_Neighbors: 0200000000000000010000000000000001000000010000000100000001000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 30c15e218f8eb154c9491907de7830b1, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+  - m_Neighbors: 0100000000000000020000000100000000000000010000000100000001000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 65276f4e4d0260a489223c00134e2c93, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+  - m_Neighbors: 0100000001000000010000000100000000000000010000000000000002000000
+    m_Sprites:
+    - {fileID: 21300000, guid: fdb019e26aaaeb5449cfa8da299b4658, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 1
     m_RandomTransform: 0
   - m_Neighbors: 0000000001000000000000000100000001000000000000000100000000000000
     m_Sprites:
@@ -97,4 +133,13 @@ MonoBehaviour:
     m_RuleTransform: 0
     m_Output: 1
     m_ColliderType: 0
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000000000000000000000000000000000000000000000000000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 196091b61a1d9f341a0bef5ebe702f9d, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 1
     m_RandomTransform: 0
