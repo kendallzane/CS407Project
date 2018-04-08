@@ -5,7 +5,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class DSPixelPerfectCamera : MonoBehaviour
 {
 	public float FinalUnitSize 		{ get { return finalUnitSize; } }
