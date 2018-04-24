@@ -65,6 +65,12 @@ public class H2OChad : EnemyAI {
 	private float moveAngle = 90;
 	public bool mercyInvincibility = false;
 	
+	private AudioSource asource;
+    public AudioClip shootSound;
+	public AudioClip shootBig;
+	public AudioClip hurt;
+	public AudioClip die;
+	
 	// Use this for initialization
 	void Start () {
 		baseX = transform.position.x;
@@ -76,7 +82,8 @@ public class H2OChad : EnemyAI {
 		timeToChange = Random.Range (changeDirMin, changeDirMax);
 		timeSinceChanged = timeToChange;
 		Player = GameObject.Find("MainCharacter");
-		
+		asource = GetComponent<AudioSource>();
+
 		SpriteRenderer s = GetComponent<SpriteRenderer>();
 		if (iAmBoss) {
 			s.color = new Color (1f, 0.5f, 1f);
@@ -105,7 +112,7 @@ public class H2OChad : EnemyAI {
 				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				angle += Random.Range(-5, 6);
                 StartCoroutine(FireProjectile(aimSpeed, angle));
-        
+				asource.PlayOneShot(shootSound);
 				aimAttackCounter += 1;
 				
 				if (aimAttackCounter >= aimAttackTimes) {
@@ -125,7 +132,9 @@ public class H2OChad : EnemyAI {
 			if (timeSinceAttack > spinAttackRate) {
 				an.SetTrigger("Shoot");
                 StartCoroutine(FireProjectile(spinSpeed, spinAngle));
-        
+				if (spinAttackCounter % 3 == 0) {
+					asource.PlayOneShot(shootSound);
+				}
 				spinAttackCounter += 1;
 				if (spinAttack == 1) {
 					spinAngle += spinAngleIncrement;
@@ -151,6 +160,7 @@ public class H2OChad : EnemyAI {
 				Vector3 dir = Player.transform.position - transform.position;
 				dir = Player.transform.InverseTransformDirection(dir);
 				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+				asource.PlayOneShot(shootBig);
 				for (int i = -waveAngleQuantity ; i < waveAngleQuantity; i++) {
 					StartCoroutine(FireProjectile(waveSpeed, angle + (i * waveAngleIncrement)));
 				}
@@ -286,6 +296,7 @@ public class H2OChad : EnemyAI {
 			}
 			mercyInvincibility = true;
 			canMove = false;
+			asource.PlayOneShot(hurt, 0.5f);
 			eh.TakeDamage (damage);
 			an.SetTrigger ("Hurt");
 		}
@@ -300,6 +311,8 @@ public class H2OChad : EnemyAI {
 		canMove = false;
 		alive = false;
 		Debug.Log("h2o chad est mort");
+		asource.Stop();
+		asource.PlayOneShot(die, 0.5f);
 		yield return new WaitForSecondsRealtime(1);
 
 		//Update Game Controller and clear room

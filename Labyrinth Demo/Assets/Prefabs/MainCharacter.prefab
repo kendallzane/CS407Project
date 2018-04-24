@@ -1019,6 +1019,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   canMove: 0
+  fallSafe: 0
+  platformFallSafe: 0
 --- !u!114 &114338615419079794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1101,6 +1103,7 @@ MonoBehaviour:
   attackLock: 0
   hasSword: 1
   canDash: 1
+  dashing: 0
   commandSwitching: 0
 --- !u!114 &114785022947641584
 MonoBehaviour:
@@ -1123,6 +1126,14 @@ MonoBehaviour:
   extraHealthOnUpgrade: 50
   pushBackForce: 50
   isDead: 0
+  invincibilityFramesTime: 1
+  invincibilityFrames: 0
+  timeDelay: 0
+  tm: {fileID: 0}
+  gr: {fileID: 0}
+  lastTile: 
+  fallDamage: 10
+  falling: 0
 --- !u!198 &198132820391831074
 ParticleSystem:
   m_ObjectHideFlags: 1

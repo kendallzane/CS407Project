@@ -34,6 +34,11 @@ public class H2OBoy : EnemyAI {
 	private float moveAngle = 90;
 	public bool mercyInvincibility = false;
 	
+	private AudioSource asource;
+    public AudioClip move;
+	public AudioClip hurt;
+	public AudioClip die;
+	
 	// Use this for initialization
 	void Start () {
 		dir = 90;
@@ -42,6 +47,7 @@ public class H2OBoy : EnemyAI {
 		timeSinceChanged = 0f;
 		timeToChange = Random.Range (changeDirMin, changeDirMax);
 		timeSinceChanged = timeToChange;
+		asource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -79,6 +85,7 @@ public class H2OBoy : EnemyAI {
 				ChangeDir ();
 				Vector3 angle = Quaternion.AngleAxis(dir, Vector3.forward) * Vector3.right;
 				rb.AddForce(angle*speed, ForceMode2D.Impulse);
+				asource.PlayOneShot(move, 0.15f);
 			}
 
 			
@@ -131,6 +138,8 @@ public class H2OBoy : EnemyAI {
 			if (moveAngle < 0) {
 				moveAngle += 360;
 			}
+			
+			asource.PlayOneShot(hurt, 0.5f);
 		}
 	}
 
@@ -143,6 +152,7 @@ public class H2OBoy : EnemyAI {
 		canMove = false;
 		alive = false;
 		Debug.Log("h2o boy est mort");
+		asource.PlayOneShot(die, 0.5f);
 		yield return new WaitForSecondsRealtime(1);
 		if (daddy) {
 			

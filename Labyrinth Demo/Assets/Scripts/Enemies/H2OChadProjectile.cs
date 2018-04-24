@@ -5,11 +5,13 @@ using UnityEngine;
 public class H2OChadProjectile : MonoBehaviour {
 
     public int damageToPlayer;                              // Damage dealt to player
-
+	private GameObject Player;
     //private float speed = 5f;                               // The speed, in units per second, the projectile will move towards the target
     //private bool moveTowardsTarget = false;                 // Controls whether the targets return to the flier
    // public GameObject Owner;                                // Flier that created the projectile
-	
+	void Start () {
+		Player = GameObject.Find("MainCharacter");
+	}
 	// Update is called once per frame
 	void Update () {
         
@@ -26,7 +28,7 @@ public class H2OChadProjectile : MonoBehaviour {
 			if (coll.isTrigger) {
 				coll.GetComponent<PlayerHealth>().TakeDamage(damageToPlayer, (Vector2)coll.transform.position - (Vector2)transform.position);
             }
-			Destroy(gameObject);
+			 Destroy(gameObject);
         } 
     }
 
@@ -37,5 +39,8 @@ public class H2OChadProjectile : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+		if (collision.gameObject == Player) {
+			Destroy(gameObject);
+		}
     }
 }

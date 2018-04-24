@@ -75,17 +75,17 @@ public class PlayerHealth : MonoBehaviour {
 			}
 		}
 		
-		string currentTile = tm.GetTile(gr.WorldToCell(transform.position)).name; 
+		string currentTile = tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, -0.18f, 0f))).name; 
 		if (lastTile != currentTile) {
 			//Debug.Log("Player tile change: " + lastTile + " to " + currentTile + "		" + Time.time);
 			lastTile = currentTile;
 		}
 			
-		if (lastTile == "HoleTile") {
+		if (lastTile.Contains("Hole")) {
 				//check at some other locations on the sprite
-				if (tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.15f, 0f))).name == "HoleTile" 
-				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0.06f, 0.15f, 0f))).name == "HoleTile" 
-				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.15f, 0f))).name == "HoleTile") 
+				if (tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.07f, 0f))).name.Contains("Hole") 
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0.06f, 0.07f, 0f))).name.Contains("Hole") 
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.07f, 0f))).name.Contains("Hole")) 
 				{
 					Fall(fallDamage, lastGoodPosition);
 				}
