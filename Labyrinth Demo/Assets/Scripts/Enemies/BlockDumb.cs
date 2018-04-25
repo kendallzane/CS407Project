@@ -18,6 +18,8 @@ public class BlockDumb : EnemyAI {
 	public Tilemap tm;
 	public Grid gr;
 	private Vector2 desiredVelocity = Vector2.zero;
+	private float flipRate = 1.0f;
+	private float timer;
 	
 	// Use this for initialization
 	void Start () {
@@ -46,6 +48,11 @@ public class BlockDumb : EnemyAI {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(desiredVelocity * Time.deltaTime);
+		timer += Time.deltaTime;
+			if (timer >= flipRate) {
+				GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+				timer = 0f;
+			}
 	}
 
 	//hurt the player character by running into them

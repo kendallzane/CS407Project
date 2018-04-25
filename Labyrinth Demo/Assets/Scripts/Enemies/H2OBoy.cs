@@ -85,7 +85,7 @@ public class H2OBoy : EnemyAI {
 				ChangeDir ();
 				Vector3 angle = Quaternion.AngleAxis(dir, Vector3.forward) * Vector3.right;
 				rb.AddForce(angle*speed, ForceMode2D.Impulse);
-				asource.PlayOneShot(move, 0.15f);
+				asource.PlayOneShot(move, 0.05f);
 			}
 
 			
@@ -166,7 +166,7 @@ public class H2OBoy : EnemyAI {
 			
 			EnemyHealth bh1 = BabySlug1.GetComponent<EnemyHealth>();
 			bh1.health = 30;
-			BabySlug1.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			BabySlug1.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
 			H2OBoy ls1 = BabySlug1.GetComponent<H2OBoy>();
 			ls1.trailScale = 0.3f;
 			ls1.speed = 0.3f;
@@ -178,7 +178,7 @@ public class H2OBoy : EnemyAI {
 				transform.rotation) as GameObject;
 			EnemyHealth bh2 = BabySlug2.GetComponent<EnemyHealth>();
 			bh2.health = 30;
-			BabySlug2.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			BabySlug2.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
 			H2OBoy ls2 = BabySlug2.GetComponent<H2OBoy>();
 			ls2.trailScale = 0.3f;
 			ls2.speed = 0.3f;

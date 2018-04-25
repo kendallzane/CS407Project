@@ -23,7 +23,10 @@ public class CameraFollower : MonoBehaviour {
 		borders = GameObject.FindGameObjectWithTag ("Borders");
 		if (borders == null) {
 			Debug.Log ("No borders found, using manual values");
-			
+			//MinX += (Camera.main.orthographicSize * (16f/9f));
+			//MaxX -= (Camera.main.orthographicSize * (16f/9f));
+			//MinY += Camera.main.orthographicSize;
+			//MaxY -= Camera.main.orthographicSize;
 		} else {
 
 			Vector2[] colliderpoints = borders.GetComponent<EdgeCollider2D>().points;
