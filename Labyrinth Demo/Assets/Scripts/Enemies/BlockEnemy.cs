@@ -33,7 +33,7 @@ public class BlockEnemy : EnemyAI {
 	public Vector2 homePosition;						//where the block stays and returns to
 	
 	public float timer;
-	private Vector2 desiredVelocity = Vector2.zero;
+	public Vector2 desiredVelocity = Vector2.zero;
 	
 	public Tilemap tm;
 	public Grid gr;
@@ -139,15 +139,16 @@ public class BlockEnemy : EnemyAI {
 	
 	//hurt the player character by running into them
 	void OnTriggerEnter2D (Collider2D coll) {
-		
+		Debug.Log(coll.name);
 		if (coll.tag == "Player" && coll.isTrigger) {
 			coll.GetComponent<PlayerHealth>().TakeDamage (damage, (Vector2) coll.transform.position - (Vector2) transform.position);
 		}
-		if (coll.gameObject == tm.gameObject&& attacking) {
+		if (coll.gameObject == tm.gameObject && attacking) {
 			attacking = false;
 			retreating = true;
 			timer = retreatDelay;
 			desiredVelocity = (-desiredVelocity / attackSpeed) * retreatSpeed;
+			Debug.Log("c");
 		}
 	}
 
