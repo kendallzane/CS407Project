@@ -50,7 +50,7 @@ public class PauseMenu : MonoBehaviour {
                 numOfFireKeys.text = numFire.ToString() + "x ";
                 numOfBaseKeys.text = numBase.ToString() + "x ";
                 numOfEarthKeys.text = numEarth.ToString() + "x ";
-                numOfWaterKeys.text = numEarth.ToString() + "x ";
+                numOfWaterKeys.text = numWater.ToString() + "x ";
                 numOfWindKeys.text = numWin.ToString() + "x ";
                 int sword = GC.GetComponent<GameController>().swordUpgrade;
                 if(sword == 0)
