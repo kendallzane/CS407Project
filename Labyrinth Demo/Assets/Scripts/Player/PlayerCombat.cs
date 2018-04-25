@@ -42,7 +42,7 @@ public class PlayerCombat : MonoBehaviour {
 	private bool[] attackCombo;						//Keeps track of what stage of the combo we're in
 	[HideInInspector] public bool attackLock = false;//prevents player spam from skipping attacks
 	[HideInInspector] public bool hasSword = true;	//does the player have access to his sword?
-	private bool attacking = false;					//is the player currently attacking?
+	public bool attacking = false;					//is the player currently attacking?
 	private float horiz;
 	private float vert;								//used for slight movement available during attacks
 	public bool canDash = true;						//is the player currently able to dash?

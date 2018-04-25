@@ -4,38 +4,51 @@ using UnityEngine;
 
 public class FanWind : MonoBehaviour {
 
-	public float windForce;
 	public bool facingDown = true;
 	private bool containsPlayer;
-
+	public float thrust = 0.5f;
 	private GameObject player;
+	public Rigidbody2D rb;
+	public PlayerCombat pc;
+	public Sprite s1, s2, s3, s4;
+	public float animRate = 0.1f;
+	private float timer;
 
 	// Use this for initialization
 	void Start () {
+		if (!facingDown) {
+			GetComponent<SpriteRenderer>().sprite = s4;
+		}
 		containsPlayer = false;
 		player = GameObject.FindGameObjectWithTag("Player");
+		rb = player.GetComponent<Rigidbody2D>();
+		pc = player.GetComponent<PlayerCombat>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (containsPlayer) {
-			Vector3 deltaPos = (player.transform.position - this.transform.position);
-
-			//Inversion
-			deltaPos = new Vector3 (1f / deltaPos.x, 1f / deltaPos.y, deltaPos.z);
-
-			deltaPos.Scale (new Vector3 (windForce, windForce, 1));
-
+		if (facingDown) {
+			timer += Time.deltaTime;
+			if (timer >= animRate) {
+				if (GetComponent<SpriteRenderer>().sprite == s1) {
+					GetComponent<SpriteRenderer>().sprite = s2;
+				} else if (GetComponent<SpriteRenderer>().sprite == s2) {
+					GetComponent<SpriteRenderer>().sprite = s3;
+				} else if (GetComponent<SpriteRenderer>().sprite == s3) {
+					GetComponent<SpriteRenderer>().sprite = s1;
+				}
+				timer = 0;
+			}
+		}
+		if (containsPlayer && pc.attacking == false && pc.dashing == false && pc.canAttack == true) {
 			//Only apply in direction of wind travel
 			if (facingDown) {
 				//vertical wind	
-				deltaPos.x = 0;
+				rb.AddForce(Vector3.down * thrust);
 			} else {
 				//horizontal wind
-				deltaPos.y = 0;
+				rb.AddForce(Vector3.up * thrust);
 			}
-			deltaPos.z = 0;
-			player.transform.position = player.transform.position + deltaPos;
 		}
 		containsPlayer = false;
 	}
