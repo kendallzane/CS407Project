@@ -15,50 +15,57 @@ public class CameraFollower : MonoBehaviour {
 	private GameObject borders;
 
 	//variables
-	private float MinX = 0, MaxX = 0, MinY = 0, MaxY = 0;			//bounds of the camera, calculated from the borders
+	public float MinX = 0, MaxX = 0, MinY = 0, MaxY = 0;			//bounds of the camera, calculated from the borders
+	
 
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		borders = GameObject.FindGameObjectWithTag ("Borders");
 		if (borders == null) {
-			Debug.Log ("You forgot to add borders to this scene...");
-			return;
-		}
+			Debug.Log ("No borders found, using manual values");
+			
+		} else {
 
-		//Get the cornermost edges of the scene
-		foreach (Vector2 point in borders.GetComponent<EdgeCollider2D>().points) {
-			if (point.x < MinX) {
-				MinX = point.x;
+			Vector2[] colliderpoints = borders.GetComponent<EdgeCollider2D>().points;
+			MinX = colliderpoints[0].x;
+			MaxX = colliderpoints[0].x;
+			MinY = colliderpoints[0].y;
+			MaxY = colliderpoints[0].y;
+			//Get the cornermost edges of the scene
+			foreach (Vector2 point in colliderpoints) {
+				if (point.x < MinX) {
+					MinX = point.x;
+				}
+				if (point.x > MaxX) {
+					MaxX = point.x;
+				}
+				if (point.y < MinY) {
+					MinY = point.y;
+				}
+				if (point.y > MaxY) {
+					MaxY = point.y;
+				}
 			}
-			if (point.x > MaxX) {
-				MaxX = point.x;
-			}
-			if (point.y < MinY) {
-				MinY = point.y;
-			}
-			if (point.y > MaxY) {
-				MaxY = point.y;
-			}
-		}
 
-		//adjust the edges to the size of the scren
-		MinX += (Camera.main.orthographicSize * (16f/9f));
-		MaxX -= (Camera.main.orthographicSize * (16f/9f));
-		MinY += Camera.main.orthographicSize;
-		MaxY -= Camera.main.orthographicSize;
+			//adjust the edges to the size of the scren
+			MinX += (Camera.main.orthographicSize * (16f/9f));
+			MaxX -= (Camera.main.orthographicSize * (16f/9f));
+			MinY += Camera.main.orthographicSize;
+			MaxY -= Camera.main.orthographicSize;
 
-		//fix for if the screen is too small
-		if ((MaxX < MinX)) {
-			float tmp;
-			tmp = MaxX;
-			MaxX = MinX;
-			MinX = tmp;
-		}
-		if ((MaxY < MinY)) {
-			float tmp;
-			tmp = MaxY;
-			MaxY = MinY;
-			MinY = tmp;
+			//fix for if the screen is too small
+			if ((MaxX < MinX)) {
+				float tmp;
+				tmp = MaxX;
+				MaxX = MinX;
+				MinX = tmp;
+			}
+			if ((MaxY < MinY)) {
+				float tmp;
+				tmp = MaxY;
+				MaxY = MinY;
+				MinY = tmp;
+			}
 		}
 	}
 
