@@ -9,7 +9,7 @@ public class PPlatePuzzle2 : MonoBehaviour {
 	GameObject cube;
 	int currentPPlate;
 
-	private GameObject gc;
+	//private GameObject gc;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +21,13 @@ public class PPlatePuzzle2 : MonoBehaviour {
 		currentPPlate = 0;
 
 		cube = container.transform.Find ("cube").gameObject;
-
+		/* need GameController
 		gc = GameObject.Find ("GameController");
 
 		if (gc.GetComponent<GameController> ().roomPuzzle [26]) {
 			cube.SetActive (false);
 		}
+		*/
 	}
 	
 	// Update is called once per frame
@@ -38,7 +39,7 @@ public class PPlatePuzzle2 : MonoBehaviour {
 			currentPPlate++;
 		}
 		if (pPlates[currentPPlate].getIsOn()) {
-			gc.GetComponent<GameController> ().roomPuzzle [26] = true;
+			//gc.GetComponent<GameController> ().roomPuzzle [26] = true;
 		}
 	}
 }

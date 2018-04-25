@@ -7,7 +7,6 @@ public class PPlate : MonoBehaviour {
 	private SpriteRenderer pRenderer;
 	public Sprite up;
 	public Sprite down;
-	public Sprite inv;
 
 	public float dTime;
 
@@ -28,12 +27,15 @@ public class PPlate : MonoBehaviour {
 			if (other.gameObject.CompareTag ("Projectile")) {
 				yield break;
 			}
-			if (pRenderer.sprite != inv) {
+			if (pRenderer.enabled) {
 				pRenderer.sprite = down;
 			}
 			yield break;
 		}
 		isOn = true;
+		if (!pRenderer.enabled) {
+			pRenderer.enabled = true;
+		}
 		pRenderer.sprite = down;
 		if (wall != null) {
 			wall.SetActive (false);
@@ -73,11 +75,11 @@ public class PPlate : MonoBehaviour {
 	}
 
 	public void invisible () {
-		pRenderer.sprite = inv;
+		pRenderer.enabled = false;
 	}
 
 	public void visible () {
-		pRenderer.sprite = up;
+		pRenderer.enabled = true;
 	}
 
 	// Update is called once per frame
