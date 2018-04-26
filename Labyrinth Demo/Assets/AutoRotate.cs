@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationSwitch : MonoBehaviour {
+public class AutoRotate : MonoBehaviour {
 
 	//constants
 	private static int MAXBRIDGES = 5;
@@ -14,16 +14,19 @@ public class RotationSwitch : MonoBehaviour {
 	//variables
 	public int switchNum = 0;
 	public bool switchState = false;
-	public float cooldown = 1.00f;
+	public float cooldown = 3.00f;
 	public bool active = true;
 	private float timer;
 	public GameObject[] plats;
 	public GameObject[] switches;
+	public GameObject fan;
+	
 
 	// Use this for initialization
 	void Start () {
 		plats = GameObject.FindGameObjectsWithTag("FlipPlatform");
 		switches = GameObject.FindGameObjectsWithTag("FlipSwitch");
+		fan = GameObject.Find("Fan");
 		an = GetComponent<Animator> ();
 		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
 		if (gcObj == null) {
@@ -40,13 +43,18 @@ public class RotationSwitch : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (!active) {
+		
 			timer += Time.deltaTime;
 			if (timer >= cooldown) {
-				active = true;
+				GetComponent<Animator>().SetTrigger ("Switch");
+				foreach (GameObject plat in plats)
+				{
+					plat.GetComponent<GapPlatform>().Flip();
+				}
+				fan.GetComponent<FanWindToggleable>().active = !fan.GetComponent<FanWindToggleable>().active;
 				timer = 0f;
 			}
-		}
+		
 	}
 	
 

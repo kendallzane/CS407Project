@@ -39,7 +39,10 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public int selectedCommand;			//the Player's currently selected command
 	[HideInInspector] public float[] commandCharges;		//the time remaining on the player's commandCharges
 	[HideInInspector] public int swordUpgrade;				//what upgrade is the player's sword at?
-
+	
+	public bool redLaserDestroyed = false;							
+	public bool blueLaserDestroyed = false;	
+	
 	// Use this for initialization
 	void Awake () {
 		DontDestroyOnLoad (gameObject);

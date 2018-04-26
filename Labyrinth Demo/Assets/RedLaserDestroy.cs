@@ -2,34 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericButton : MonoBehaviour {
+public class RedLaserDestroy : MonoBehaviour {
 
-	public GameObject other;
 	bool pressed = false;
 	public Sprite pressedSprite;
-	public GameObject gcObj;
-	public GameController gc;
+	public int laserToDestroy = 0;
 	// Use this for initialization
 	void Start () {
-		gcObj = GameObject.FindGameObjectWithTag ("GameController");
-		if (gcObj == null) {
-			return;
-		}
-		gc = gcObj.GetComponent<GameController> ();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		gcObj = GameObject.FindGameObjectWithTag ("GameController");
-		if (gcObj == null) {
-			return;
-		}
-		gc = gcObj.GetComponent<GameController> ();
+		
 	}
 	
 	void onPress(){
-		
-		other.SendMessage("ButtonPressed");
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj == null) {
+			return;
+		}
+		GameController gc = gcObj.GetComponent<GameController> ();
+		if (laserToDestroy == 1) {
+			gc.redLaserDestroyed = true;
+		} else {
+			gc.blueLaserDestroyed = true;
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D coll) {

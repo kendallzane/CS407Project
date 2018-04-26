@@ -16,6 +16,8 @@ TagManager:
   - Entity
   - Bridges
   - Gap
+  - FlipPlatform
+  - FlipSwitch
   layers:
   - Default
   - TransparentFX

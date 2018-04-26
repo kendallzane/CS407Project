@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 	[HideInInspector] public bool fallSafe = false;
 	[HideInInspector] public bool platformFallSafe = false;
 	
+	public List <GameObject> currentCollisions = new List <GameObject> ();
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
+		if (currentCollisions.Count > 0) {
+			platformFallSafe = true;
+		} else {
+			platformFallSafe = false;
+		}
+		
 		if (canMove) {
 			horiz = Input.GetAxisRaw ("Horizontal");
 			vert = Input.GetAxisRaw ("Vertical");
@@ -59,4 +67,18 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 	}
+	
+	void OnTriggerEnter2D(Collider2D coll) {
+		if (coll.tag == "FlipPlatform" && coll.GetComponent<GapPlatform>().active == true) {
+			if (!currentCollisions.Contains(coll.gameObject)) {
+				currentCollisions.Add (coll.gameObject);
+			}
+		}
+	}
+	
+	void OnTriggerExit2D(Collider2D coll) {
+		if (currentCollisions.Contains(coll.gameObject)) {
+			currentCollisions.Remove (coll.gameObject);
+		}
+    }
 }
