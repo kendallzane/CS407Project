@@ -274,6 +274,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114866196328980270, guid: d452a748b17fb034993ed0db9a3aedef,
+        type: 2}
+      propertyPath: MinX
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114866196328980270, guid: d452a748b17fb034993ed0db9a3aedef,
+        type: 2}
+      propertyPath: MaxX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114866196328980270, guid: d452a748b17fb034993ed0db9a3aedef,
+        type: 2}
+      propertyPath: MinY
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114866196328980270, guid: d452a748b17fb034993ed0db9a3aedef,
+        type: 2}
+      propertyPath: MaxY
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d452a748b17fb034993ed0db9a3aedef, type: 2}
   m_IsPrefabParent: 0
@@ -378,17 +398,17 @@ Prefab:
     - target: {fileID: 114786291585677734, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: lockNum
-      value: 9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 114786291585677734, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: lockType
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114786291585677734, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: isLock
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3002c21a0ba572e4b85c34e293118ea1, type: 2}
