@@ -802,6 +802,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.85
       objectReference: {fileID: 0}
+    - target: {fileID: 114420423282383834, guid: 491f6d75d28565f46905ba58e8cd1f9c,
+        type: 2}
+      propertyPath: attackSpeed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 491f6d75d28565f46905ba58e8cd1f9c, type: 2}
   m_IsPrefabParent: 0
