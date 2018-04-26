@@ -123,7 +123,7 @@ public class WindBoss : EnemyAI {
 			Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			ProjectileRigidBody.AddForce(dir * bulletSpeed);
 			
-			Destroy(Projectile, 10.0f);
+			Destroy(Projectile, 20.0f);
 			
 		}
 		

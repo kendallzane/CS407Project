@@ -88,6 +88,8 @@ public class PlayerHealth : MonoBehaviour {
 				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.07f, 0f))).name.Contains("Hole")) 
 				{
 					Fall(fallDamage, lastGoodPosition);
+				} else {
+					lastGoodPosition = transform.position;
 				}
 		} else {
 			lastGoodPosition = transform.position;
@@ -105,6 +107,9 @@ public class PlayerHealth : MonoBehaviour {
 	/// <param name="damage">Damage Taken.</param>
 	/// <param name="dirHit">Direction player was hit from.</param>
 	public void TakeDamage (int damage, Vector2 dirHit) {
+		if (falling) {
+			return;
+		}
 		if (damageCollider.enabled) {
 			if (health > 0) {
 				health -= damage;
@@ -142,6 +147,7 @@ public class PlayerHealth : MonoBehaviour {
 	/// </summary>
 	/// <param name="damage">Damage.</param>
 	public void TakeDamage (int damage) {
+		
 		if (health > 0) {
 			health -= damage;
 			if (health < 0) {
