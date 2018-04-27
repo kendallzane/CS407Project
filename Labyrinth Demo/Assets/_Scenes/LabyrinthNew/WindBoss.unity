@@ -511,12 +511,12 @@ Prefab:
     - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
         type: 2}
       propertyPath: bulletSpeed
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 114767794804072552, guid: f328cf698828b0342a948830b98094a1,
         type: 2}
       propertyPath: numPhases
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f328cf698828b0342a948830b98094a1, type: 2}
