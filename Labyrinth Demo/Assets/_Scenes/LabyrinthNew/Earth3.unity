@@ -308,34 +308,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5661d424ba795d346a246dd53d120a58, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &519806117
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 519806118}
-  m_Layer: 0
-  m_Name: spawnEnemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &519806118
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519806117}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0301692, y: 2.230537, z: 99.978516}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &577237405
 Prefab:
   m_ObjectHideFlags: 0
@@ -6578,7 +6550,12 @@ Prefab:
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toScene
-      value: 12
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114786291585677734, guid: 3002c21a0ba572e4b85c34e293118ea1,
+        type: 2}
+      propertyPath: isClosed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3002c21a0ba572e4b85c34e293118ea1, type: 2}
