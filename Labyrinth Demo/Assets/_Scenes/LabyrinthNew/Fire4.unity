@@ -11027,6 +11027,11 @@ Prefab:
       propertyPath: containedItem
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114129416469648788, guid: 919d7150a701379478814a206f7e2a09,
+        type: 2}
+      propertyPath: chestNum
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 919d7150a701379478814a206f7e2a09, type: 2}
   m_IsPrefabParent: 0

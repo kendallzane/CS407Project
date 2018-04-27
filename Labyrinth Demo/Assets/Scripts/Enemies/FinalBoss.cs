@@ -16,14 +16,14 @@ public class FinalBoss : EnemyAI {
 	public GameObject victoryScreen;
 
 	//variables
-	public float speed = 2.0f;							//speed wraith travels in
-	public int damage = 20;								//how much damage does the basic wraith do?
+	public float speed = 2.0f;							//speed boss travels in
+	public int damage = 20;								//how much damage does the final boss do?
 	public float changeDirMin = 2.0f;					//how many min seconds until changeDir
 	public float changeDirMax = 4.0f;					//how many max seconds until changeDir
-	public float pushBackForce = 50f;					//how quickly does the wraith get pushed back?
 
 	public int movesTillChange = 8;						//how many movement iterations until an attack?
 	public float attackTime = 3.0f;						//how long does the boss attack for?
+	public float turnSpeed = 5f;
 
 	private float timeToChange;							//randomized float btwn min and max to change directions
 	private float timeSinceChanged = 0.0f;				//when since last changeDir
@@ -47,10 +47,9 @@ public class FinalBoss : EnemyAI {
 
 	// Update is called once per frame
 	void Update () {
-		//if (stateCounter > movesTillChange) {
-			//Attack ();
-			//movesTillChange = 0;
-		if (canMove) {
+		if (stateCounter > movesTillChange) {
+			Attack ();
+		} else if (canMove) {
 			timeSinceChanged += Time.deltaTime;
 			if (timeSinceChanged > timeToChange) {
 				ChangeDir ();
@@ -75,24 +74,26 @@ public class FinalBoss : EnemyAI {
 
 	void Attack () {
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		rb.velocity = Vector2.zero;
 		canMove = false;
 		attackTimeDelay -= Time.deltaTime;
 		if (player != null) {
-			Vector3 newRot = Vector3.RotateTowards (transform.position, player.transform.position, 360, 360);			//immediately rotate to player
-			transform.rotation = Quaternion.LookRotation(newRot);
+			transform.rotation = Quaternion.Euler (0f, 0f, transform.rotation.eulerAngles.z + (Time.deltaTime * turnSpeed));
 			if (!madeAttack) {
 				mySmoke = Instantiate (smokeAttack, transform.position, transform.rotation);
 				madeAttack = true;
 			} else {
 				mySmoke.transform.rotation = transform.rotation;
+				mySmoke.transform.position = transform.position;
 			}
 		}
 		if (attackTimeDelay < 0) {
-			canMove = true;
 			Destroy (mySmoke);
 			attackTimeDelay = attackTime;
 			transform.rotation = Quaternion.identity;
 			madeAttack = false;
+			stateCounter = 0;
+			canMove = true;
 		}
 	}
 
@@ -114,7 +115,6 @@ public class FinalBoss : EnemyAI {
 		eh.TakeDamage (damage);
 		an.SetTrigger ("Hurt");
 		rb.velocity = Vector2.zero;
-		rb.AddForce (dirHit.normalized * pushBackForce);
 	}
 
 	public void HurtFinished () {

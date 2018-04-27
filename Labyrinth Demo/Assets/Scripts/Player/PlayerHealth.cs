@@ -132,18 +132,10 @@ public class PlayerHealth : MonoBehaviour {
 			}
 			else if (health <= 0 && !isDead) {                        //only die if you already had just a "sliver of health" left
 				//YOU DIED!!!!
-				/*
 				damageCollider.enabled = false;
 				pc.DisablePlayer ();
 				an.SetTrigger("Death");
 				rb.isKinematic = true;
-				*/
-				damageCollider.enabled = false;
-				ph.ShowHealth (health);
-				pc.DisablePlayer ();
-				an.SetTrigger ("Hurt");
-				healingFX.SetActive (false);
-				rb.AddForce (dirHit.normalized * pushBackForce);
 			}
 		}
 	}
@@ -166,15 +158,10 @@ public class PlayerHealth : MonoBehaviour {
 		//please keep this else
 		else if (!isDead) {                        //ONLY die if you already had just a "sliver of health" left
 			//YOU DIED!!!!
-			
-			/*
 			damageCollider.enabled = false;
 			pc.DisablePlayer ();
 			an.SetTrigger("Death");
 			rb.isKinematic = true;
-			*/
-			ph.ShowHealth (health);
-			healingFX.SetActive (false);
 		}
 	}
 
@@ -249,8 +236,8 @@ public class PlayerHealth : MonoBehaviour {
 
     public void PlayerIsDead() {
 		isDead = true;
-        Time.timeScale = 0f;
 		Instantiate (soul, gameObject.transform.position, Quaternion.identity);
+        //Time.timeScale = 0f;
 		Destroy (ph.gameObject);
         Destroy(gameObject);
     }

@@ -8629,12 +8629,12 @@ Prefab:
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
       propertyPath: cameraStartPositions.Array.data[0].y
-      value: 0
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
       propertyPath: cameraStartPositions.Array.data[0].x
-      value: -1.48
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
@@ -8679,7 +8679,7 @@ Prefab:
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
       propertyPath: cameraStartPositions.Array.data[1].x
-      value: -4.26
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
@@ -8689,7 +8689,7 @@ Prefab:
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
       propertyPath: cameraStartPositions.Array.data[1].y
-      value: -0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114590260159078348, guid: b4f9717b519c8fe409587822cd892834,
         type: 2}
