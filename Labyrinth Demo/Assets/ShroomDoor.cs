@@ -8,6 +8,7 @@ public class ShroomDoor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		gc = GameObject.FindGameObjectWithTag ("GameController");
 		if (gc.GetComponent<GameController> ().roomPuzzle [20] >= 1) {
 			Destroy(gameObject);
 		}
