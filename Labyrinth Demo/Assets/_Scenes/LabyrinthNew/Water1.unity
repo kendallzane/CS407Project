@@ -1438,7 +1438,7 @@ Prefab:
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toScene
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114786291585677734, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
