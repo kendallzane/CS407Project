@@ -74,22 +74,29 @@ public class PlayerHealth : MonoBehaviour {
 				timeDelay = invincibilityFramesTime;
 			}
 		}
+		string currentTile = "";
+		if (gr != null && tm != null && transform != null) {
+			if (tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, -0.18f, 0f))) != null) {
+				currentTile = tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, -0.18f, 0f))).name; 
+			}
+		} 
 		
-		string currentTile = tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, -0.18f, 0f))).name; 
-		if (lastTile != currentTile) {
+		if (currentTile != null && lastTile != currentTile) {
 			//Debug.Log("Player tile change: " + lastTile + " to " + currentTile + "		" + Time.time);
 			lastTile = currentTile;
 		}
 			
-		if (lastTile.Contains("Hole")) {
+		if (lastTile.Contains("Hole") || lastTile == "") {
 				//check at some other locations on the sprite
-				if (tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.07f, 0f))).name.Contains("Hole") 
-				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0.06f, 0.07f, 0f))).name.Contains("Hole") 
-				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.07f, 0f))).name.Contains("Hole")) 
+				string lastName = tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.07f, 0f))).name;
+				if ((tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.07f, 0f))).name.Contains("Hole")
+				|| tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0f, 0.07f, 0f))).name.Contains("mb_"))
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(0.06f, 0.00f, 0f))).name.Contains("Hole") 
+				&& tm.GetTile(gr.WorldToCell(transform.position + new Vector3(-0.06f, 0.00f, 0f))).name.Contains("Hole")) 
 				{
 					Fall(fallDamage, lastGoodPosition);
 				} else {
-					lastGoodPosition = transform.position;
+					//lastGoodPosition = transform.position;
 				}
 		} else {
 			lastGoodPosition = transform.position;
