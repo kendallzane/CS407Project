@@ -3175,6 +3175,98 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f564fdf63a9adb5498a5171d225acedf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1015044497
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168810902749932, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[0].y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[3].y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[4].y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[1].y
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[2].y
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[0].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[1].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[2].x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[3].x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 68787075561624530, guid: 2b508f57758bb2748920ed4ecae34a5b,
+        type: 2}
+      propertyPath: m_Points.Array.data[4].x
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2b508f57758bb2748920ed4ecae34a5b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1039974906 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1864413078083472, guid: f564fdf63a9adb5498a5171d225acedf,
@@ -15865,6 +15957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 451301626}
   pressedSprite: {fileID: 21300000, guid: 04df8fb08a74c044bad7d11a1b54f7f3, type: 3}
+  gcObj: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!61 &1939002394
 BoxCollider2D:
   m_ObjectHideFlags: 0
