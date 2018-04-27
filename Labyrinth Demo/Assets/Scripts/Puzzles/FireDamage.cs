@@ -5,7 +5,6 @@ using System.Collections.Specialized;
 
 public class FireDamage : MonoBehaviour {
 
-    public Vector2 locationToRespawn;
     public int damagePerTick;
     private bool containsPlayer = false;
     private Collider2D player;
