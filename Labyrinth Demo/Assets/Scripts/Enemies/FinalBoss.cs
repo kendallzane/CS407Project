@@ -47,10 +47,10 @@ public class FinalBoss : EnemyAI {
 
 	// Update is called once per frame
 	void Update () {
-		if (stateCounter > movesTillChange) {
-			Attack ();
+		//if (stateCounter > movesTillChange) {
+			//Attack ();
 			//movesTillChange = 0;
-		} else if (canMove) {
+		if (canMove) {
 			timeSinceChanged += Time.deltaTime;
 			if (timeSinceChanged > timeToChange) {
 				ChangeDir ();
@@ -82,6 +82,7 @@ public class FinalBoss : EnemyAI {
 			transform.rotation = Quaternion.LookRotation(newRot);
 			if (!madeAttack) {
 				mySmoke = Instantiate (smokeAttack, transform.position, transform.rotation);
+				madeAttack = true;
 			} else {
 				mySmoke.transform.rotation = transform.rotation;
 			}
@@ -91,6 +92,7 @@ public class FinalBoss : EnemyAI {
 			Destroy (mySmoke);
 			attackTimeDelay = attackTime;
 			transform.rotation = Quaternion.identity;
+			madeAttack = false;
 		}
 	}
 
