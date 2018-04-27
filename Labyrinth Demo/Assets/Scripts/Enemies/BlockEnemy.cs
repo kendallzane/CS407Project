@@ -154,7 +154,7 @@ public class BlockEnemy : EnemyAI {
 		if (coll.tag == "Player" && coll.isTrigger) {
 			coll.GetComponent<PlayerHealth>().TakeDamage (damage, (Vector2) coll.transform.position - (Vector2) transform.position);
 		}
-		if (coll.gameObject == tm.gameObject && attacking) {
+		if ((coll.gameObject == tm.gameObject || coll.tag == "Borders") && attacking) {
 			attacking = false;
 			retreating = true;
 			timer = retreatDelay;
