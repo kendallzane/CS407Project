@@ -10,6 +10,11 @@ public class FinalBoss : EnemyAI {
 	private const int UP = 2;
 	private const int RIGHT = 3;
 
+	//references
+	private GameObject player;
+	public GameObject smokeAttack;
+	public GameObject victoryScreen;
+
 	//variables
 	public float speed = 2.0f;							//speed wraith travels in
 	public int damage = 20;								//how much damage does the basic wraith do?
@@ -17,10 +22,18 @@ public class FinalBoss : EnemyAI {
 	public float changeDirMax = 4.0f;					//how many max seconds until changeDir
 	public float pushBackForce = 50f;					//how quickly does the wraith get pushed back?
 
+	public int movesTillChange = 8;						//how many movement iterations until an attack?
+	public float attackTime = 3.0f;						//how long does the boss attack for?
+
 	private float timeToChange;							//randomized float btwn min and max to change directions
 	private float timeSinceChanged = 0.0f;				//when since last changeDir
 	private int dir = 0;
 	private bool canMove;								//can the wraith move?
+
+	private float attackTimeDelay;
+	private int stateCounter = 0;						//how many movement iterations until an attack?
+	private bool madeAttack;
+	private GameObject mySmoke;
 
 	// Use this for initialization
 	void Start () {
@@ -28,11 +41,16 @@ public class FinalBoss : EnemyAI {
 		canMove = true;
 		timeSinceChanged = 0f;
 		timeToChange = Random.Range (changeDirMin, changeDirMax);
+		player = GameObject.FindGameObjectWithTag ("Player");
+		attackTimeDelay = attackTime;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (canMove) {
+		if (stateCounter > movesTillChange) {
+			Attack ();
+			//movesTillChange = 0;
+		} else if (canMove) {
 			timeSinceChanged += Time.deltaTime;
 			if (timeSinceChanged > timeToChange) {
 				ChangeDir ();
@@ -52,6 +70,27 @@ public class FinalBoss : EnemyAI {
 				rb.velocity = Vector2.right * speed;
 				break;
 			}
+		}
+	}
+
+	void Attack () {
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		canMove = false;
+		attackTimeDelay -= Time.deltaTime;
+		if (player != null) {
+			Vector3 newRot = Vector3.RotateTowards (transform.position, player.transform.position, 360, 360);			//immediately rotate to player
+			transform.rotation = Quaternion.LookRotation(newRot);
+			if (!madeAttack) {
+				mySmoke = Instantiate (smokeAttack, transform.position, transform.rotation);
+			} else {
+				mySmoke.transform.rotation = transform.rotation;
+			}
+		}
+		if (attackTimeDelay < 0) {
+			canMove = true;
+			Destroy (mySmoke);
+			attackTimeDelay = attackTime;
+			transform.rotation = Quaternion.identity;
 		}
 	}
 
@@ -83,6 +122,7 @@ public class FinalBoss : EnemyAI {
 	public override IEnumerator OnDeath ()
 	{
 		yield return null;
+		victoryScreen.SetActive (true);
 		Destroy(gameObject);
 	}
 
@@ -91,5 +131,6 @@ public class FinalBoss : EnemyAI {
 		dir = Random.Range (0, 4);
 		timeSinceChanged = 0f;
 		timeToChange = Random.Range (changeDirMin, changeDirMax);
+		stateCounter++;
 	}
 }
