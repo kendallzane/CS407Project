@@ -669,6 +669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 1407274555}
   pressedSprite: {fileID: 21300000, guid: 04df8fb08a74c044bad7d11a1b54f7f3, type: 3}
+  gcObj: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!61 &605960004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1226,17 +1228,17 @@ Prefab:
     - target: {fileID: 212842491778702282, guid: 9a48c56f063ab3e418dfef347ec3ce77,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.39915293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212842491778702282, guid: 9a48c56f063ab3e418dfef347ec3ce77,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.2997405
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212842491778702282, guid: 9a48c56f063ab3e418dfef347ec3ce77,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.9264706
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a48c56f063ab3e418dfef347ec3ce77, type: 2}
@@ -8660,6 +8662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 933707672}
   pressedSprite: {fileID: 21300000, guid: 04df8fb08a74c044bad7d11a1b54f7f3, type: 3}
+  gcObj: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!61 &2138704919
 BoxCollider2D:
   m_ObjectHideFlags: 0

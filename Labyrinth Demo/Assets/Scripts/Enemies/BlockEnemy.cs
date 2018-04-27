@@ -99,16 +99,22 @@ public class BlockEnemy : EnemyAI {
 		RaycastHit2D hit;
 		if (checkDown) {
 			//Debug.Log(Time.time + "checking down");
+			Physics2D.queriesHitTriggers = false;
 			hit = Physics2D.Raycast(homePosition, Vector2.down, attackRange);
+			Physics2D.queriesHitTriggers = true;
 			if (hit) {
+				
 				//Debug.Log(Time.time + "		gameObject hit: " + hit.transform.name);
 				if (hit.collider.gameObject == Player) {
+					Debug.Log("down");
 					return DOWN;
 				}
 			}
 		}
 		if (checkUp) {
+			Physics2D.queriesHitTriggers = false;
 			hit = Physics2D.Raycast(homePosition, Vector2.up, attackRange);
+			Physics2D.queriesHitTriggers = true;
 			if (hit) {
 				//Debug.Log(Time.time + "		gameObject hit: " + hit.transform.name);
 				if (hit.collider.gameObject == Player) {
@@ -117,16 +123,21 @@ public class BlockEnemy : EnemyAI {
 			}
 		}
 		if (checkLeft) {
+			Physics2D.queriesHitTriggers = false;
 			hit = Physics2D.Raycast(homePosition, Vector2.left, attackRange);
+			Physics2D.queriesHitTriggers = true;
 			if (hit) {
-				//Debug.Log(Time.time + "		gameObject hit: " + hit.transform.name);
+				Debug.Log(Time.time + "		gameObject hit: " + hit.transform.name);
 				if (hit.collider.gameObject == Player) {
+					
 					return LEFT;
 				}
 			}
 		}
 		if (checkRight) {
+			Physics2D.queriesHitTriggers = false;
 			hit = Physics2D.Raycast(homePosition, Vector2.right, attackRange);
+			Physics2D.queriesHitTriggers = true;
 			if (hit) {
 				//Debug.Log(Time.time + "		gameObject hit: " + hit.transform.name);
 				if (hit.collider.gameObject == Player) {

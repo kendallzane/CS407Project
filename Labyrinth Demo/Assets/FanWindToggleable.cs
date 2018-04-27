@@ -61,6 +61,15 @@ public class FanWindToggleable : MonoBehaviour {
 		if (coll.tag == "Player") {
 			containsPlayer = true;
 		} 
+		if (coll.tag == "Projectile" && active) {
+			if (facingDown) {
+				//vertical wind	
+				coll.GetComponent<Rigidbody2D>().AddForce(Vector3.down * thrust/20);
+			} else {
+				//horizontal wind
+				coll.GetComponent<Rigidbody2D>().AddForce(Vector3.up * thrust/20);
+			}
+		} 
 	}
 
 	void OnTriggerExit2D(Collider2D coll){
