@@ -8115,109 +8115,36 @@ MonoBehaviour:
   - Tutorial3
   - Tutorial4
   - Central
-  - Earth6
-  - Earth7
-  - Earth8
-  - Earth9
-  - Earth10
-  - Earth11
-  - Earth12
-  - Earth13
-  - Earth14
-  - Earth15
-  - Earth16
-  - Earth17
-  - Earth18
-  - Earth19
-  - Earth20
-  - Earth21
-  - Earth22
-  - Earth23
-  - Earth24
-  - Earth25
-  - Earth26
-  - Earth27
+  - Earth1
+  - Earth2
+  - Earth3
+  - Earth4
+  - EarthItem
   - EarthBoss
-  - Fire29
-  - Fire30
-  - Fire31
-  - Fire32
-  - Fire33
-  - Fire34
-  - Fire35
-  - Fire36
-  - Fire37
-  - Fire38
-  - Fire39
-  - Fire40
-  - Fire41
-  - Fire42
-  - Fire43
-  - Fire44
-  - Fire45
-  - Fire46
-  - Fire47
-  - Fire48
-  - Fire49
-  - Fire50
-  - Fire51
-  - Fire52
-  - Fire53
-  - Fire54
-  - Fire55
-  - Fire56
+  - Fire1
+  - Fire2
+  - Fire3
+  - Fire4
   - FireBoss
-  - Water58
-  - Water59
-  - Water60
-  - Water61
-  - Water62
-  - Water63
-  - Water64
-  - Water65
-  - Water66
-  - Water67
-  - Water68
-  - Water69
-  - Water70
-  - Water71
-  - Water72
-  - Water73
-  - Water74
-  - Water75
-  - Water76
-  - Water77
-  - Water78
-  - Water79
-  - Water80
-  - Water81
-  - Water82
-  - Water83
+  - Water1
+  - Water2
+  - Water3
+  - Water4
+  - WaterItem
   - WaterBoss
-  - Wind85
-  - Wind86
-  - Wind87
-  - Wind88
-  - Wind89
-  - Wind90
-  - Wind91
-  - Wind92
-  - Wind93
-  - Wind94
-  - Wind95
-  - Wind96
-  - Wind97
-  - Wind98
-  - Wind99
-  - Wind100
-  - Wind101
-  - Wind102
-  - Wind103
-  - Wind104
-  - Wind105
-  - Wind106
-  - Wind107
+  - Wind1
+  - Wind2
+  - Wind3
+  - Wind4
+  - Wind5
+  - Wind6
+  - WindItem
   - WindBoss
+  - WindBonus
+  - WaterBonus
+  - EarthBonus
+  - FireBonus
+  - Final
   transitionTime: 0.25
   entranceNum: 0
 --- !u!114 &114561147363032550
@@ -11397,6 +11324,8 @@ MonoBehaviour:
   selectedCommand: 0
   commandCharges: []
   swordUpgrade: 0
+  redLaserDestroyed: 0
+  blueLaserDestroyed: 0
 --- !u!114 &114967615084092736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13666,7 +13595,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 198.32, y: 363.21}
-  m_SizeDelta: {x: 396.64, y: 285.96}
+  m_SizeDelta: {x: 396.64, y: 285.95996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224221609538776336
 RectTransform:

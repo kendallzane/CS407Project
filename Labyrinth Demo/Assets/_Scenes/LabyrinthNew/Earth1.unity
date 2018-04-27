@@ -596,7 +596,7 @@ Prefab:
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}
       propertyPath: toEntrance
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114843220426672424, guid: 3002c21a0ba572e4b85c34e293118ea1,
         type: 2}

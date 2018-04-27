@@ -6,332 +6,113 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Main Menu.unity
+    path: Assets/_Scenes/Main Menu.unity
     guid: e00aae56c0f793a409e16f40665db6c6
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Tutorial1.unity
-    guid: 8f5abff4510abcb47a91af1b707385ce
+    path: Assets/_Scenes/LabyrinthNew/Tutorial1.unity
+    guid: 86d263089f0e8c643af1da31f22ab67e
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Tutorial2.unity
-    guid: ffc7f3d73b13bf04ea2a70e4303adc10
+    path: Assets/_Scenes/LabyrinthNew/Tutorial2.unity
+    guid: c51e70d107be7ef44aa92963b3a22f73
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Tutorial3.unity
-    guid: 06e9f79e0e865754a80986c959905d0f
+    path: Assets/_Scenes/LabyrinthNew/Tutorial3.unity
+    guid: 66f1570ac4046b244b56de26786bc447
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Tutorial4.unity
-    guid: 02801535c3e91994eac693af93229dbd
+    path: Assets/_Scenes/LabyrinthNew/Tutorial4.unity
+    guid: f2a5f7c9db78738438faa05222f30c46
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Central.unity
-    guid: 34f0c92a5974bfe44b2734eaf3235b3a
+    path: Assets/_Scenes/LabyrinthNew/Central.unity
+    guid: 6b2c17ce4bad0a841b382cadde71180a
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth6.unity
-    guid: 47cad9c00f132a24098b06cc10ccccc0
+    path: Assets/_Scenes/LabyrinthNew/Earth1.unity
+    guid: c7302f28bdd533a4588cce660c0759c5
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth7.unity
-    guid: eccc0630cc8f52941b4ef4679b94469a
+    path: Assets/_Scenes/LabyrinthNew/Earth2.unity
+    guid: a2fded1d932dff944b1d99000512fbae
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth8.unity
-    guid: a31907434525ead41bf016617128ccfc
+    path: Assets/_Scenes/LabyrinthNew/Earth3.unity
+    guid: 865baea2f28b2884b9960a9d2358975e
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth9.unity
-    guid: ec9a7d94f11e2944a9d7faea77c84bad
+    path: Assets/_Scenes/LabyrinthNew/Earth4.unity
+    guid: 7930a41f25e1caa44baa7a954dee37c0
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth10.unity
-    guid: 8b4954abd109c1c4ba936ba31e08baef
+    path: Assets/_Scenes/LabyrinthNew/EarthItem.unity
+    guid: 7f1e0b7bb28c67641ac9f5d73c75a564
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth11.unity
-    guid: 682f5748b8d7ac44e902c8afc691fd7e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth12.unity
-    guid: 05920205951de3e4a87f9c99d4b09192
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth13.unity
-    guid: 82bafbc1f6609de469a6e700eb28a04f
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth14.unity
-    guid: 6b5a56b8511954b40afe57397c21b809
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth15.unity
-    guid: 0db63934fa1ea424799b61fcf5aa7bde
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth16.unity
-    guid: 47d08163f8d298a40a5d614b4b281a62
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth17.unity
-    guid: 37cf0e4601f28b849bd431558f099625
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth18.unity
-    guid: d32ef2bbf6d29e144bd28619fb988d60
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth19.unity
-    guid: 587fe2c9af621b148add83ff374404c5
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth20.unity
-    guid: 4f397c414eced874eb4c2815f3fdb54e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth21.unity
-    guid: 85a13cc48c545e84f8d0ce59bd27e186
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth22.unity
-    guid: 55be11c73c902af42a0dfaaa11a34a8f
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth23.unity
-    guid: 16a02d0b9af34f14096d03c27455e3f1
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth24.unity
-    guid: c4a055934c6694a4aad03ef561915394
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth25.unity
-    guid: ad7e625095329a8428bad08fe9bd7b16
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth26.unity
-    guid: d8a178133fede3f4ca1856b87210af87
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Earth27.unity
-    guid: 5f63e428cf12a4d4d949b24c6f5feaa6
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/EarthBoss.unity
+    path: Assets/_Scenes/LabyrinthNew/EarthBoss.unity
     guid: 485c4cf3f0563c940b1a92fc8d377bdb
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire29.unity
-    guid: e9486068a9a081b45a9c450b6f49e9d3
+    path: Assets/_Scenes/LabyrinthNew/Fire1.unity
+    guid: d89fd0b5efcee4e46a83fcbaff79ac71
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire30.unity
-    guid: 5e04571efbdaf704b9ce2ff046cd37d9
+    path: Assets/_Scenes/LabyrinthNew/Fire2.unity
+    guid: 208d581529b906e46985d1f9b047023c
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire31.unity
-    guid: 44360e2e2ba705c42af9268fdef1c9b9
+    path: Assets/_Scenes/LabyrinthNew/Fire3.unity
+    guid: e5907d19194e7bb498a8ac58267f8d25
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire32.unity
-    guid: f94620a7e96bde4438b1474851bc8a0d
+    path: Assets/_Scenes/LabyrinthNew/Fire4.unity
+    guid: e4d6108853e3d7e4c9e7f1c9d005e54a
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire33.unity
-    guid: 19e4438fe9633d24b9e0f0569a0b0b6a
+    path: Assets/_Scenes/LabyrinthNew/FireBoss.unity
+    guid: e94eb26ce80edcc4dae3d72146a2b809
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire34.unity
-    guid: 34014b8a75a3892478855818bc1bebf8
+    path: Assets/_Scenes/LabyrinthNew/Water1.unity
+    guid: 5410d67b18f51d343914be6cd8645784
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire35.unity
-    guid: bbe2ddf08bd45ef4d93a74ad16834fb3
+    path: Assets/_Scenes/LabyrinthNew/Water2.unity
+    guid: 2132a73568523b640962706008638da2
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire36.unity
-    guid: e6667a6205312f2418201143f8fdd07a
+    path: Assets/_Scenes/LabyrinthNew/Water3.unity
+    guid: fc6375d15b4c8c0449f13341252aa74d
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire37.unity
-    guid: ece4641586174f34d9eca338727ea218
+    path: Assets/_Scenes/LabyrinthNew/Water4.unity
+    guid: 8471cfccf43d8eb4db8914dbf2a8c8b1
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire38.unity
-    guid: 111552f3eabab9f47a01cd440ed3eb18
+    path: Assets/_Scenes/LabyrinthNew/WaterItem.unity
+    guid: a41a812831cbbc346a38c6c62ada3146
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire39.unity
-    guid: 26402ecebe3cdbd4d964539320177475
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire40.unity
-    guid: d7e97029518333c4cbaba52efa434e32
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire41.unity
-    guid: a7f1d61d7d103b64c9b2c40a1bbd789e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire42.unity
-    guid: d330acfd15442bf41a3c1d61af055e8d
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire43.unity
-    guid: d896bfe7fe9b8a445a8586bdc3417e5f
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire44.unity
-    guid: 4e2f8f7c20afc0a418bd191973c532db
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire45.unity
-    guid: 1cbf9804cc25080478eb98624ec1ad4c
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire46.unity
-    guid: 1b513423d55d6fe4d9f133616b43e9b1
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire47.unity
-    guid: 5c42310294d81514ca5b6f4de49e9243
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire48.unity
-    guid: 06d730b035e129447827539fed96ba8b
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire49.unity
-    guid: 89fbb87c4c3dd714fb7c8a5d32d20ab3
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire50.unity
-    guid: 52d4262741cffbe49bd0a25b813b5b93
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire51.unity
-    guid: b3e2293c3205f9540be4be1e304ff3e4
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire52.unity
-    guid: 4ca23e6da1e8a13459ced24cf6073613
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire53.unity
-    guid: edfb10098c535b645b97b23de8a73346
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire54.unity
-    guid: 5c845411a276cde43b8b8c38fcd7b85e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire55.unity
-    guid: 1f36da61547968945b432879a5adc40f
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Fire56.unity
-    guid: 6501714c202325448a598d3df5d456aa
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/FireBoss.unity
-    guid: 39d0357b41613204382e6c3c8d36b365
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water58.unity
-    guid: e86231168c11fa74f8cb5cde891b9340
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water59.unity
-    guid: b142d2ed0a92e254aa3d4ae47a98d608
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water60.unity
-    guid: 2736f7a08506fa44fa1af9bbd526159b
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water61.unity
-    guid: a3915af9f1b6cb94fb02ceeb79ffb714
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water62.unity
-    guid: 995dae755ddfd9e4a9e077e977ae06ff
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water63.unity
-    guid: 59fdf480860350e42b647b3ef3282b7e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water64.unity
-    guid: d1023c42ba9f1a543ac8c3fcf01e0c74
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water65.unity
-    guid: 9e8b1828351dcb746ae4afd030ef56f2
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water66.unity
-    guid: 12050eac3fb13664e95dfba3e44bc6ba
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water67.unity
-    guid: faf473149d6d5b94280f6c754a4e94ce
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water68.unity
-    guid: 622629337c15c0749800a90bee6373ec
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water69.unity
-    guid: fb8c98cfff498984387737690c820da2
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water70.unity
-    guid: d4d8c8701deebde4cbd631fe2587a564
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water71.unity
-    guid: 940c4eaffaa464743901138404494223
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water72.unity
-    guid: 660bd9cf3f20bd34eab484b10294a020
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water73.unity
-    guid: d0eb65f1ed18e6a47aab5005ba882378
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water74.unity
-    guid: e6d8ef8b8c592444e9f1e02b1745b44e
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water75.unity
-    guid: 8ed433431f1ffc7438e99aac31e52bfc
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water76.unity
-    guid: 331a65f32e9ac4c4b990b042d375c3f3
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water77.unity
-    guid: e9633b8f93fe21f418851cb73eb8629a
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water78.unity
-    guid: d432bc2c7cb2c6f469ba1f0de69f6a8b
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water79.unity
-    guid: 821077d050803d64c93699738b126348
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water80.unity
-    guid: 4b16e72a30bfbe04794af35219819450
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water81.unity
-    guid: 5644587a4a2a520429286c13b081556d
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water82.unity
-    guid: 3e8e5a47af48989429d0cacd5c5b93a0
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Water83.unity
-    guid: cdc7a4b434f60534e88bc3e17bcb2a0d
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/WaterBoss.unity
+    path: Assets/_Scenes/LabyrinthNew/WaterBoss.unity
     guid: a4704c74b99e6134a8398b9350b3fbb7
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind85.unity
-    guid: 9ef6c0725ff6bb54c84256d341d226ff
+    path: Assets/_Scenes/LabyrinthNew/Wind1.unity
+    guid: 5c6257015ff688b4ebaa28d05cbc4c4b
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind86.unity
-    guid: e73a987de5f42784e98e2e8c6efd7880
+    path: Assets/_Scenes/LabyrinthNew/Wind2.unity
+    guid: 1be4a709fcd888e4ebebcefb8008016a
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind87.unity
-    guid: 505eb2a351c4f6044bb15fbf0515f247
+    path: Assets/_Scenes/LabyrinthNew/Wind3.unity
+    guid: 80e4fa22d967fcb44b8e4551cf2e99ea
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind88.unity
-    guid: 197e8a4660bcb22419203ad71cac9ee3
+    path: Assets/_Scenes/LabyrinthNew/Wind4.unity
+    guid: 76a599c9adf15654a8198be4cf08497f
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind89.unity
-    guid: 3696589b1904d0f4eb923d95616e648e
+    path: Assets/_Scenes/LabyrinthNew/Wind5.unity
+    guid: 75e487b74f4d0ad408f2722c473d18f5
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind90.unity
-    guid: 58be68c3b310cb74a858510d57cb6d31
+    path: Assets/_Scenes/LabyrinthNew/Wind6.unity
+    guid: e6d0c69f980a74547aee9ff585bef55c
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind91.unity
-    guid: 5854bf6a9868d5c4c95d9147ed9f16a1
+    path: Assets/_Scenes/LabyrinthNew/WindItem.unity
+    guid: 21ebb6b1c8fb83841af171f1e8236b52
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind92.unity
-    guid: 1a18f7b238344d5459c9c714ffd43ad0
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind93.unity
-    guid: e4ce6622638dc99498024eee7e866f8f
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind94.unity
-    guid: 4520015614bf52e458a57e2ec6bd1dcb
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind95.unity
-    guid: bc83bf0a16785fe4ea3b08bfcb0b023b
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind96.unity
-    guid: 5665f413af39cf54395081fa4f9df5a7
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind97.unity
-    guid: b7b1ad7185ed3b346a5990158e7b2750
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind98.unity
-    guid: a3ddb39bca8475c4eb4c9d40cdcd6438
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind99.unity
-    guid: 54ffb5ce84882a246a910ddf9f79d21d
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind100.unity
-    guid: 0d8311fad15631d408be50f14e3d152a
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind101.unity
-    guid: ede47435c77d1cc4193aae997529a00d
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind102.unity
-    guid: 71223860c1d6f8342853e98564efee18
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind103.unity
-    guid: e8e2b9ccaadcfc24a9d56962e8375fe4
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind104.unity
-    guid: bf04b9403045aad478cbcd7ca87bf671
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind105.unity
-    guid: fcef246ee4403004a9f8a8d78be8955a
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind106.unity
-    guid: ec63f9ae61b8bfe4d941e8e393f3c750
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Wind107.unity
-    guid: dfcd5b49b6c020c4f9ecf938b361b044
-  - enabled: 1
-    path: Assets/_Scenes/Labyrinth/WindBoss.unity
+    path: Assets/_Scenes/LabyrinthNew/WindBoss.unity
     guid: 294a373c523d1b4448083794eaf2b0e6
   - enabled: 1
-    path: Assets/_Scenes/Labyrinth/Entrance.unity
-    guid: 95d73c66978337141842079b71de206c
+    path: Assets/_Scenes/LabyrinthNew/WindBonus.unity
+    guid: 9fc3b16208b819c4287caa2e363fea27
+  - enabled: 1
+    path: Assets/_Scenes/LabyrinthNew/WaterBonus.unity
+    guid: 28e71a23575c6064fb96d3d29159c831
+  - enabled: 1
+    path: Assets/_Scenes/LabyrinthNew/EarthBonus.unity
+    guid: ce833caee1f3f8544908397cc6aaa59f
+  - enabled: 1
+    path: Assets/_Scenes/LabyrinthNew/FireBonus.unity
+    guid: 337a4163506798d46b9ff62b9d8f849b
+  - enabled: 1
+    path: Assets/_Scenes/LabyrinthNew/Final.unity
+    guid: 02821226f6be47248826fddc6a0ed907
+  - enabled: 1
+    path: Assets/_Scenes/LabyrinthNew/Entrance.unity
+    guid: 1ad0f69131958ac4a8ad90e31e2f7eb1
