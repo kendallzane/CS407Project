@@ -138,7 +138,8 @@ public class BossDoor : MonoBehaviour {
 	}
 
 	private void airLock() {
-		an.SetBool ("airUnlocked", true);
+		Animator anbd = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
+		anbd.SetBool ("airUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		hud.SetActive (true);
@@ -148,7 +149,8 @@ public class BossDoor : MonoBehaviour {
 	}
 
 	private void earthLock() {
-		an.SetBool ("earthUnlocked", true);
+		Animator anbd = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
+		anbd.SetBool ("earthUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		hud.SetActive (true);
@@ -158,7 +160,8 @@ public class BossDoor : MonoBehaviour {
 	}
 
 	private void fireLock() {
-		an.SetBool ("fireUnlocked", true);
+		Animator anbd = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
+		anbd.SetBool ("fireUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		hud.SetActive (true);
@@ -168,7 +171,8 @@ public class BossDoor : MonoBehaviour {
 	}
 
 	private void waterLock() {
-		an.SetBool ("waterUnlocked", true);
+		Animator anbd = GameObject.Find("Boss Door Front").GetComponent<Animator> ();
+		anbd.SetBool ("waterUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		hud.SetActive (true);
