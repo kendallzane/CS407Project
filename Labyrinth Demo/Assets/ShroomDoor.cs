@@ -10,14 +10,16 @@ public class ShroomDoor : MonoBehaviour {
 	void Start () {
 		gc = GameObject.FindGameObjectWithTag ("GameController");
 		if (gc.GetComponent<GameController> ().roomPuzzle [20] >= 1) {
-			Destroy(gameObject);
+			gameObject.SetActive (false);
+			//Destroy(gameObject);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			gameObject.SetActive (false);
 			gc.GetComponent<GameController> ().roomPuzzle [20] = 1;
 		}
 	}
