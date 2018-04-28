@@ -7,8 +7,8 @@ public class GenericButton : MonoBehaviour {
 	public GameObject other;
 	bool pressed = false;
 	public Sprite pressedSprite;
-	public GameObject gcObj;
-	public GameController gc;
+	[HideInInspector] public GameObject gcObj;
+	[HideInInspector] public GameController gc;
 	// Use this for initialization
 	void Start () {
 		gcObj = GameObject.FindGameObjectWithTag ("GameController");

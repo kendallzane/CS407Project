@@ -18,6 +18,11 @@ public class FlameToggle : ButtonLogic {
 		
 	}
 
+	public void ButtonPressed() {
+		fireActive = !fireActive;
+		fire.SetActive(false);
+	}
+
     public void switchIt(){
         fireActive = !fireActive;
         fire.SetActive(false);
