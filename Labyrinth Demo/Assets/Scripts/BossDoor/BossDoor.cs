@@ -7,7 +7,7 @@ public class BossDoor : MonoBehaviour {
 	private Animator an;
 
 	private GameObject player;
-	private GameObject hud;
+	private GameObject[] huds;
 	private GameObject gc;
 
 	public int elementType = 0;			//1 for Earth, 2 for Fire, 3 for Water, 4 for Wind
@@ -18,7 +18,7 @@ public class BossDoor : MonoBehaviour {
 	void Start () {
 		an = GetComponent<Animator> ();
 		player = GameObject.Find ("MainCharacter");
-		hud = GameObject.FindGameObjectWithTag ("HUD");
+		huds = GameObject.FindGameObjectsWithTag ("HUD");
 		gc = GameObject.Find ("GameController");
 
 		// called if lock has been opened before
@@ -122,7 +122,9 @@ public class BossDoor : MonoBehaviour {
 	private void disablePlayer() {
 		gc.GetComponentInChildren<PauseMenu> ().enabled = false;
 		player.GetComponent<PlayerCombat>().DisablePlayer();
-		hud.SetActive (false);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (false);
+		}
 		mainCamera.gameObject.SetActive(false);
 		cutSceneCamera.gameObject.SetActive(true);
 		Time.timeScale = 0f;
@@ -131,9 +133,11 @@ public class BossDoor : MonoBehaviour {
 	private void enablePlayer() {
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
-		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (true);
+		}
 		Time.timeScale = 1f;
 	}
 
@@ -142,9 +146,11 @@ public class BossDoor : MonoBehaviour {
 		anbd.SetBool ("airUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
-		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (true);
+		}
 		Time.timeScale = 1f;
 	}
 
@@ -153,9 +159,11 @@ public class BossDoor : MonoBehaviour {
 		anbd.SetBool ("earthUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
-		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (true);
+		}
 		Time.timeScale = 1f;
 	}
 
@@ -164,9 +172,11 @@ public class BossDoor : MonoBehaviour {
 		anbd.SetBool ("fireUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
-		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (true);
+		}
 		Time.timeScale = 1f;
 	}
 
@@ -175,9 +185,11 @@ public class BossDoor : MonoBehaviour {
 		anbd.SetBool ("waterUnlocked", true);
 		gc.GetComponentInChildren<PauseMenu> ().enabled = true;
 		player.GetComponent<PlayerCombat>().EnablePlayer();
-		hud.SetActive (true);
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
+		foreach (GameObject hud in huds) {
+			hud.SetActive (true);
+		}
 		Time.timeScale = 1f;
 	}
 }

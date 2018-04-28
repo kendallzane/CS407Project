@@ -302,7 +302,7 @@ public class PlayerCombat : MonoBehaviour {
 			if (commands[selectedCommand].canUse) {
 				//Use the selected command
 				commands[selectedCommand].UseCommand();
-				ph.ChangeCommand();
+				//ph.ChangeCommand();
 			} else {
 				//show error with sound effect and/or quick animation
 			}
