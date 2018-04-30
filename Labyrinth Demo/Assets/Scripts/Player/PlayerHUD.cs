@@ -14,6 +14,9 @@ public class PlayerHUD : MonoBehaviour {
 	private Animator an;
 	private PlayerCombat pc;
 
+	private GameObject gc;				//gamecontroller
+
+
 	//variables
 	public Color[] dashColors;			//the colors used to indicate how many charges are remaining
 	private bool canChange = true;
@@ -30,6 +33,8 @@ public class PlayerHUD : MonoBehaviour {
 			pc.commands [i].commandNum = i;
 		}
 		ResetSelection ();
+
+		gc = GameObject.Find ("GameController");
 	}
 	
 	// Update is called once per frame
@@ -86,6 +91,7 @@ public class PlayerHUD : MonoBehaviour {
 	// Called when the player hits the minimize button
 	public void Minimize () {
 		//Minimize the HUD
+		gc.GetComponent<GameController> ().hudMin = !gc.GetComponent<GameController> ().hudMin;
 		an.SetTrigger("Minimize");
 	}
 

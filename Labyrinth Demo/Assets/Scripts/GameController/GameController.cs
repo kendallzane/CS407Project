@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public GameObject player;				//the player in the current scene
 
 	[HideInInspector] public int[] roomPuzzle;
+	[HideInInspector] public bool hudMin;			//HUD minimized?
 
 	//playerValues (could be good to refactor as a struct)
 	[HideInInspector] public int maxHealth;					//what is the maxHealth of the player?
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour {
 		roomPuzzle = new int[SceneManager.sceneCountInBuildSettings];
 		rotationSwitchStates [3] = true;
 		player = GameObject.FindGameObjectWithTag ("Player");
+		hudMin = false;
 	}
 	
 	// Update is called once per frame
@@ -72,7 +74,9 @@ public class GameController : MonoBehaviour {
 			player = GameObject.FindGameObjectWithTag ("Player");
 			player.GetComponent<PlayerCombat> ().PlayerSetup (maxHealth, health, maxDashCharges, dashCharges, dashTimeDelay, selectedCommand, commandCharges, swordUpgrade);
 			GetComponentInChildren<GameOver> ().playerHealth = player.GetComponent<PlayerHealth> ();
-
+			if (hudMin) {
+				GameObject.Find ("HUD (3)(Clone)").GetComponent <Animator>().SetTrigger("Minimize");
+			}
 			//Keep track of enemy respawns
 		}
 	}
