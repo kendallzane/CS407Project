@@ -91,16 +91,17 @@ public class H2OChad : EnemyAI {
 			puddleList = (Transform[]) Puddles.GetComponentsInChildren<Transform>();
 			
 		}
+		if (iAmBoss) {
+			GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
 
-		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+			if (gcObj.GetComponent<GameController> ().bossDefeats [3]) {
+				GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+				foreach (GameObject door in doors) {
+					door.GetComponent<Animator> ().SetTrigger ("Open");
+				}
 
-		if (gcObj.GetComponent<GameController> ().bossDefeats [3]) {
-			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
-			foreach (GameObject door in doors) {
-				door.GetComponent<Animator> ().SetTrigger ("Open");
+				Destroy (gameObject);
 			}
-
-			Destroy (gameObject);
 		}
 	}
 	
@@ -327,14 +328,16 @@ public class H2OChad : EnemyAI {
 		yield return new WaitForSecondsRealtime(1);
 
 		//Update Game Controller and clear room
-		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
-		if (gcObj != null) {
-			gcObj.GetComponent<GameController> ().DefeatBoss (3);
-			gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
-		}
-		GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
-		foreach (GameObject door in doors) {
-			door.GetComponent<Animator> ().SetTrigger ("Open");
+		if (iAmBoss) {
+			GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+			if (gcObj != null) {
+				gcObj.GetComponent<GameController> ().DefeatBoss (3);
+				gcObj.GetComponent<BackgroundMusic> ().SwitchLayers (gcObj.GetComponent<BackgroundMusic> ().currLayer);
+			}
+			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+			foreach (GameObject door in doors) {
+				door.GetComponent<Animator> ().SetTrigger ("Open");
+			}
 		}
 		
 		Destroy(gameObject);

@@ -7,7 +7,7 @@ public class BossDoor : MonoBehaviour {
 	private Animator an;
 
 	private GameObject player;
-	private GameObject[] huds;
+	private GameObject hud;
 	private GameObject gc;
 
 	public int elementType = 0;			//1 for Earth, 2 for Fire, 3 for Water, 4 for Wind
@@ -18,12 +18,12 @@ public class BossDoor : MonoBehaviour {
 	void Start () {
 		an = GetComponent<Animator> ();
 		player = GameObject.Find ("MainCharacter");
-		huds = GameObject.FindGameObjectsWithTag ("HUD");
+		hud = GameObject.Find ("HUD (3)(Clone)");
 		gc = GameObject.Find ("GameController");
 
 		// called if lock has been opened before
 		for (int i = 0; i < 5; i++) {
-			disablePlayer ();
+			//disablePlayer ();
 			if (gc != null && gc.GetComponent<GameController> ().ElementalLocks[i]) {
 				switch (i) {
 				case 0:
@@ -70,12 +70,12 @@ public class BossDoor : MonoBehaviour {
 					break;
 				}
 			}
-			enablePlayer ();
+			//enablePlayer ();
 		}
 
 		// called if lock has not been opened before
 		for (int i = 0; i < 5; i++) {
-			disablePlayer ();
+			//disablePlayer ();
 			if (gc != null && gc.GetComponent<GameController> ().bossDefeats [i] && !gc.GetComponent<GameController> ().ElementalLocks[i]) {
 				switch (i) {
 				case 0:
@@ -106,7 +106,7 @@ public class BossDoor : MonoBehaviour {
 					break;
 				}
 			}
-			enablePlayer ();
+			//enablePlayer ();
 		}
 
 	}
@@ -122,9 +122,7 @@ public class BossDoor : MonoBehaviour {
 	private void disablePlayer() {
 		gc.GetComponentInChildren<PauseMenu> ().enabled = false;
 		player.GetComponent<PlayerCombat>().DisablePlayer();
-		foreach (GameObject hud in huds) {
-			hud.SetActive (false);
-		}
+		hud.SetActive (false);
 		mainCamera.gameObject.SetActive(false);
 		cutSceneCamera.gameObject.SetActive(true);
 		Time.timeScale = 0f;
@@ -135,9 +133,7 @@ public class BossDoor : MonoBehaviour {
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
-		foreach (GameObject hud in huds) {
-			hud.SetActive (true);
-		}
+		hud.SetActive (true);
 		Time.timeScale = 1f;
 	}
 
@@ -148,9 +144,7 @@ public class BossDoor : MonoBehaviour {
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
-		foreach (GameObject hud in huds) {
-			hud.SetActive (true);
-		}
+		hud.SetActive (true);
 		Time.timeScale = 1f;
 	}
 
@@ -161,9 +155,7 @@ public class BossDoor : MonoBehaviour {
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
-		foreach (GameObject hud in huds) {
-			hud.SetActive (true);
-		}
+		hud.SetActive (true);
 		Time.timeScale = 1f;
 	}
 
@@ -174,9 +166,7 @@ public class BossDoor : MonoBehaviour {
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
-		foreach (GameObject hud in huds) {
-			hud.SetActive (true);
-		}
+		hud.SetActive (true);
 		Time.timeScale = 1f;
 	}
 
@@ -187,9 +177,7 @@ public class BossDoor : MonoBehaviour {
 		player.GetComponent<PlayerCombat>().EnablePlayer();
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
-		foreach (GameObject hud in huds) {
-			hud.SetActive (true);
-		}
+		hud.SetActive (true);
 		Time.timeScale = 1f;
 	}
 }
