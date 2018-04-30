@@ -42,6 +42,17 @@ public class FireSteve : EnemyAI {
 	void Start () {
 		canMove = true;//
 		center = new Vector2(0.0f, 0.0f);
+
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+
+		if (gcObj.GetComponent<GameController> ().bossDefeats [2]) {
+			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+			foreach (GameObject door in doors) {
+				door.GetComponent<Animator> ().SetTrigger ("Open");
+			}
+
+			Destroy (gameObject);
+		}
 	}
 	
 	// Update is called once per frame

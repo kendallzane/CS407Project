@@ -91,6 +91,17 @@ public class H2OChad : EnemyAI {
 			puddleList = (Transform[]) Puddles.GetComponentsInChildren<Transform>();
 			
 		}
+
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+
+		if (gcObj.GetComponent<GameController> ().bossDefeats [3]) {
+			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+			foreach (GameObject door in doors) {
+				door.GetComponent<Animator> ().SetTrigger ("Open");
+			}
+
+			Destroy (gameObject);
+		}
 	}
 	
 	// Update is called once per frame

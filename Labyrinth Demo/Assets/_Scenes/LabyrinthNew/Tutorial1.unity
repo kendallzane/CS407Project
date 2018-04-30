@@ -796,7 +796,9 @@ MonoBehaviour:
 
     Space - Swing sword
 
-    Escape - Pause'
+    Escape - Pause
+
+    Tab - Toggle Hud'
 --- !u!222 &641475773
 CanvasRenderer:
   m_ObjectHideFlags: 0

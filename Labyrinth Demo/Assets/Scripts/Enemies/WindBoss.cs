@@ -54,6 +54,18 @@ public class WindBoss : EnemyAI {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		phase(phaseNum);
+
+		GameObject gcObj = GameObject.FindGameObjectWithTag ("GameController");
+		if (gcObj.GetComponent<GameController> ().bossDefeats [4]) {
+			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
+			foreach (GameObject door in doors) {
+				door.GetComponent<Animator> ().SetTrigger ("Open");
+			}
+			if (exitPlatform != null) {
+				exitPlatform.SetActive (true);
+			}
+			Destroy (gameObject);
+		}
 	}
 	
 	// Update is called once per frame

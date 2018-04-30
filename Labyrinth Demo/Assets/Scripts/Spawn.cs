@@ -34,8 +34,10 @@ public class Spawn : MonoBehaviour {
 		gc = GameObject.Find ("GameController");
 
 		if (gc.GetComponent<GameController> ().roomPuzzle [sceneN] == 1) {
-			foreach (GameObject enemy in enemies) {
-				Destroy (enemy);
+			if (sceneN == 8) {
+				foreach (GameObject enemy in enemies) {
+					Destroy (enemy);
+				}
 			}
 			GameObject[] doors = GameObject.FindGameObjectsWithTag ("Door");
 			foreach (GameObject door in doors) {
