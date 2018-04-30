@@ -134,6 +134,7 @@ public class BossDoor : MonoBehaviour {
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		hud.SetActive (true);
+		hud.GetComponent<PlayerHUD>().ResetSelection();
 		Time.timeScale = 1f;
 	}
 
@@ -145,6 +146,7 @@ public class BossDoor : MonoBehaviour {
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		hud.SetActive (true);
+		hud.GetComponent<PlayerHUD>().ResetSelection();
 		Time.timeScale = 1f;
 	}
 
@@ -156,6 +158,7 @@ public class BossDoor : MonoBehaviour {
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		hud.SetActive (true);
+		hud.GetComponent<PlayerHUD>().ResetSelection();
 		Time.timeScale = 1f;
 	}
 
@@ -167,6 +170,7 @@ public class BossDoor : MonoBehaviour {
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		hud.SetActive (true);
+		hud.GetComponent<PlayerHUD>().ResetSelection();
 		Time.timeScale = 1f;
 	}
 
@@ -178,6 +182,7 @@ public class BossDoor : MonoBehaviour {
 		cutSceneCamera.gameObject.SetActive(false);
 		mainCamera.gameObject.SetActive(true);
 		hud.SetActive (true);
+		hud.GetComponent<PlayerHUD>().ResetSelection();
 		Time.timeScale = 1f;
 	}
 }
