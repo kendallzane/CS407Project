@@ -29,13 +29,13 @@ public class MapDisplay : MonoBehaviour {
 			toAdd = 6;
 			break;
 		case FIRE:
-			toAdd = 29;
+			toAdd = 12;
 			break;
 		case WATER:
-			toAdd = 58;
+			toAdd = 17;
 			break;
 		case WIND:
-			toAdd = 85;
+			toAdd = 23;
 			break;
 		}
 		foreach (GameObject room in rooms) {
