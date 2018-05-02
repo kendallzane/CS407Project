@@ -10,6 +10,8 @@ public class MapDisplay : MonoBehaviour {
 	const int FIRE = 2;
 	const int WATER = 3;
 	const int WIND = 4;
+	const int FINAL = 5;
+
 
 	//references
 	private GameController gc;
@@ -36,6 +38,9 @@ public class MapDisplay : MonoBehaviour {
 			break;
 		case WIND:
 			toAdd = 23;
+			break;
+		case FINAL:
+			toAdd = 31;
 			break;
 		}
 		foreach (GameObject room in rooms) {

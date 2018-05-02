@@ -92,7 +92,7 @@ public class PauseMenu : MonoBehaviour {
 					MapDisplay md = map.GetComponent<MapDisplay> ();
 					map.SetActive (false);
 					if (GC != null) {
-						if (md.mapLayer == GC.GetComponent<GameController> ().currLayer) {
+						if (md.mapLayer == GC.GetComponent<GameController> ().mapLayer) {
 							map.SetActive (true);
 							md.UpdateMap ();
 						}

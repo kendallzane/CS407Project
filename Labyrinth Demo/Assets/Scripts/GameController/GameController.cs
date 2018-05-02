@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour {
 	const int FIRE = 2;
 	const int WATER = 3;
 	const int WIND = 4;
+	const int FINAL = 5;
+
 
 	//references
 
@@ -26,6 +28,7 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public bool[] roomsExplored;			//which rooms has the player explored? (to show on the map in the pause menu)
 	[HideInInspector] public bool toBeDestroyed = false;	//should the gameObject call starting functions?
 	[HideInInspector] public int currLayer = BASE;			//what layer is the player currently in?
+	[HideInInspector] public int mapLayer = BASE;			//what layer is the player currently in?
 	[HideInInspector] public GameObject player;				//the player in the current scene
 
 	[HideInInspector] public int[] roomPuzzle;
